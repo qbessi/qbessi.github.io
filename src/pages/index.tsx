@@ -11,10 +11,8 @@ export default function Home() {
       <Head>
         <title>Qbessi</title>
       </Head>
-      <Wrapper>
-        <Header />
-        <Hero />
-      </Wrapper>
+      <Header />
+      <Hero />
     </>
   );
 }

@@ -14,12 +14,14 @@ const config: Config = {
         }
       },
       backgroundImage: {
+        "circles": "url('/bg_circles.svg')",
+        "oval": "url('/bg_oval.svg')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontSize: {
-        lg: '26px',
+        lg: '19px',
         xl: '40px',
       },
     },

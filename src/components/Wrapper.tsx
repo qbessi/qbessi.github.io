@@ -1,6 +1,6 @@
 const Wrapper = ({ children }) => {
   return (
-    <div className="wrapper m-3">
+    <div className="wrapper">
       {children}
     </div>
   );
