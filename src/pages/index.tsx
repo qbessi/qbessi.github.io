@@ -1,18 +1,20 @@
 import Image from "next/image";
+import Head from "next/head";
+import Hero from "@/components/Hero";
 import Header from "@/components/Header"
-import {SpaceGrotesk} from "next/font/google"
+import Wrapper from "@/components/Wrapper"
 
 
 export default function Home() {
   return (
-    <Header />
-
-    // <Hero />
-
-    // <Skills />
-
-    // <Projects /> // logic <ProjectDetails onClick={onClick} />
-
-    // <Contact /> // <Form /> 
+    <>
+      <Head>
+        <title>Qbessi</title>
+      </Head>
+      <Wrapper>
+        <Header />
+        <Hero />
+      </Wrapper>
+    </>
   );
 }
