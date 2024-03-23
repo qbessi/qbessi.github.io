@@ -8,13 +8,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      theme: {
+        color: {
+          green: '#4EE1A0',
+        }
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontSize: {
+        lg: '26px',
+        xl: '40px',
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
