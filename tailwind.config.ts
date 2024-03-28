@@ -15,6 +15,7 @@ const config: Config = {
       },
       backgroundImage: {
         "circles": "url('/bg_circles.svg')",
+        "circles2": "url('/bg_circles_r.svg')",
         "oval": "url('/bg_oval.svg')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
