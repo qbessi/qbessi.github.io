@@ -13,14 +13,6 @@ const Hero = () => {
         Based in London, I'm a Frontend Developer passionate about 
         building accessible web apps.
       </h2>
-      
-      <Link href="#contact-me" 
-            className='divide-y uppercase
-                       border-b-4 
-                       border-green-500
-                       hover:border-green-900
-                        font-bold 
-                          rounded'>Contact Me</Link>
     
     <hr className="h-px mx-4 mt-10 bg-gray-200 border-0 dark:bg-gray-100"></hr>
     
