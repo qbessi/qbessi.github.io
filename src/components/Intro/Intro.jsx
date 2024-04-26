@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Intro.scss';
 import "@fontsource/open-sans/600.css";
-import shapeGlobe from '../../assets/shape-globe.svg';
 
 const Intro = () => {
     const [londonTime, setLondonTime] = useState('');
@@ -22,8 +21,6 @@ const Intro = () => {
                 <h3>London {londonTime}</h3>
             </div>
             <h1>Big & <span className='bold-word'>Bold</span></h1>
-
-            <img src={shapeGlobe} alt='3D Globe' className='shapeGlobe'/>
         </div>
     );
 };

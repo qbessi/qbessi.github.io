@@ -1,4 +1,4 @@
-import 'normalize.css';
+import 'normalize.scss';
 import './App.scss'
 import Header from './components/Header/Header'
 import Intro from './components/Intro/Intro';
@@ -9,7 +9,9 @@ const App = () => {
     <>
       <div className='container'>
         <Header />
-        <Intro />
+        <main>
+          <Intro />
+        </main>
       </div>
     </>
   )

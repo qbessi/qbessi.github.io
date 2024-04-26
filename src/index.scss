@@ -1,6 +1,6 @@
 @import "@fontsource/open-sans";
-@font-face {font-family: 'Voyage'; src: local('Voyage'), url(./fonts/voyage-regular.otf) format('opentype');}
-@font-face {font-family: 'Voyage'; font-weight: 900; src: local('Voyage'), url(./fonts/voyage-bold.otf) format('opentype');}
+@font-face {font-family: 'Voyage'; src: local('Voyage'), url(./assets/fonts/voyage-regular.otf) format('opentype');}
+@font-face {font-family: 'Voyage'; font-weight: 900; src: local('Voyage'), url(./assets/fonts/voyage-bold.otf) format('opentype');}
 
 :root {
   --copy-font: "Open Sans", sans-serif;

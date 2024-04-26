@@ -5,10 +5,13 @@
     place-items: center;
     position: relative;
     height:100vh;
-    .shapeGlobe {
+    overflow: hidden;
+    .globe {
         position: absolute;
-        bottom: 100px;
-        right: 0;
+        bottom: -200px;
+        right: -100px;
+        width: 800px;
+        height: 800px;
     }
     h1 {
         font-family: var(--heading-font);
