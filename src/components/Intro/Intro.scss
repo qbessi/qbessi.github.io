@@ -1,0 +1,42 @@
+.Intro {   
+    font-family: var(--copy-font);
+    display:grid;
+    grid-auto-rows: max-content;
+    place-items: center;
+    position: relative;
+    height:100vh;
+    .shapeGlobe {
+        position: absolute;
+        bottom: 100px;
+        right: 0;
+    }
+    h1 {
+        font-family: var(--heading-font);
+        font-size: 20em;
+        text-align: center;
+        line-height: 13rem;
+        display: grid;
+        .bold-word {
+            line-height: 1em;
+            margin-left: 6rem;
+        }
+    }
+    &_topRow {
+        display:grid;
+        grid-template-columns: auto auto;
+        grid-gap: 0;
+        font-size: 2rem;
+        text-transform: uppercase;
+        h3 {
+            font-weight: 600;
+            letter-spacing: -1.5px;
+            &:first-child {
+                margin-right: 4rem;
+                place-self: end;
+            }
+            &:nth-child(2) {
+                place-items: start;
+            }
+        }
+    }
+}
