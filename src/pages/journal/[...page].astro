@@ -6,7 +6,7 @@ import type { CollectionEntry } from 'astro:content'
 
 import Button from '@/components/Button.astro'
 import Pagination from '@/components/Paginator.astro'
-import PostPreview from '@/components/blog/PostPreview.astro'
+import PostPreview from '@/components/journal/PostPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import { getAllPosts, getUniqueTags, sortMDByDate } from '@/utils'
 
@@ -25,8 +25,8 @@ interface Props {
 const { page, uniqueTags } = Astro.props
 
 const meta = {
-	description: 'Posts',
-	title: 'Blog'
+	description: 'posts',
+	title: 'Journal'
 }
 
 const paginationProps = {
@@ -63,13 +63,13 @@ const paginationProps = {
 			</svg>
 		</Button>
 
-		<h1 class='mb-6 mt-5 text-2xl font-bold'>Blog</h1>
+		<h1 class='mb-6 mt-5 text-2xl font-bold'>Journal</h1>
 		{page.data.length === 0 && <p>No posts yet.</p>}
 
 		{
 			page.data.length > 0 && (
 				<div class='grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8'>
-					<section aria-label='Blog posts list'>
+					<section aria-label='Journal posts list'>
 						<ul class='flex flex-col gap-y-4 text-start'>
 							{page.data.map((p) => (
 								<PostPreview post={p} withDesc />
