@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: 'qbessi',
 	// Meta property used as the default description meta property
-	description: 'Portfolio @ qbessi',
+	description: 'portfolio @ qbessi',
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: 'en-GB',
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -25,11 +25,11 @@ export const siteConfig: SiteConfig = {
 
 export const menuLinks: Array<{ title: string; path: string }> = [
 	{
-		title: 'Home',
+		title: 'home',
 		path: '/'
 	},
 	{
-		title: 'Journal',
+		title: 'journal',
 		path: '/journal/'
 	}
 ]
