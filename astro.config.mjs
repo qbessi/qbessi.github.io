@@ -13,7 +13,7 @@ import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://qbessi.github.io',	
+	site: 'https://qbessi.github.io',
 	base: 'main'
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
