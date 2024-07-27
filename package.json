@@ -31,7 +31,6 @@
 		"tailwind-merge": "^2.2.1",
 		"tailwindcss": "^3.4.1",
 		"typescript": "^5.4.2",
-		"packageManager": "pnpm@6.32.4"
 	},
 	"devDependencies": {
 		"@tailwindcss/aspect-ratio": "^0.4.2",
