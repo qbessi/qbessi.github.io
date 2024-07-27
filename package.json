@@ -2,6 +2,7 @@
 	"name": "retrograde-rotation",
 	"type": "module",
 	"version": "0.0.1",
+	"packageManager": "pnpm@6.32.4",
 	"scripts": {
 		"dev": "astro check --watch & astro dev",
 		"start": "astro dev",
