@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: 'Satoshi';
-	src: url('/fonts/Satoshi-Variable.ttf');
-	font-style: normal;
+	font-family: 'JetBrains Mono Bold';
+	src: url('/fonts/JetBrainsMonoNerdFontMono-Bold.ttf');
+	font-style: bold;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: 'Satoshi';
-	src: url('/fonts/Satoshi-VariableItalic.ttf');
-	font-style: italic;
+	font-family: 'JetBrains Mono Regular';
+	src: url('/fonts/JetBrainsMonoNerdFontMono-Regular.ttf');
+	font-style: normal;
 	font-display: swap;
 }
 
