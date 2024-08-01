@@ -15,7 +15,7 @@ import { getAllPosts, sortMDByDate } from '@/utils'
 const languages = ['English', 'Portguese', 'Arabic']
 const frontend = ['HTML', 'CSS', 'JavaScript']
 const backend = ['Python', 'SQL']
-const others = ['Bash', 'Windows', 'OSX', 'Linux']
+const others = ['PowerShell', 'Bash', 'Linux']
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
@@ -87,7 +87,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='About'>
 			<p class='text-muted-foreground'>
-				Seasoned Front-End Developer with a decade of experience in London's dynamic tech landscape, now transitioning into a Support Engineer role. Proven expertise in delivering high-quality, user-centric solutions and a strong foundation in web technologies. Passionate about networking and security, with a keen interest in optimizing system performance and safeguarding digital assets. Adept at troubleshooting complex issues and committed to leveraging my development background to enhance support operations and drive innovative solutions.
+				Seasoned Front-End Developer with a decade of experience in London's dynamic landscape, now transitioning into a Support Engineer role. Interests in Cloud Security and Penetrating Testing.
 			</p>
 		</Section>
 		{
@@ -151,14 +151,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       </ul> -->			
 
       </Card>
-			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			/>
+		
 		</Section>
 
 		<Section title='Projects'>
