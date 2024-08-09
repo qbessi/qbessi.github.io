@@ -1,4 +1,4 @@
-# Astro Resume
+# CV Website
 
 ## Features
 
@@ -15,14 +15,9 @@
 - Auto-generated [sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 - [Expressive Code](https://expressive-code.com/) source code and syntax highlighter
 
-## Credits
-
-- [astro-theme-cactus](https://github.com/chrismwilliams/astro-theme-cactus) for blog design
-- [minirezume-framer](https://minirezume.framer.website/) for resume homepage design
-
 ## Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside the project, you'll see the following folders and files:
 
 ```text
 ├── public/
