@@ -51,14 +51,14 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					<p class='font-medium'>Available</p>
 				</a>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Qbessi'>
+					<!--  <Label title='Qbessi'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
 								d='M4.615 20q-.69 0-1.152-.462Q3 19.075 3 18.385v-9.77q0-.69.463-1.152Q3.925 7 4.615 7H9V5.615q0-.69.463-1.152Q9.925 4 10.615 4h2.77q.69 0 1.153.463q.462.462.462 1.152V7h4.385q.69 0 1.152.463q.463.462.463 1.152v9.77q0 .69-.462 1.152q-.463.463-1.153.463zm0-1h14.77q.23 0 .423-.192q.192-.193.192-.423v-9.77q0-.23-.192-.423Q19.615 8 19.385 8H4.615q-.23 0-.423.192Q4 8.385 4 8.615v9.77q0 .23.192.423q.193.192.423.192M10 7h4V5.615q0-.23-.192-.423Q13.615 5 13.385 5h-2.77q-.23 0-.423.192q-.192.193-.192.423zM4 19V8z'
 							></path></svg
 						>
-					</Label>
+					</Label> -->
               <Label title='London, UK'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
@@ -118,13 +118,19 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				imageClass='h-12 w-auto md:-left-16'
 			>
 			</Card>
-			<Card
-				heading='Frontend Developer (Contract)'
-				subheading='The White Company, London'
-				date='Sep 2018 - Sep 2019'
-			>
+			<a
+			href='https://www.linkedin.com/in/qbessi/' target='_blank'
+			class='flex flex-row items-center gap-x-3 px-0 py-2 text-sm shadow-sm transition-all hover:shadow-md'
+		>
+			<span class='relative flex items-center justify-center'>
+				<span
+					class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
+				></span>
+				<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
+			</span>
 
-		</Card>
+			<p class='font-medium'>More Experience on LinkedIn</p>
+		</a>
 		</Section>
 
 		<Section title='Education'>
@@ -162,6 +168,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		<Section title='Certifications'>
 			<Card
 				as='a'
+				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
+				altText='AZ-900 Microsoft Azure Fundamentals'
+				imageClass='h-11 w-auto md:-left-16'
 				heading='AZ-900 Microsoft Azure Fundamentals'
 				subheading='Demonstrate foundational knowledge of cloud concepts, core Azure services, plus Azure management and governance features and tools.'
 				date='Aug 2024 - Aug 2024'
@@ -169,6 +178,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			/>
 			<Card
 				as='a'
+				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
+				altText='AZ-900 Microsoft Azure Fundamentals'
+				imageClass='h-11 w-auto md:-left-16'
 				heading='MS-900 Microsoft 365 Fundamentals'
 				subheading='Demonstrate understanding of Microsoft 365, to deliver industry-leading productivity apps along with intelligent cloud services, and world-class security.'
 				date='Aug 2024 - Aug 2024'
@@ -176,6 +188,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			/>
 			<Card
 				as='a'
+				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
+				altText='AZ-900 Microsoft Azure Fundamentals'
+				imageClass='h-11 w-auto md:-left-16'
 				heading='SC-900 Microsoft Security, Compliance, and Identity Fundamentals'
 				subheading='Demonstrate foundational knowledge on security, compliance, and identity concepts and related cloud-based Microsoft solutions.'
 				date='Aug 2024 - Aug 2024'
