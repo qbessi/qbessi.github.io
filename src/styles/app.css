@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .jetbrains-mono {
-	font-family: "JetBrains Mono", monospace;
+	font-family: "JetBrains Mono";
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
