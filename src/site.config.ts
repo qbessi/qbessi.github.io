@@ -3,11 +3,11 @@ import type { AstroExpressiveCodeOptions } from 'astro-expressive-code'
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: 'qbessi',
+	author: 'Qbessi',
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: 'qbessi',
+	title: 'Qbessi',
 	// Meta property used as the default description meta property
-	description: 'portfolio @ qbessi',
+	description: 'Support Engineer @ Qbessi',
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: 'en-GB',
 	// Meta property, found in src/components/BaseHead.astro L:42
