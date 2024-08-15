@@ -70,7 +70,7 @@
 
 	toggleDarkModeButton?.addEventListener('click', () => {
 		const toggleDarkModeEvent = new CustomEvent('theme-change', {
-			detail: { theme: getCurrentTheme() === 'light' ? 'dark' : 'light' }
+			detail: { theme: getCurrentTheme() === 'dark' ? 'light' : 'darj' }
 		})
 		document.dispatchEvent(toggleDarkModeEvent)
 	})
