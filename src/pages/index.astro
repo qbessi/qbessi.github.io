@@ -14,7 +14,7 @@ import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['HTML/CSS', 'Python', 'JavaScript', 'SQL']
 const microsoft = ['Microsoft Azure', 'Microsoft 365', 'Microsoft Teams']
-const others = ['PowerShell', 'Bash']
+const others = ['PowerShell', 'Bash', 'Git']
 
 const MAX_POSTS = 5
 const allPosts = await getAllPosts()
@@ -132,6 +132,13 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<Card
 				heading='Technical Support Engineer'
 				subheading='Jowdah, London'
+				date='Jan 2020 - Mar 2024'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+			</Card>
+			<Card
+				heading='Frontend Developer'
+				subheading='Qbessi, London'
 				date='Jan 2020 - Mar 2024'
 				imageClass='h-12 w-auto md:-left-16'
 			>
