@@ -60,7 +60,7 @@ const config = {
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans],
-				satoshi: ['JetBrains Mono Regular', 'sans'],
+				jetbrainsmono: ['JetBrains Mono Regular', 'sans'],
 			}
 		}
 	}
