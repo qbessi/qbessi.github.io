@@ -3,19 +3,34 @@ import PageLayout from '@/layouts/BaseLayout.astro'
 import BookSection from '@/components/BookSection.astro'
 import Button from '@/components/Button.astro'
 
-const PROGRAMMING = [
+const meta = {
+	description: 'Book list related to linux, sysadmin, security and programming',
+	title: 'Books'
+}
+
+const READ = [
 	{
 		name: 'Learn PowerShell Scripting in a Month of Lunches',
 		description: 'by James Petty, Don Jones, Jeffrey Hicks',
 		href: 'https://amzn.eu/d/ctF1ljm',
-		iconPath: 'book',
+		iconPath: 'powershell',
+		iconBgColour: '#06A67F'
+	}
+]
+
+const TOREAD = [
+	{
+		name: 'PowerShell for Sysadmins: Workflow Automation Made Easy',
+		description: 'Learn to use PowerShell to automate.',
+		href: 'https://amzn.eu/d/fKUwR9Q',
+		iconPath: 'powershell',
 		iconBgColour: '#06A67F'
 	}
 ]
 
 ---
 
-<PageLayout meta={{ title: 'Home' }}>
+<PageLayout meta={meta}>
 	<div class='w-full'>
 		<Button title='Back' href='/' style='button'>
 			<svg
@@ -52,7 +67,8 @@ const PROGRAMMING = [
 				</span>
 			</div>
 			
-			<BookSection title='Programming' books={PROGRAMMING} />
+			<BookSection title='Read' books={READ} />
+			<BookSection title='To-Read' books={TOREAD} />
 		</div>
 	</div>
 </PageLayout>

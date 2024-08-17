@@ -31,6 +31,14 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 	{
 		title: 'journal',
 		path: '/journal/'
+	},
+	{
+		title: 'homelab',
+		path: '/homelab/'
+	},
+	{
+		title: 'books',
+		path: '/books/'
 	}
 ]
 
