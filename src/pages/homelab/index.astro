@@ -9,6 +9,51 @@ const meta = {
 	title: 'Homelab'
 }
 
+const SYSTEMS = [
+	{
+		name: 'Proxmox',
+		description: 'Create and Manage VMs and Containers',
+		href: 'https://www.proxmox.com/en/',
+		iconPath: 'proxmox',
+		iconBgColour: '#06A67F'
+	},
+	{
+		name: 'Kali',
+		description: 'Penetration Testing Distribution',
+		href: 'https://www.kali.org/',
+		iconPath: 'kali',
+		iconBgColour: '#06A67F'
+	},
+	{
+		name: 'Parrot OS',
+		description: 'Penetration Testing Distribution',
+		href: 'https://www.parrotsec.org/',
+		iconPath: 'parrotos',
+		iconBgColour: '#06A67F'
+	},
+	{
+		name: 'Debian',
+		description: 'Main Operating System',
+		href: 'https://www.debian.org/',
+		iconPath: 'debian',
+		iconBgColour: '#06A67F'
+	},
+	{
+		name: 'Sway',
+		description: 'X11 Window Manager',
+		href: 'https://swaywm.org/',
+		iconPath: 'sway',
+		iconBgColour: '#06A67F'
+	},
+	{
+		name: 'Redhat',
+		description: 'Red Hat Enterprise Linux is a stable.',
+		href: 'https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux',
+		iconPath: 'redhat',
+		iconBgColour: '#06A67F'
+	},
+];
+
 const TOOLS = [
 	{
 		name: 'Obsidian',
@@ -51,43 +96,8 @@ const TOOLS = [
 		href: 'https://matrix.org/',
 		iconPath: 'matrix',
 		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Proxmox',
-		description: 'Create and Manage VMs and Containers',
-		href: 'https://www.proxmox.com/en/',
-		iconPath: 'proxmox',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Kali',
-		description: 'Penetration Testing Distribution',
-		href: 'https://www.kali.org/',
-		iconPath: 'kali',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Parrot OS',
-		description: 'Penetration Testing Distribution',
-		href: 'https://www.parrotsec.org/',
-		iconPath: 'parrotos',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Debian',
-		description: 'Main Operating System',
-		href: 'https://www.debian.org/',
-		iconPath: 'debian',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Sway',
-		description: 'X11 Window Manager',
-		href: 'https://swaywm.org/',
-		iconPath: 'sway',
-		iconBgColour: '#06A67F'
 	}
-]
+];
 
 const READ = [
 	{
@@ -143,6 +153,7 @@ const TOREAD = [
 			</div>
 			
 			<ToolSection title='Tools' tools={TOOLS} />
+			<ToolSection title='Operating Systems' tools={SYSTEMS} />
 		</div>
 
 		<div class='mt-5 flex w-full flex-col gap-y-10'>
