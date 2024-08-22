@@ -92,12 +92,12 @@ read_option() {
       echo '------------------------------------------------------'
       echo ""
       echo 'HOMELAB'
-      echo 'My homelab to host and test various projects'
+      echo 'My homelab to host and test various projects.'
       echo 'https://qbessi.com/homelab/'
       echo ""
-      echo 'HACKTHEBOX'
-      echo 'My journey to reaching the rank of "Pro Hacker"'
-      echo 'https://app.hackthebox.com/profile/1962394'
+      echo 'POWERSHELL'
+      echo 'My journey to learning PowerShell.'
+      echo "https://github.com/qbessi/tiny-powershell-projects"
     ;;
     5)
       reset
