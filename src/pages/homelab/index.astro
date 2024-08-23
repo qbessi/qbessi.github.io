@@ -4,8 +4,11 @@ import ToolSection from '@/components/ToolSection.astro'
 import BookSection from '@/components/BookSection.astro'
 import Button from '@/components/Button.astro'
 
+import { Image } from 'astro:assets'
+import homelab from '../../assets/homelab.png'
+
 const meta = {
-	description: 'Homelab & Tools I use daily for OSX and Linux.',
+	description: 'Homelab & Tools I use Daily for OSX and Linux.',
 	title: 'Homelab'
 }
 
@@ -149,10 +152,14 @@ const TOREAD = [
 		<div class='mt-5 flex w-full flex-col gap-y-10'>
 			<div>
 				<h1 class='mb-1 text-2xl font-bold'>Homelab</h1>
-				<p>Homelab &amp; Tools I use daily</p>
+				<p>Homelab &amp; Tools I use Daily</p>
 			</div>
 			
-			<img src='src/assets/homelab.png' alt='Homelab Diagram' />
+			<Image
+				src={homelab}
+				alt='Homelab'
+				loading='eager'
+        />
 
 			<ToolSection title='Tools' tools={TOOLS} />
 			<ToolSection title='Operating Systems' tools={SYSTEMS} />
