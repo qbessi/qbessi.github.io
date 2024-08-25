@@ -13,9 +13,8 @@ import astro from '../assets/about-astro.png'
 import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['HTML/CSS', 'JavaScript', 'SQL']
-const microsoft = ['Microsoft Azure', 'Microsoft 365', 'Microsoft Teams']
-const cloud = ['Azure Networking', 'Load Balancing', 'Virtual Machines']
-const others = ['PowerShell', 'Bash']
+const microsoft = ['Azure Administrator', 'Endpoint Administrator', 'Teams Administrator']
+const others = ['PowerShell', 'Bash', 'Python']
 
 const MAX_POSTS = 5
 const allPosts = await getAllPosts()
@@ -238,6 +237,28 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<Card
 				as='a'
 				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
+				altText='AZ-104 Microsoft Certified: Azure Administrator Associate'
+				imageClass='h-11 w-auto md:-left-16'
+				heading='AZ-104 Microsoft Certified: Azure Administrator Associate'
+				subheading='Demonstrate key skills to configure, manage, secure, and administer key professional functions in Microsoft Azure.'
+				date='Sep 2024'
+				target='_blank'
+				href='https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/?practice-assessment-type=certification&WT.mc_id=certposter_poster-wwl'
+			/>
+			<Card
+				as='a'
+				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
+				altText='MD-102 Microsoft 365 Certified: Endpoint Administrator Associate'
+				imageClass='h-11 w-auto md:-left-16'
+				heading='MD-102 Microsoft 365 Certified: Endpoint Administrator Associate'
+				subheading=' Plan and execute an endpoint deployment strategy, using essential elements of modern management, co-management approaches, and Microsoft Intune integration.'
+				date='Aug 2024'
+				target='_blank'
+				href='https://learn.microsoft.com/en-us/credentials/certifications/modern-desktop/?practice-assessment-type=certification&WT.mc_id=certposter_poster-wwl'
+			/>
+			<Card
+				as='a'
+				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
 				altText='MS-700 Microsoft 365 Certified: Teams Administrator Associate'
 				imageClass='h-11 w-auto md:-left-16'
 				heading='MS-700 Microsoft 365 Certified: Teams Administrator Associate'
@@ -251,7 +272,6 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		<Section title='Skills'>
 			<SkillLayout title='Languages' skills={languages} />
 			<SkillLayout title='Microsoft' skills={microsoft} />
-			<SkillLayout title='Cloud' skills={cloud} />
 			<SkillLayout title='Other' skills={others} />
 		</Section>
 	</div>
