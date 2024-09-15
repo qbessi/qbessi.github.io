@@ -3,6 +3,7 @@ title: "OverTheWire: Bandit Walkthrough Guide"
 description: "A walkthrough guide to completing the Bandit levels in the OverTheWire wargames."
 publishDate: "27 Aug 2024"
 updatedDate: 28 Aug 2024
+tags: ["overthewire", "wargames"]
 ---
 
 A walkthrough guide to completing the Bandit levels in the OverTheWire wargames.
