@@ -8,18 +8,11 @@ import { Image } from 'astro:assets'
 import homelab from '../../assets/homelab.png'
 
 const meta = {
-	description: 'Homelab & Tools I use Daily for OSX and Linux.',
+	description: 'Homelab & tools I use daily in *nux.',
 	title: 'Homelab'
 }
 
 const SYSTEMS = [
-	{
-		name: 'Proxmox',
-		description: 'Create and Manage VMs and Containers',
-		href: 'https://www.proxmox.com/en/',
-		iconPath: 'proxmox',
-		iconBgColour: '#06A67F'
-	},
 	{
 		name: 'Kali',
 		description: 'Penetration Testing Distribution',
@@ -47,14 +40,7 @@ const SYSTEMS = [
 		href: 'https://swaywm.org/',
 		iconPath: 'sway',
 		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Redhat',
-		description: 'Red Hat Enterprise Linux.',
-		href: 'https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux',
-		iconPath: 'redhat',
-		iconBgColour: '#06A67F'
-	},
+	}
 ];
 
 const TOOLS = [
@@ -66,13 +52,6 @@ const TOOLS = [
 		iconBgColour: '#06A67F'
 	},
 	{
-		name: 'Hyper',
-		description: 'Electron-based Terminal',
-		href: 'https://hyper.is/',
-		iconPath: 'hyper',
-		iconBgColour: '#06A67F'
-	},
-	{
 		name: 'VSCodium',
 		description: 'IDE',
 		href: 'https://github.com/VSCodium/vscodium',
@@ -80,9 +59,16 @@ const TOOLS = [
 		iconBgColour: '#06A67F'
 	},
 	{
-		name: 'Neovim',
+		name: 'NeoVim',
 		description: 'Vim-based Text Editor',
 		href: 'https://neovim.io/',
+		iconPath: 'neovim',
+		iconBgColour: '#06A67F'
+	},
+	{
+		name: 'LazyVim',
+		description: 'Customize and extend NeoVim',
+		href: 'https://www.lazyvim.org/',
 		iconPath: 'neovim',
 		iconBgColour: '#06A67F'
 	},
@@ -91,13 +77,6 @@ const TOOLS = [
 		description: 'Typeface for Developers',
 		href: 'https://www.jetbrains.com/lp/mono/',
 		iconPath: 'jetbrains',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Matrix',
-		description: 'Decentralised Communication',
-		href: 'https://matrix.org/',
-		iconPath: 'matrix',
 		iconBgColour: '#06A67F'
 	}
 ];
@@ -124,20 +103,6 @@ const TOREAD = [
 		name: 'Python for DevOps: Learn Ruthlessly Effective Automation',
 		description: 'Learning how to interact and automate with Linux.',
 		href: 'https://amzn.eu/d/6VE9nGA',
-		iconPath: 'python',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'PowerShell for Sysadmins: Workflow Automation Made Easy',
-		description: 'Learn to use PowerShell to automate.',
-		href: 'https://amzn.eu/d/fKUwR9Q',
-		iconPath: 'powershell',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Tiny Python Projects',
-		description: 'Learn coding and testing with puzzles and games.',
-		href: 'https://www.manning.com/books/tiny-python-projects?a_aid=youens&a_bid=b6485d52',
 		iconPath: 'python',
 		iconBgColour: '#06A67F'
 	}
@@ -193,7 +158,7 @@ const TOREAD = [
 						<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
 					</span>
 
-					<p class='font-medium'>Reading: Python for DevOps: Learn Ruthlessly Effective Automation</p>
+					<p class='font-medium'>Reading: Learn PowerShell Scripting in a Month of Lunches</p>
 				</span>
 			</div>
 			

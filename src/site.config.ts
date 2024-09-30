@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: 'Qbessi',
 	// Meta property used as the default description meta property
-	description: 'Cloud Engineer London',
+	description: 'DevOps Engineer London',
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: 'en-GB',
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -64,6 +64,6 @@ export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 		borderRadius: '4px',
 		codePaddingInline: '1rem',
 		codeFontFamily:
-			'"JetBrains Mono Regular", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;'
+			'"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;'
 	}
 }
