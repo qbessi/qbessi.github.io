@@ -1,6 +1,6 @@
 ---
-title: "Set Up the Sway Window Manager on Debian 12"
-description: "Learn how to set up the Sway WM on Debian 12."
+title: "Set Up Sway Window Manager on Debian 12"
+description: "Learn how to set up Sway WM on Debian 12 Minimal install."
 publishDate: "11 Oct 2024"
 tags: ["sway", "debian", "linux"]
 draft: false
