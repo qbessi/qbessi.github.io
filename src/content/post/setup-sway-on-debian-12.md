@@ -81,6 +81,4 @@ Now that Sway is up and running, you can further customise your environment. Her
 
 ## Conclusion
 
-Setting up the Sway window manager on Debian 12 can be straightforward if you follow these steps. Enjoy the efficiency of a tiling window manager and tailor it to fit your workflow. 
-
-Feel free to share your experiences or any tips you have for using Sway in the comments below!
+Setting up the Sway window manager on Debian 12 can be straightforward if you follow these steps. Enjoy the efficiency of a tiling window manager and tailor it to fit your workflow.
