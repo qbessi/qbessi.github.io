@@ -2,7 +2,7 @@
 title: "Why Learning to Code for the Cloud is an Essential Skill"
 description: "Discover why coding skills are essential for cloud computing success and how they enhance employability beyond certifications."
 publishDate: "10 Oct 2024"
-tags: ["cloud", "coding", "skill"]
+tags: ["cloud", "coding"]
 draft: false
 ---
 
