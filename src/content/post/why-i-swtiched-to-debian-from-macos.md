@@ -1,6 +1,6 @@
 ---
 title: "Why I Switched to Debian from macOS"
-description: "Why I switched from macOS to Debian for DevOps: stability, customisation, and improved command line skills.."
+description: "Why I switched from macOS to Debian for DevOps: stability, customisation, and improved command line skills."
 publishDate: "10 Oct 2024"
 tags: ["osx", "debian", "linux"]
 draft: false
