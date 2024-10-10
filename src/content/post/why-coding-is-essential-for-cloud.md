@@ -1,6 +1,6 @@
 ---
 title: "Why Learning to Code for the Cloud is an Essential Skill"
-description: "I share my journey completing AZ-900, MS-900, and SC-900 in four weeks."
+description: "Discover why coding skills are essential for cloud computing success and how they enhance employability beyond certifications."
 publishDate: "10 Oct 2024"
 tags: ["cloud", "coding", "skill"]
 draft: false
