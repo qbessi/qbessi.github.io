@@ -1,6 +1,6 @@
 ---
 title: "Why VIM is Better Than VSCode"
-description: "VIM and Neovim is superior to VSCode for DevOps."
+description: "Why VIM is better than VSCode for DevOps/Cloud Engineers."
 publishDate: "12 Oct 2024"
 tags: ["vim", "neovim", "vi"]
 draft: false
