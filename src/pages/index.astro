@@ -129,6 +129,83 @@ const meta = {
 				<li><strong>Brazilian Jiu-Jitsu:</strong> Blue Belt</li>
 			</ul>
 		</Section>
+
+		<Section title='Projects'>
+			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
+				<ProjectCard
+					href='/homelab/'
+					heading='Homelab'
+					subheading='My homelab to host and test various projects.'
+					imagePath='/src/assets/coming-soon.png'
+					altText='Homelab'
+					class='w-full sm:w-1/2'
+				/>
+				<ProjectCard
+					href='https://roadmap.sh/u/qbessi'
+					target='_blank'
+					heading='Roadmap'
+					subheading='Project to complete the DevOps roadmap.'
+					imagePath='/src/assets/devops.jpg'
+					altText='DevOps Roadmap'
+					class='w-full sm:w-1/2'
+				/>
+			</div>
+		</Section>
+
+		<Section title='Skills'>
+			<SkillLayout title='Languages' skills={languages} />
+			<SkillLayout title='Microsoft' skills={microsoft} />
+			<SkillLayout title='Other' skills={others} />
+		</Section>
+		
+		<Section title='Certifications'>
+			<Card
+				as='a'
+				imagePath='/src/assets/isc2.svg'
+				altText='ISC2 Certified in Cybersecurity (CC)'
+				imageClass='h-11 w-auto md:-left-16'
+				heading='ISC2 Certified in Cybersecurity (CC)'
+				subheading='Demonstrate foundational knowledge in cybersecurity concepts, principles, and practices.'
+				date='Oct 2024'
+				href='https://www.isc2.org/certifications/cc/cc-certification-exam-outline'
+				target='_blank'
+			/>
+			<Card
+				as='a'
+				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
+				altText='AZ-900 Microsoft Azure Fundamentals'
+				imageClass='h-11 w-auto md:-left-16'
+				heading='AZ-900 Microsoft Azure Fundamentals'
+				subheading='Demonstrate foundational knowledge of cloud concepts, core Azure services, plus Azure management and governance features and tools.'
+				date='Aug 2024'
+				href='https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification'
+				target='_blank'
+			/>
+			<Card
+				as='a'
+				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
+				altText='MS-900 Microsoft 365 Fundamentals'
+				imageClass='h-11 w-auto md:-left-16'
+				heading='MS-900 Microsoft 365 Fundamentals'
+				subheading='Demonstrate understanding of Microsoft 365, to deliver industry-leading productivity apps along with intelligent cloud services, and world-class security.'
+				date='Aug 2024'
+				href='https://learn.microsoft.com/en-us/credentials/certifications/microsoft-365-fundamentals/?practice-assessment-type=certification'
+				target='_blank'
+			/>
+			<Card
+				as='a'
+				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
+				altText='SC-900 Microsoft Security, Compliance, and Identity Fundamentals'
+				imageClass='h-11 w-auto md:-left-16'
+				heading='SC-900 Microsoft Security, Compliance, and Identity Fundamentals'
+				subheading='Demonstrate foundational knowledge on security, compliance, and identity concepts and related cloud-based Microsoft solutions.'
+				date='Aug 2024'
+				href='https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/?practice-assessment-type=certification'
+				target='_blank'
+			/>
+			
+		</Section>
+		
 		{
 			allPostsByDate.length > 0 && (
 				<Section title='Posts'>
@@ -192,80 +269,5 @@ const meta = {
 		
 		</Section>
 
-		<Section title='Projects'>
-			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
-				<ProjectCard
-					href='/homelab/'
-					heading='Homelab'
-					subheading='My homelab to host and test various projects.'
-					imagePath='/src/assets/coming-soon.png'
-					altText='Homelab'
-					class='w-full sm:w-1/2'
-				/>
-				<ProjectCard
-					href='https://roadmap.sh/u/qbessi'
-					target='_blank'
-					heading='Roadmap'
-					subheading='Project to complete the DevOps roadmap.'
-					imagePath='/src/assets/devops.jpg'
-					altText='DevOps Roadmap'
-					class='w-full sm:w-1/2'
-				/>
-			</div>
-		</Section>
-
-		<Section title='Certifications'>
-			<Card
-				as='a'
-				imagePath='/src/assets/isc2.svg'
-				altText='ISC2 Certified in Cybersecurity (CC)'
-				imageClass='h-11 w-auto md:-left-16'
-				heading='ISC2 Certified in Cybersecurity (CC)'
-				subheading='Demonstrate foundational knowledge in cybersecurity concepts, principles, and practices.'
-				date='Oct 2024'
-				href='https://www.isc2.org/certifications/cc/cc-certification-exam-outline'
-				target='_blank'
-			/>
-			<Card
-				as='a'
-				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
-				altText='AZ-900 Microsoft Azure Fundamentals'
-				imageClass='h-11 w-auto md:-left-16'
-				heading='AZ-900 Microsoft Azure Fundamentals'
-				subheading='Demonstrate foundational knowledge of cloud concepts, core Azure services, plus Azure management and governance features and tools.'
-				date='Aug 2024'
-				href='https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification'
-				target='_blank'
-			/>
-			<Card
-				as='a'
-				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
-				altText='MS-900 Microsoft 365 Fundamentals'
-				imageClass='h-11 w-auto md:-left-16'
-				heading='MS-900 Microsoft 365 Fundamentals'
-				subheading='Demonstrate understanding of Microsoft 365, to deliver industry-leading productivity apps along with intelligent cloud services, and world-class security.'
-				date='Aug 2024'
-				href='https://learn.microsoft.com/en-us/credentials/certifications/microsoft-365-fundamentals/?practice-assessment-type=certification'
-				target='_blank'
-			/>
-			<Card
-				as='a'
-				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
-				altText='SC-900 Microsoft Security, Compliance, and Identity Fundamentals'
-				imageClass='h-11 w-auto md:-left-16'
-				heading='SC-900 Microsoft Security, Compliance, and Identity Fundamentals'
-				subheading='Demonstrate foundational knowledge on security, compliance, and identity concepts and related cloud-based Microsoft solutions.'
-				date='Aug 2024'
-				href='https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/?practice-assessment-type=certification'
-				target='_blank'
-			/>
-			
-		</Section>
-
-		<Section title='Skills'>
-			<SkillLayout title='Languages' skills={languages} />
-			<SkillLayout title='Microsoft' skills={microsoft} />
-			<SkillLayout title='Other' skills={others} />
-		</Section>
 	</div>
 </PageLayout>
