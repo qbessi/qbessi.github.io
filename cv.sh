@@ -21,10 +21,11 @@ echo "LinkedIn: https://linkedin.com/in/qbessi"
 
 show_menu() {
   echo ""
-  echo "1) Education"
-  echo "2) Skills & Interests"
-  echo "3) Work Experience"
-  echo "4) Exit"
+  echo "1) Contact"
+  echo "2) Education"
+  echo "3) Skills & Interests"
+  echo "4) Work Experience"
+  echo "5) Exit"
 }
 
 read_option() {
@@ -33,6 +34,18 @@ read_option() {
   echo ""
   case $choice in
     1)
+      reset
+      echo -e "${BPurple}CONTACT${Color_Off}"
+      echo ""
+      echo "Moe Koubeissi"
+      echo "London, UK"
+      echo "itsupport@qbessi.com"
+      echo "07947 909 110"
+      echo "Portfolio: https://qbessi.com"
+      echo "Github: https://github.com/qbessi"
+      echo "LinkedIn: https://linkedin.com/in/qbessi"
+    ;;
+    2)
       reset
       echo -e "${BPurple}EDUCATION${Color_Off}"
       echo ""
@@ -44,7 +57,7 @@ read_option() {
       echo "ISC2 Certified in Cybersecurity"
       echo "BSc (Hons) Multimedia Computing"
     ;;
-    2)
+    3)
       reset
       echo -e "${BPurple}SKILLS & INTERESTS${Color_Off}"
       echo ""
@@ -58,7 +71,7 @@ read_option() {
       echo -e "${BPurple}•${Color_Off} Weightlifting"
       echo -e "${BPurple}•${Color_Off} HomeLab"
     ;;
-    3)
+    4)
       reset
       echo -e "${BPurple}WORK EXPERIENCE${Color_Off}"
       echo ""
@@ -96,9 +109,10 @@ read_option() {
       echo "More Experience on LinkedIn"
       echo -e "${BPurple}https://linkedin.com/in/qbessi${Color_Off}"
     ;;
-    4)
+    5)
       reset
       echo -e "${BPurple}SEE YOU SOON${Color_Off}"
+      echo "Moe Koubeissi"
       echo "itsupport@qbessi.com"
       echo "07947 909 110"
       echo "Portfolio: https://qbessi.com"
