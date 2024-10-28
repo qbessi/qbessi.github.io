@@ -118,7 +118,7 @@ read_option() {
       echo "Portfolio: https://qbessi.com"
       echo "Github: https://github.com/qbessi"
       echo "LinkedIn: https://linkedin.com/in/qbessi"
-      exit
+      logout
     ;;
     *)
       echo "Invalid option. Please try again"
