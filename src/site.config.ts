@@ -33,8 +33,8 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: '/journal/'
 	},
 	{
-		title: 'homelab',
-		path: '/homelab/'
+		title: 'tools',
+		path: '/tools/'
 	}
 ]
 

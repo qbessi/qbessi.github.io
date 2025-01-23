@@ -8,8 +8,8 @@ import { Image } from 'astro:assets'
 import homelab from '../../assets/homelab.svg'
 
 const meta = {
-	description: 'Homelab & tools I use daily in *nux.',
-	title: 'Homelab'
+	description: 'Tools I Use Daily.',
+	title: 'Tools'
 }
 
 const SYSTEMS = [
@@ -136,41 +136,8 @@ const TOREAD = [
 		</Button>
 
 		<div class='mt-5 flex w-full flex-col gap-y-10'>
-			<div>
-				<h1 class='mb-1 text-2xl font-bold'>Homelab</h1>
-			</div>
+				<h1 class='mb-1 text-2xl font-bold'>Tools</h1>
 			
-			<Image
-				src={homelab}
-				alt='Homelab'
-				loading='eager'
-        />
-
-        <div class='mt-5 flex w-full flex-col gap-y-10'>
-			<div>
-				<h1 class='mb-1 text-2xl font-bold'>Books</h1>
-                <span
-					
-					class='flex flex-row items-center gap-x-3 px-0 py-2 text-sm shadow-sm transition-all hover:shadow-md'
-				>
-					<span class='relative flex items-center justify-center'>
-						<span
-							class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-						></span>
-						<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
-					</span>
-
-					<p class='font-medium'>Reading: Learn PowerShell Scripting in a Month of Lunches</p>
-				</span>
-			</div>
-			
-			<BookSection title='Read' books={READ} />
-			<BookSection title='To-Read' books={TOREAD} />
-		</div>
-
-			<ToolSection title='Tools' tools={TOOLS} />
-			<ToolSection title='Operating Systems' tools={SYSTEMS} />
-		</div>
 
 		<div class='mt-5 flex w-full flex-col gap-y-10'>
 			<div>
