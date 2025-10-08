@@ -12,16 +12,16 @@ import terminal from '../assets/terminal.svg'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const languages = ['HTML/CSS', 'JavaScript']
+const languages = ['HTML/CSS', 'JavaScript', 'SQL']
 const microsoft = ['Microsoft Azure Administrator']
-const others = ['Bash', 'Linux']
+const others = ['Bash', 'Linux', 'macOS', 'Windows']
 
 const MAX_POSTS = 5
 const allPosts = await getAllPosts()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 const meta = {
-	description: 'Technical Project Manager',
+	description: 'Email Marketing Specialist',
 	title: 'Welcome'
 }
 
