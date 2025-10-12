@@ -4,12 +4,12 @@ import type { CollectionEntry } from 'astro:content'
 
 import FormattedDate from '../FormattedDate.astro'
 
-type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
-	post: CollectionEntry<'post'>
-	withDesc?: boolean
+type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{ as: Tag }> & {
+  post: CollectionEntry<'post'>
+  withDesc?: boolean
 }
 
-const { as: Tag = 'div', post, withDesc = false } = Astro.props
+const { as: Tag = 'div', post, withDesc = false } = Astro.props as Props
 const postDate = post.data.updatedDate ?? post.data.publishDate
 ---
 

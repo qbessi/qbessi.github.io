@@ -5,9 +5,8 @@ import Card from '../components/Card.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
+import type { CollectionEntry } from 'astro:content'
 import PostPreview from '@/components/journal/PostPreview.astro'
-
-import { Image } from 'astro:assets'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
@@ -16,9 +15,14 @@ const microsoft = ['Microsoft Azure Administrator']
 const others = ['Bash', 'Linux', 'macOS', 'Windows']
 
 const MAX_POSTS = 5
-const allPosts = await getAllPosts()
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+// If getAllPosts() returns mixed collections, filter to 'post'
+const allPosts = (await getAllPosts()).filter(
+  (p): p is CollectionEntry<'post'> => p.collection === 'post'
+)
 
+const allPostsByDate: CollectionEntry<'post'>[] =
+  sortMDByDate(allPosts).slice(0, MAX_POSTS)
+  
 const meta = {
 	description: 'Email Marketing Specialist',
 	title: 'Welcome'
@@ -150,7 +154,7 @@ Skilled in tackling rendering challenges across major email clients, with proven
 					heading='Roadmap'
 					subheading='Project to complete the DevOps roadmap.'
 					imagePath='/src/assets/email2.png'
-					altText='DevOps Roadmap'
+					altText='OCRA'
 					class='w-full sm:w-1/2'
 				/>
 			</div>
@@ -164,7 +168,7 @@ Skilled in tackling rendering challenges across major email clients, with proven
 
 		<Section title='Experience'>
 			<Card
-				heading='Email Marketing Specialist'
+				heading='Email Marketing Specialist / Front End Developer'
 				subheading='Qbessi, Remote'
 				date='Aug 2011 - Present'
 				imageClass='h-12 w-auto md:-left-16'
