@@ -155,7 +155,7 @@ You’re just one click away from learning smarter.
 - Dynamic CTAs: “Start My French Journey” vs. “Start My Spanish Journey.”  
 - Custom delay logic (send only between 8 a.m.–8 p.m. local time).
 
-![Flow Builder Screenshot](path/to/flow-screenshot.png)
+![Flow Builder Screenshot](/src/assets/flow-jowdah.png)
 
 This automation ensured the campaign felt timely, personalized, and conversational — without manual scheduling.
 
