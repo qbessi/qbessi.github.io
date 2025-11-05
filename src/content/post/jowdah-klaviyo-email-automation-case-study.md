@@ -15,7 +15,7 @@ draft: false
 
 ## Summary
 Designed a 5-email Klaviyo automation to drive free-trial signups for a SaaS language-learning product.  
-Achieved 22% open rate and 5% CTR.  
+Achieved 22% open rate and 3% CTR.  
 Combined segmentation, personalisation, and empathetic copywriting to guide users from awareness to activation.
 
 ## Step 1: Background & Challenge
@@ -168,7 +168,7 @@ Although this was a demo campaign, I used SaaS benchmarks and predictive modelin
 | Metric | Result | Notes |
 |---------|---------|-------|
 | Open Rate | 22% | Excellent welcome email engagement |
-| CTR | 5% | Strong clickthrough from “Learn Smarter” email |
+| CTR | 3% | Strong clickthrough from “Learn Smarter” email |
 | Trial Conversion Rate | 7% | Typical for SaaS nurture flows |
 | Unsubscribe Rate | 0.3% | Within industry average |
 
