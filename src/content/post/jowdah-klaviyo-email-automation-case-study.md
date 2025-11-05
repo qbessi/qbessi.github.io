@@ -2,7 +2,7 @@
 title: "Jowdah Klaviyo Email Automation Case Study"
 description: "Build and automate an email campaign to drive free-trial signups using Klaviyo."
 publishDate: "19 Oct 2025"
-tags: ["email marketing", "klaviya"]
+tags: ["email marketing", "klaviyo"]
 draft: false
 ---
 
