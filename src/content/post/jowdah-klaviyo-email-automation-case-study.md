@@ -15,7 +15,7 @@ draft: false
 
 ## Summary
 Designed a 5-email Klaviyo automation to drive free-trial signups for a SaaS language-learning product.  
-Achieved 48% open rate and 12% CTR.  
+Achieved 22% open rate and 5% CTR.  
 Combined segmentation, personalisation, and empathetic copywriting to guide users from awareness to activation.
 
 ## Step 1: Background & Challenge
@@ -167,16 +167,16 @@ Although this was a demo campaign, I used SaaS benchmarks and predictive modelin
 
 | Metric | Result | Notes |
 |---------|---------|-------|
-| Open Rate | 48% | Excellent welcome email engagement |
-| CTR | 12% | Strong clickthrough from “Learn Smarter” email |
+| Open Rate | 22% | Excellent welcome email engagement |
+| CTR | 5% | Strong clickthrough from “Learn Smarter” email |
 | Trial Conversion Rate | 7% | Typical for SaaS nurture flows |
 | Unsubscribe Rate | 0.3% | Within industry average |
 
 ### A/B Tests
 | Test | Variation | Outcome |
 |------|------------|----------|
-| Subject line | “Get Fluent Fast” vs. “Your Free Jowdah Trial Awaits” | 12% higher open rate on “Get Fluent Fast” |
-| CTA text | “Start Learning” vs. “Activate Free Trial” | 9% higher CTR on “Start Learning” |
+| Subject line | “Get Fluent Fast” vs. “Your Free Jowdah Trial Awaits” | 3% higher open rate on “Get Fluent Fast” |
+| CTA text | “Start Learning” vs. “Activate Free Trial” | 2% higher CTR on “Start Learning” |
 | Send time | 9 a.m. vs. 6 p.m. | 5% higher open rate in the morning batch |
 
 ### Optimization Plan
