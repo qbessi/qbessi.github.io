@@ -6,7 +6,7 @@ import type { CollectionEntry } from 'astro:content'
 
 import Button from '@/components/Button.astro'
 import Pagination from '@/components/Paginator.astro'
-import PostPreview from '@/components/case-studies/PostPreview.astro'
+import PostPreview from '@/components/portfolio/PostPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import { getAllPosts, getUniqueTags, sortMDByDate } from '@/utils'
 
@@ -25,8 +25,8 @@ interface Props {
 const { page, uniqueTags } = Astro.props
 
 const meta = {
-	description: 'Email Campaigns Case Studies - a collection of lifecycle flows and performance outcomes designed and built in Klaviyo.',
-	title: 'Case Studies'
+	description: 'Email Campaigns - a collection of lifecycle flows and performance outcomes designed and built in Klaviyo.',
+	title: 'Portfolio'
 }
 
 const paginationProps = {
