@@ -10,8 +10,9 @@ import PostPreview from '@/components/portfolio/PostPreview.astro'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const languages = ['HTML/CSS', 'JavaScript']
-const others = ['HubSpot Administrator', 'Linux', 'macOS', 'Windows']
+const languages = ['HTML/CSS']
+const esp = ['MailChimp', 'Klaviyo', 'Shopify', 'Clay']
+const others = ['Linux', 'macOS', 'Windows']
 
 const MAX_POSTS = 5
 // If getAllPosts() returns mixed collections, filter to 'post'
@@ -161,6 +162,7 @@ Skilled in tackling rendering challenges across major email clients, with proven
 
 		<Section title='Skills'>
 			<SkillLayout title='Languages' skills={languages} />
+			<SkillLayout title='ESP' skills={esp} />
 			<SkillLayout title='Other' skills={others} />
 		</Section>
 
