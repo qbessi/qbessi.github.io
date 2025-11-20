@@ -1,0 +1,32 @@
+---
+title: "Frontier Jurassic Park 3"
+description: "7-day automated launch journey built for Frontier Developments."
+publishDate: "20 Nov 2025"
+tags: ["email marketing", "frontier"]
+draft: false
+---
+
+7-day automated launch journey built for Frontier Developments
+
+## Goal
+Turn pre-launch wishlists & newsletter sign-ups into maximum first-week revenue while keeping deliverability pristine.
+
+### Numbers Planned
+Deliverability targets: < 0.08 % complaint rate | < 1.5 % hard bounce | 28–32 % open | 9–12 % CTR
+
+
+| Email         | Trigger                                            | Audience                                     | Content Focus                                                                                     | Primary CTA                       | Deliverability Note                             |
+| ------------- | -------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------- | ----------------------------------------------- |
+| #1 Launch Day | Scheduled  exact release moment (00:01 local time) | Everyone except suppressed + past purchasers | “Build Your Own Jurassic World” + hero + “Buy Now                                                 | Single orange button → store page | Only to users with 30-day engagement score > 30 |
+| #2 +12 h      | Opened #1 but no CTA                               | Same segment                                 | “Help life find a way”                                                                            | Buy Now                           | Smaller volume, still engaged users             |
+| #3 +36 h      | Clicked #1 or #2 but no purchase                   | Same segment                                 | “Players are loving it” + 5-star reviews + Steam rating screenshot + limited-time launch discount | Buy Now + “10% off ends soon”     | Urgency + social proof                          |
+| #4 +72 h      | Still no purchase + opened any previous            | Lower engagement tier                        | “Last chance for launch-week bonus skin pack” + bonus in-game item                                | Buy Now                           | Final nudge before suppression                  |
+|               |                                                    |                                              |                                                                                                   |                                   |                                                 |
+
+![[Email 1 1.jpg]]
+# Email 2 +12 hours
+
+![[Email 2.jpg]]
+
+---
+
