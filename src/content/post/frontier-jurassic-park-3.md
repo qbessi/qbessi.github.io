@@ -30,7 +30,6 @@ Turn pre-launch wishlists & newsletter sign-ups into maximum first-week revenue 
 | #3 +36 h      | Clicked #1 or #2 but no purchase                   | Same segment                                 | “Players are loving it” + 5-star reviews + Steam rating screenshot + limited-time launch discount | Buy Now + “10% off ends soon”     | Urgency + social proof                          |
 | #4 +72 h      | Still no purchase + opened any previous            | Lower engagement tier                        | “Last chance for launch-week bonus skin pack” + bonus in-game item                                | Buy Now                           | Final nudge before suppression                  |
 |               |                                                    |                                              |                                                                                                   |                                   |                                                 |
----
 
 ## Post-Launch
 
