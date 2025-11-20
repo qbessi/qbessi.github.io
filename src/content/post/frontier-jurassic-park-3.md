@@ -23,10 +23,10 @@ Deliverability targets: < 0.08 % complaint rate | < 1.5 % hard bounce | 28–32 
 | #4 +72 h      | Still no purchase + opened any previous            | Lower engagement tier                        | “Last chance for launch-week bonus skin pack” + bonus in-game item                                | Buy Now                           | Final nudge before suppression                  |
 |               |                                                    |                                              |                                                                                                   |                                   |                                                 |
 
-![[Email 1 1.jpg]]
-# Email 2 +12 hours
+# Email 2 +12 hours - Opened #1 but no CTA
+![[/src/assets/Email1.jpg]]
 
-![[Email 2.jpg]]
-
+# Email 2 +36 hours - Clicked #1 or #2 but no purchase
+![[/src/assets/Email2.jpg]]
 ---
 
