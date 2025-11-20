@@ -30,3 +30,6 @@ Deliverability targets: < 0.08 % complaint rate | < 1.5 % hard bounce | 28–32 
 ![[/src/assets/Email2.jpg]]
 ---
 
+![email 1](/src/assets/Email1.jpg)
+
+![email 2](/src/assets/Email2.jpg)
