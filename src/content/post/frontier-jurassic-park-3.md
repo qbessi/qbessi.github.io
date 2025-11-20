@@ -17,10 +17,10 @@ Turn pre-launch wishlists & newsletter sign-ups into maximum first-week revenue 
 28–32 % open
 9–12 % CTR
 
-## Email 2 +12 hours - Opened #1 but no CTA
+## Email 1 - Launch
 ![email 1](email1.jpg)
 
-## Email 2 +36 hours - Clicked #1 or #2 but no purchase
+## Email 2 - Opened #1 but no CTA
 ![email 2](email2.jpg)
 
 | Email         | Trigger                                            | Audience                                     | Content Focus                                                                                     |  CTA                       | Deliverability                             |
