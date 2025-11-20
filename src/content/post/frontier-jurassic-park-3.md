@@ -31,3 +31,7 @@ Turn pre-launch wishlists & newsletter sign-ups into maximum first-week revenue 
 | #4 +72 h      | Still no purchase + opened any previous            | Lower engagement tier                        | “Last chance for launch-week bonus skin pack” + bonus in-game item                                | Buy Now                           | Final nudge before suppression                  |
 |               |                                                    |                                              |                                                                                                   |                                   |                                                 |
 ---
+
+## Post-Launch
+
+To protect long-term deliverability and continuously improve performance, the sequence includes built-in A/B testing on Email #1, progressive engagement scoring to suppress cold leads before Email #3/#4, automatic complaint/unsubscribe monitoring with immediate suppression, and a post-campaign warmup/cooldown period where send volume is gradually reduced. After the launch week, non-buyers are moved to a 30-day re-engagement flow while purchasers enter a dedicated owner sequence focused on DLC and retention - ensuring the sender reputation remains pristine for future launches.
