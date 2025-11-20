@@ -14,6 +14,11 @@ Turn pre-launch wishlists & newsletter sign-ups into maximum first-week revenue 
 ## Numbers Planned
 Deliverability targets: < 0.08 % complaint rate | < 1.5 % hard bounce | 28–32 % open | 9–12 % CTR
 
+# Email 2 +12 hours - Opened #1 but no CTA
+![email 1](src/assets/Email1.jpg)
+
+# Email 2 +36 hours - Clicked #1 or #2 but no purchase
+![email 2](src/assets/Email2.jpg)
 
 | Email         | Trigger                                            | Audience                                     | Content Focus                                                                                     | Primary CTA                       | Deliverability Note                             |
 | ------------- | -------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------- | ----------------------------------------------- |
@@ -22,14 +27,4 @@ Deliverability targets: < 0.08 % complaint rate | < 1.5 % hard bounce | 28–32 
 | #3 +36 h      | Clicked #1 or #2 but no purchase                   | Same segment                                 | “Players are loving it” + 5-star reviews + Steam rating screenshot + limited-time launch discount | Buy Now + “10% off ends soon”     | Urgency + social proof                          |
 | #4 +72 h      | Still no purchase + opened any previous            | Lower engagement tier                        | “Last chance for launch-week bonus skin pack” + bonus in-game item                                | Buy Now                           | Final nudge before suppression                  |
 |               |                                                    |                                              |                                                                                                   |                                   |                                                 |
-
-# Email 2 +12 hours - Opened #1 but no CTA
-![[/src/assets/Email1.jpg]]
-
-# Email 2 +36 hours - Clicked #1 or #2 but no purchase
-![[/src/assets/Email2.jpg]]
 ---
-
-![email 1](src/assets/Email1.jpg)
-
-![email 2](src/assets/Email2.jpg)
