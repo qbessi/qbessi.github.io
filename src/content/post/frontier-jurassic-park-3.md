@@ -15,10 +15,10 @@ Turn pre-launch wishlists & newsletter sign-ups into maximum first-week revenue 
 Deliverability targets: < 0.08 % complaint rate | < 1.5 % hard bounce | 28–32 % open | 9–12 % CTR
 
 ## Email 2 +12 hours - Opened #1 but no CTA
-![email 1](Email 1.jpg)
+![email 1](email1.jpg)
 
 ## Email 2 +36 hours - Clicked #1 or #2 but no purchase
-![email 2](Email 2.jpg)
+![email 2](email2.jpg)
 
 | Email         | Trigger                                            | Audience                                     | Content Focus                                                                                     |  CTA                       | Deliverability                             |
 | ------------- | -------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------- | ----------------------------------------------- |
