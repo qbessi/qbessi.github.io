@@ -20,7 +20,7 @@ Deliverability targets: < 0.08 % complaint rate | < 1.5 % hard bounce | 28–32 
 # Email 2 +36 hours - Clicked #1 or #2 but no purchase
 ![email 2](src/assets/Email2.jpg)
 
-| Email         | Trigger                                            | Audience                                     | Content Focus                                                                                     | Primary CTA                       | Deliverability Note                             |
+| Email         | Trigger                                            | Audience                                     | Content Focus                                                                                     |  CTA                       | Deliverability                             |
 | ------------- | -------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------- | ----------------------------------------------- |
 | #1 Launch Day | Scheduled  exact release moment (00:01 local time) | Everyone except suppressed + past purchasers | “Build Your Own Jurassic World” + hero + “Buy Now                                                 | Single orange button → store page | Only to users with 30-day engagement score > 30 |
 | #2 +12 h      | Opened #1 but no CTA                               | Same segment                                 | “Help life find a way”                                                                            | Buy Now                           | Smaller volume, still engaged users             |
