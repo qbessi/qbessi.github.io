@@ -11,7 +11,7 @@ draft: false
 ## Goal
 Turn pre-launch wishlists & newsletter sign-ups into maximum first-week revenue while keeping deliverability pristine.
 
-### Numbers Planned
+## Numbers Planned
 Deliverability targets: < 0.08 % complaint rate | < 1.5 % hard bounce | 28–32 % open | 9–12 % CTR
 
 
@@ -30,6 +30,6 @@ Deliverability targets: < 0.08 % complaint rate | < 1.5 % hard bounce | 28–32 
 ![[/src/assets/Email2.jpg]]
 ---
 
-![email 1](/src/assets/Email1.jpg)
+![email 1](src/assets/Email1.jpg)
 
-![email 2](/src/assets/Email2.jpg)
+![email 2](src/assets/Email2.jpg)
