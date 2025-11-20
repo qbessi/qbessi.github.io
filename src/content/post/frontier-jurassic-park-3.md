@@ -6,13 +6,16 @@ tags: ["email marketing", "frontier"]
 draft: false
 ---
 
-7-day automated launch journey built for Frontier Developments
+7-day automated launch journey built for Frontier Developments (Mock)
 
 ## Goal
 Turn pre-launch wishlists & newsletter sign-ups into maximum first-week revenue while keeping deliverability pristine.
 
-## Numbers Planned
-Deliverability targets: < 0.08 % complaint rate | < 1.5 % hard bounce | 28–32 % open | 9–12 % CTR
+## Deliverability targets
+< 0.08 % complaint rate 
+< 1.5 % hard bounce
+28–32 % open
+9–12 % CTR
 
 ## Email 2 +12 hours - Opened #1 but no CTA
 ![email 1](email1.jpg)
