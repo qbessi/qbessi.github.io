@@ -1,5 +1,5 @@
 ---
-title: "Frontier Jurassic Work Evolutions 3"
+title: "Frontier Jurassic World Evolutions 3"
 description: "7-day automated launch journey built for Frontier Developments."
 publishDate: "20 Nov 2025"
 tags: ["email marketing", "frontier"]
