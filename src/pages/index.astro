@@ -12,7 +12,7 @@ import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['HTML','CSS', 'JavaScript', 'Email HTML']
 const esp = ['MailChimp', 'Klaviyo', 'HubSpot']
-const tools = ['Google Postmaster Tools', 'Microsoft SNDS', 'Litmus']
+const tools = ['Postmaster Tools', 'SNDS', 'Litmus']
 const workflow = ['Jira', 'Slack', 'Git', 'VS Code', 'Docker', 'Vim']
 const others = ['Linux (Debian/Ubuntu/Arch)', 'macOS', 'Windows']
 
@@ -34,7 +34,7 @@ const meta = {
 
 <PageLayout meta={meta}>
 	<div class='flex w-full flex-col gap-y-10'>
-		<section class='flex flex-col items-center gap-y-7'>
+		<Section class='flex flex-col items-center gap-y-7'>
       <!-- <Image
 				src={terminal}
 				alt='profile photo'
@@ -121,11 +121,21 @@ const meta = {
 					
 				</div>
 			</div>
-		</section>
+		</Section>
 
  		<Section title='About'>
 			<p class='text-muted-foreground'>
-Email developer specializing in deliverability, inbox placement, list hygiene, and campaign performance diagnostics.		</Section>
+				Email developer specializing in deliverability, inbox placement, list hygiene, and campaign performance diagnostics.
+			</p>
+		</Section>
+
+		<Section title='Skills'>
+			<SkillLayout title='Languages' skills={languages} />
+			<SkillLayout title='ESP' skills={esp} />
+			<SkillLayout title='Tools' skills={tools} />
+			<SkillLayout title='Workflow' skills={workflow} />
+			<SkillLayout title='Other' skills={others} />
+		</Section>
 
 		<Section title='Experience'>
 			<Card
@@ -170,14 +180,6 @@ Email developer specializing in deliverability, inbox placement, list hygiene, a
 
 			<p class='font-medium'>More Experience on LinkedIn</p>
 		</a>
-		</Section>
-
-		<Section title='Skills'>
-			<SkillLayout title='Languages' skills={languages} />
-			<SkillLayout title='ESP' skills={esp} />
-			<SkillLayout title='Tools' skills={tools} />
-			<SkillLayout title='Workflow' skills={workflow} />
-			<SkillLayout title='Other' skills={others} />
 		</Section>
 		
 		<Section title='Certifications'>
