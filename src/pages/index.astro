@@ -12,7 +12,7 @@ import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['HTML','CSS', 'JavaScript', 'Email HTML']
 const esp = ['MailChimp', 'Klaviyo', 'HubSpot']
-const tools = ['Postmaster Tools', 'SNDS', 'Litmus']
+const tools = ['Google Postmaster Tools', 'Microsoft SNDS', 'Litmus']
 const workflow = ['Jira', 'Slack', 'Git', 'VS Code', 'Docker', 'Vim']
 const others = ['Linux (Debian/Ubuntu/Arch)', 'macOS', 'Windows']
 
@@ -34,7 +34,7 @@ const meta = {
 
 <PageLayout meta={meta}>
 	<div class='flex w-full flex-col gap-y-10'>
-		<Section class='flex flex-col items-center gap-y-7'>
+		<section class='flex flex-col items-center gap-y-7'>
       <!-- <Image
 				src={terminal}
 				alt='profile photo'
@@ -62,7 +62,7 @@ const meta = {
 					M K
 				</h1>
 
-				<div class='flex flex-col gap-y-5 md:flex-row md:gap-y-0'>
+				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
               		<!-- <Label title='UK'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
@@ -71,10 +71,10 @@ const meta = {
 							></path></svg
 						>
 					</Label> -->
-					<Label
-						title=''
+					<!-- <Label
+						title='Qbessi'
 						as='a'
-						href='https://x.com/qbessi/'
+						href='https://twitter.com/qbessi/'
 						target='_blank'
 					>
 					<svg viewBox="-143 145 512 512"
@@ -82,9 +82,9 @@ const meta = {
 					class='h-5 w-5 text-foreground/75'>
 						<path fill='currentColor' d="M-143,145v512h512V145H-143z M215.2,361.2c0.1,2.2,0.1,4.5,0.1,6.8c0,69.5-52.9,149.7-149.7,149.7  c-29.7,0-57.4-8.7-80.6-23.6c4.1,0.5,8.3,0.7,12.6,0.7c24.6,0,47.3-8.4,65.3-22.5c-23-0.4-42.5-15.6-49.1-36.5  c3.2,0.6,6.5,0.9,9.9,0.9c4.8,0,9.5-0.6,13.9-1.9C13.5,430-4.6,408.7-4.6,383.2v-0.6c7.1,3.9,15.2,6.3,23.8,6.6  c-14.1-9.4-23.4-25.6-23.4-43.8c0-9.6,2.6-18.7,7.1-26.5c26,31.9,64.7,52.8,108.4,55c-0.9-3.8-1.4-7.8-1.4-12  c0-29,23.6-52.6,52.6-52.6c15.1,0,28.8,6.4,38.4,16.6c12-2.4,23.2-6.7,33.4-12.8c-3.9,12.3-12.3,22.6-23.1,29.1  c10.6-1.3,20.8-4.1,30.2-8.3C234.4,344.5,225.5,353.7,215.2,361.2z"/>
 						</svg>
-					</Label>
+					</Label> -->
 					<Label
-						title=''
+						title='LinkedIn'
 						as='a'
 						href='https://www.linkedin.com/in/qbessi/'
 						target='_blank'
@@ -102,7 +102,7 @@ const meta = {
 					</Label>
 
 					<Label
-						title=''
+						title='GitHub'
 						as='a'
 						href='https://github.com/qbessi/'
 						target='_blank'
@@ -121,12 +121,18 @@ const meta = {
 					
 				</div>
 			</div>
-		</Section>
+		</section>
 
  		<Section title='About'>
 			<p class='text-muted-foreground'>
-				Email developer specialising in deliverability, inbox placement, list hygiene, and campaign performance diagnostics.
-			</p>
+Email developer specializing in deliverability, inbox placement, list hygiene, and campaign performance diagnostics.		</Section>
+
+		<Section title='Skills'>
+			<SkillLayout title='Languages' skills={languages} />
+			<SkillLayout title='ESP' skills={esp} />
+			<SkillLayout title='Tools' skills={tools} />
+			<SkillLayout title='Workflow' skills={workflow} />
+			<SkillLayout title='Other' skills={others} />
 		</Section>
 
 		<Section title='Experience'>
@@ -172,14 +178,6 @@ const meta = {
 
 			<p class='font-medium'>More Experience on LinkedIn</p>
 		</a>
-		</Section>
-
-		<Section title='Skills'>
-			<SkillLayout title='Languages' skills={languages} />
-			<SkillLayout title='ESP' skills={esp} />
-			<SkillLayout title='Tools' skills={tools} />
-			<SkillLayout title='Workflow' skills={workflow} />
-			<SkillLayout title='Other' skills={others} />
 		</Section>
 		
 		<Section title='Certifications'>
