@@ -6,7 +6,7 @@ import type { CollectionEntry } from 'astro:content'
 
 import Button from '@/components/Button.astro'
 import Pagination from '@/components/Paginator.astro'
-import PostPreview from '@/components/portfolio/PostPreview.astro'
+import PostPreview from '@/components/journel/PostPreview.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import { getAllPosts, getUniqueTags, sortMDByDate } from '@/utils'
 
@@ -25,8 +25,8 @@ interface Props {
 const { page, uniqueTags } = Astro.props
 
 const meta = {
-	description: 'Email Campaigns - a collection of lifecycle flows and performance outcomes designed and built in Klaviyo.',
-	title: 'Portfolio'
+	description: 'A place for my thoughts and interests.',
+	title: 'Journel'
 }
 
 const paginationProps = {
@@ -63,13 +63,13 @@ const paginationProps = {
 			</svg>
 		</Button>
 
-		<h1 class='mb-6 mt-5 text-2xl font-bold'>Portfolio</h1>
+		<h1 class='mb-6 mt-5 text-2xl font-bold'>Journal</h1>
 		{page.data.length === 0 && <p>No posts yet.</p>}
 
 		{
 			page.data.length > 0 && (
 				<div class='grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8'>
-					<section aria-label='Portfolio list'>
+					<section aria-label='Journal list'>
 						<ul class='flex flex-col gap-y-4 text-start'>
 							{page.data.map((p) => (
 								<PostPreview post={p} withDesc />
@@ -106,7 +106,7 @@ const paginationProps = {
 								))}
 							</ul>
 							<span class='mt-4 block sm:text-end'>
-								<a aria-label='View all Portfolio items' class='' href='/tags/' data-astro-prefetch>
+								<a aria-label='View all Journal items' class='' href='/tags/' data-astro-prefetch>
 									View all →
 								</a>
 							</span>

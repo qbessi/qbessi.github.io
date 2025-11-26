@@ -1,8 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 
-import BlogHero from '@/components/portfolio/Hero.astro'
-import TOC from '@/components/portfolio/TOC.astro'
+import BlogHero from '@/components/journel/Hero.astro'
+import TOC from '@/components/journel/TOC.astro'
 import Button from '@/components/Button.astro'
 
 import PageLayout from './BaseLayout.astro'
@@ -24,7 +24,7 @@ const { headings } = await post.render()
 
 <PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
 	<div class='w-full'>
-		<Button title='Back' href='/portfolio' style='button'>
+		<Button title='Back' href='/journel' style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'

@@ -29,8 +29,8 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: '/'
 	},
 	{
-		title: 'portfolio',
-		path: '/portfolio/'
+		title: 'journel',
+		path: '/journel/'
 	},
 	{
 		title: 'tools',
