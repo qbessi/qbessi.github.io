@@ -10,11 +10,8 @@ import PostPreview from '@/components/journal/PostPreview.astro'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const languages = ['HTML','CSS', 'JavaScript', 'Email HTML']
+const languages = ['HTML','CSS', 'JavaScript']
 const esp = ['MailChimp', 'Klaviyo', 'HubSpot']
-const tools = ['Postmaster Tools', 'SNDS', 'Litmus']
-const workflow = ['Jira', 'Slack', 'Git', 'VS Code', 'Docker', 'Vim']
-const others = ['Linux (Debian/Ubuntu/Arch)', 'macOS', 'Windows']
 
 const MAX_POSTS = 5
 // If getAllPosts() returns mixed collections, filter to 'post'
@@ -132,9 +129,6 @@ const meta = {
 		<Section title='Skills'>
 			<SkillLayout title='Languages' skills={languages} />
 			<SkillLayout title='ESP' skills={esp} />
-			<SkillLayout title='Tools' skills={tools} />
-			<SkillLayout title='Workflow' skills={workflow} />
-			<SkillLayout title='Other' skills={others} />
 		</Section>
 
 		<Section title='Experience'>
