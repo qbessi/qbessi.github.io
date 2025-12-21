@@ -11,7 +11,6 @@ import PostPreview from '@/components/journal/PostPreview.astro'
 import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['HTML','CSS', 'JavaScript']
-const esp = ['MailChimp', 'Klaviyo', 'HubSpot']
 
 const MAX_POSTS = 5
 // If getAllPosts() returns mixed collections, filter to 'post'
@@ -23,7 +22,7 @@ const allPostsByDate: CollectionEntry<'post'>[] =
   sortMDByDate(allPosts).slice(0, MAX_POSTS)
   
 const meta = {
-	description: 'Email Marketing Specialist',
+	description: 'Front End Developer @ London',
 	title: 'Welcome'
 }
 
@@ -216,13 +215,13 @@ const meta = {
 
 		<Section title='Education'>
 			<Card
-				heading='MS Marketing'
+				heading='MSc Computer Science'
 				date=''
 			>	
 
 			</Card>
 			<Card
-				heading='BSc (Hons) Multimedia Computing'
+				heading='BSc (Hons) Computing'
 				date=''
 			>
 			</Card>
