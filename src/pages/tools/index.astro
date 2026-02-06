@@ -164,14 +164,6 @@ const TOREAD = [
 		</Button>
 
 		<div class='mt-5 flex w-full flex-col gap-y-10'>
-			<h1 class='mb-1 text-2xl font-bold'>Tools</h1>
-			
-
-			<ToolSection title='Tools' tools={TOOLS} />
-			<ToolSection title='Operating Systems' tools={SYSTEMS} />
-		</div>
-
-		<div class='mt-5 flex w-full flex-col gap-y-10'>
 			<div>
 				<h1 class='mb-1 text-2xl font-bold'>Books</h1>
                 <span
@@ -191,6 +183,15 @@ const TOREAD = [
 			
 			<BookSection title='Read' books={READ} />
 			<BookSection title='To-Read' books={TOREAD} />
+		</div>
+
+		
+		<div class='mt-5 flex w-full flex-col gap-y-10'>
+			<h1 class='mb-1 text-2xl font-bold'>Tools</h1>
+			
+
+			<ToolSection title='Tools' tools={TOOLS} />
+			<ToolSection title='Operating Systems' tools={SYSTEMS} />
 		</div>
 
 	</div>
