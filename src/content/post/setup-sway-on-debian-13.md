@@ -6,7 +6,7 @@ tags: ["sway", "debian", "linux"]
 draft: false
 ---
 
-My experience of setting up the Sway WM on Debian 12. Sway is a tiling window manager that is compatible with i3, making it an excellent choice for those who prefer a keyboard-driven workflow.
+My experience of setting up the Sway WM on Debian 13. Sway is a tiling window manager that is compatible with i3, making it an excellent choice for those who prefer a keyboard-driven workflow.
 
 ## Prerequisites
 
