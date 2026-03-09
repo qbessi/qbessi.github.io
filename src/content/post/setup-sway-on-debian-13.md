@@ -1,18 +1,18 @@
 ---
-title: "Set Up Sway Window Manager on Debian 12"
-description: "Learn how to set up Sway WM on Debian 12 Minimal install."
-publishDate: "11 Oct 2024"
+title: "Set Up Sway Window Manager on Debian 13"
+description: "Learn how to set up Sway WM on Debian 13 Minimal install."
+publishDate: "11 Dec 2025"
 tags: ["sway", "debian", "linux"]
 draft: false
 ---
 
-My experience of setting up the Sway WM on Debian 13. Sway is a tiling window manager that is compatible with i3, making it an excellent choice for those who prefer a keyboard-driven workflow.
+My experience of setting up the Sway WM on Debian 13. Sway is a tiling window manager compatible with i3, making it an excellent choice for keyboard-driven workflows.
 
 ## Prerequisites
 
 Before you begin, ensure that you have:
 
-- Debian 12 installed
+- Debian 13 installed
 - A user account with sudo privileges
 - Basic knowledge of the command line
 
@@ -81,4 +81,4 @@ Now that Sway is up and running, you can further customise your environment. Her
 
 ## Conclusion
 
-Setting up the Sway window manager on Debian 12 can be straightforward if you follow these steps. Enjoy the efficiency of a tiling window manager and tailor it to fit your workflow.
+Setting up the Sway window manager on Debian 13 can be straightforward if you follow these steps. Enjoy the efficiency of a tiling window manager and tailor it to fit your workflow.
