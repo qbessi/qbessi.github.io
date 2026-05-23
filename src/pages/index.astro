@@ -121,13 +121,12 @@ const meta = {
 
  		<Section title='About'>
 			<p class='text-muted-foreground'>
-				Front End Developer with a background in website management, optimisation, and email deliverability. Experienced in creating high-performance, 
-				user-friendly web experiences while ensuring efficient communication strategies.
+				
 			</p>
 		</Section>
 
 
-		<!-- <Section title='Projects'>
+		<Section title='Projects'>
 			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
 				<ProjectCard
 					href=''
@@ -138,119 +137,8 @@ const meta = {
 					class='w-full sm:w-1/2'
 				/>
 			</div>
-		</Section> -->
-
-		<Section title='Experience'>
-			<Card
-				heading='Website Manager'
-				subheading='Jowdah'
-				copy='Managed end-to-end development and optimisation of a subscription-based language learning website (HTML, CSS, JavaScript), scaling it to 5,000+ paying customers. Led SEO, performance optimisation, and bug resolution to ensure a seamless user experience. Developed and executed targeted email campaigns, contributing to customer acquisition and retention. Collaborated with internal teams on new features and content, while overseeing regular analytics reporting and performance insights.'
-				date='2022 - Present'
-				imageClass='h-12 w-auto md:-left-16'
-			>
-			</Card>
-			<Card
-				heading='Front End Developer & Email Developer'
-				subheading='Self-Employed Contractor'
-				copy='Worked with: UK Home Office, Dishoom, Jack Wills, La Senza, Lipsy London, Ann Summers, Ryman, Boux Avenue, Kickers, Speedo, Berghaus, Boxfresh, The White Company, Shelter, AKQA, Made Tech, Wunderman, Tribal Worldwide, Havas, TBG Digital, Isobar, The Mill, Tanget, FCB London, FutureBrand'
-				date='2011 - Present'
-				imageClass='h-12 w-auto md:-left-16'
-			>
-			</Card>
-			<a
-			href='https://linkedin.com/in/qbessi' target='_blank'
-			class='flex flex-row items-center gap-x-3 px-0 py-2 transition-all'
-		>
-			<span class='relative flex items-center justify-center'>
-				<span
-					class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-				></span>
-				<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
-			</span>
-
-			<p class='font-medium'>More Experience on LinkedIn</p>
-		</a>
 		</Section>
 
-		<Section title='Skills'>
-			<SkillLayout title='Languages' skills={languages} />
-		</Section>
-
-		<Section title='Education'>
-			<Card
-				heading='MS Cyber Security'
-				subheading=''
-				date=''
-			>	
-
-			</Card>
-			<Card
-				heading='BSc Multimedia Computing with Music Technology'
-				subheading=''
-				date=''
-			>
-			</Card>
-		
-		</Section>
-		
-		<Section title='Certifications'>
-			<Card
-				as='a'
-				imagePath='/src/assets/braze.svg'
-				altText='Braze Certification Email Deliverability Skills Badge'
-				imageClass='h-11 w-auto md:-left-16'
-				heading='Braze Certification Email Deliverability Skills Badge'
-				subheading='Validate your understanding of Braze Email Deliverability best practices.'
-				date='Nov 2025'
-				href='https://learning.braze.com/email-deliverability-skills-badge-1/1913035'
-				target='_blank'
-			/>
-			<Card
-				as='a'
-				imagePath='/src/assets/isc2.svg'
-				altText='ISC2 Certified in Cybersecurity (CC)'
-				imageClass='h-11 w-auto md:-left-16'
-				heading='ISC2 Certified in Cybersecurity (CC)'
-				subheading='Demonstrate foundational knowledge in cybersecurity concepts, principles, and practices.'
-				date='Oct 2024'
-				href='https://www.isc2.org/certifications/cc/cc-certification-exam-outline'
-				target='_blank'
-			/>
-			<Card
-				as='a'
-				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
-				altText='AZ-900 Microsoft Azure Fundamentals'
-				imageClass='h-11 w-auto md:-left-16'
-				heading='AZ-900 Microsoft Azure Fundamentals'
-				subheading='Demonstrate foundational knowledge of cloud concepts, core Azure services, plus Azure management and governance features and tools.'
-				date='Aug 2024'
-				href='https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification'
-				target='_blank'
-			/>
-			<Card
-				as='a'
-				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
-				altText='MS-900 Microsoft 365 Fundamentals'
-				imageClass='h-11 w-auto md:-left-16'
-				heading='MS-900 Microsoft 365 Fundamentals'
-				subheading='Demonstrate understanding of Microsoft 365, to deliver industry-leading productivity apps along with intelligent cloud services, and world-class security.'
-				date='Aug 2024'
-				href='https://learn.microsoft.com/en-us/credentials/certifications/microsoft-365-fundamentals/?practice-assessment-type=certification'
-				target='_blank'
-			/>
-			<Card
-				as='a'
-				imagePath='/src/assets/microsoft-certified-fundamentals-badge.svg'
-				altText='SC-900 Microsoft Security, Compliance, and Identity Fundamentals'
-				imageClass='h-11 w-auto md:-left-16'
-				heading='SC-900 Microsoft Security, Compliance, and Identity Fundamentals'
-				subheading='Demonstrate foundational knowledge on security, compliance, and identity concepts and related cloud-based Microsoft solutions.'
-				date='Aug 2024'
-				href='https://learn.microsoft.com/en-us/credentials/certifications/security-compliance-and-identity-fundamentals/?practice-assessment-type=certification'
-				target='_blank'
-			/>
-			
-		</Section>
 		
 		{
 			allPostsByDate.length > 0 && (
