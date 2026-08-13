@@ -1,0 +1,62 @@
+{
+  "name": "Qbessi",
+  "role": "Front End Developer",
+  "location": "London, UK",
+  "status": "Actively seeking a new role",
+  "about": "Front end developer based in London, building fast, accessible interfaces with modern web technologies. I care about performance, typography, and the small details. Currently looking for my next role. (placeholder)",
+  "skills": [
+    { "group": "Languages", "items": ["HTML", "CSS", "JavaScript", "TypeScript (placeholder)"] },
+    { "group": "Frameworks", "items": ["React (placeholder)", "Astro (placeholder)", "Tailwind (placeholder)"] },
+    { "group": "Tools", "items": ["Git", "Node.js (placeholder)", "Vite (placeholder)"] }
+  ],
+  "experience": [
+    {
+      "role": "Front End Developer",
+      "company": "Company A (placeholder)",
+      "location": "London",
+      "start": "2023",
+      "end": "Present",
+      "bullets": [
+        "Shipped and maintained customer-facing web features across a modern front end stack. (placeholder)",
+        "Improved page performance and accessibility scores across key user journeys. (placeholder)"
+      ]
+    },
+    {
+      "role": "Junior Front End Developer",
+      "company": "Company B (placeholder)",
+      "location": "London",
+      "start": "2021",
+      "end": "2023",
+      "bullets": [
+        "Built UI components and internal tooling with a small product team. (placeholder)"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "BSc Computer Science (placeholder)",
+      "school": "University (placeholder)",
+      "start": "2018",
+      "end": "2021"
+    }
+  ],
+  "projects": [
+    {
+      "name": "qbessi.com",
+      "desc": "This site: a terminal-style one-page CV.",
+      "stack": "HTML / CSS / JS",
+      "url": "https://qbessi.com"
+    },
+    {
+      "name": "Project Two (placeholder)",
+      "desc": "A small tool or experiment worth one line. (placeholder)",
+      "stack": "",
+      "url": ""
+    }
+  ],
+  "contact": [
+    { "label": "web", "value": "qbessi.com", "href": "https://qbessi.com" },
+    { "label": "email", "value": "hello@qbessi.com (placeholder)", "href": "mailto:hello@qbessi.com" },
+    { "label": "github", "value": "github.com/qbessi (placeholder)", "href": "https://github.com/qbessi" }
+  ]
+}

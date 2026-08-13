@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Qbessi</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#000000">
+<style>
+body {
+  --bg: #060606;
+  --ink: #e2e2e2;
+  --bright: #ffffff;
+  --dim: #969696;
+  --faint: #5a5a5a;
+  --rule: #333333;
+  --inv-bg: #e2e2e2;
+  --inv-ink: #0a0a0a;
+  --glow: 0 0 1px rgba(255, 255, 255, 0.35), 0 0 8px rgba(255, 255, 255, 0.07);
+  --glow-strong: 0 0 1px rgba(255, 255, 255, 0.6), 0 0 12px rgba(255, 255, 255, 0.2), 0 0 32px rgba(255, 255, 255, 0.07);
+
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  text-shadow: var(--glow);
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.16) 0px,
+    rgba(0, 0, 0, 0.16) 1px,
+    rgba(0, 0, 0, 0) 1px,
+    rgba(0, 0, 0, 0) 3px
+  );
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 91;
+  pointer-events: none;
+  background: radial-gradient(120% 95% at 50% 42%, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.38) 100%);
+}
+* { box-sizing: border-box; }
+h1, p, pre { margin: 0; }
+::selection { background: var(--ink); color: var(--bg); text-shadow: none; }
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--dim);
+}
+a:hover, a:focus-visible {
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  text-decoration: none;
+  text-shadow: none;
+}
+:focus-visible {
+  outline: 2px solid var(--bright);
+  outline-offset: 2px;
+}
+.screen {
+  width: min(100% - 2.25rem, 84ch);
+  margin: 0 auto;
+  padding: 1.1rem 0 2.5rem;
+}
+.topbar {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.65rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+}
+.topbar strong { color: var(--bright); font-weight: 700; }
+.tb-dim { color: var(--dim); }
+.art-wrap { overflow-x: auto; margin: 3.2rem 0 1.4rem; }
+.art {
+  margin: 0 auto;
+  width: max-content;
+  font-family: inherit;
+  font-size: clamp(7px, 2.6vw, 15px);
+  line-height: 1.14;
+  color: var(--bright);
+  text-shadow: var(--glow-strong);
+  white-space: pre;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--bright);
+  margin-top: 1.6rem;
+}
+.note {
+  text-align: center;
+  color: var(--dim);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  margin-top: 1rem;
+}
+.back {
+  text-align: center;
+  margin-top: 2.2rem;
+  font-size: 0.86rem;
+  letter-spacing: 0.1em;
+}
+.prompt {
+  margin-top: 3rem;
+  color: var(--dim);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+.cursor {
+  display: inline-block;
+  width: 0.62em;
+  height: 1.05em;
+  background: var(--ink);
+  vertical-align: text-bottom;
+  margin-left: 0.2ch;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cursor { animation: qb-blink 1.1s steps(1, end) infinite; }
+  @keyframes qb-blink { 50% { opacity: 0; } }
+}
+</style>
+</head>
+<body>
+<main class="screen">
+  <header class="topbar">
+    <p><strong>QBESSI.CRT</strong><span class="tb-dim"> · TTY1 · CARRIER LOST</span></p>
+  </header>
+
+  <div class="art-wrap">
+    <pre class="art" aria-hidden="true">
+██╗  ██╗  ██████╗  ██╗  ██╗
+██║  ██║ ██╔═══██╗ ██║  ██║
+███████║ ██║   ██║ ███████║
+╚════██║ ██║   ██║ ╚════██║
+     ██║ ╚██████╔╝      ██║
+     ╚═╝  ╚═════╝       ╚═╝</pre>
+  </div>
+
+  <h1>SIGNAL LOST — 404 — NO CARRIER</h1>
+  <p class="note">THE PAGE YOU DIALLED DOES NOT ANSWER. CHECK THE NUMBER AND REDIAL.</p>
+  <p class="back"><a href="/">[ RETURN TO MAIN MENU ]</a></p>
+
+  <p class="prompt" aria-hidden="true">&gt; NO CARRIER <span class="cursor"></span></p>
+</main>
+</body>
+</html>

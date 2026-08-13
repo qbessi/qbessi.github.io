@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qbessi — Front End Developer</title>
+<meta name="description" content="Qbessi — Front End Developer, London, UK. Actively seeking a new role.">
+<link rel="canonical" href="https://qbessi.com/">
+<meta property="og:title" content="Qbessi — Front End Developer">
+<meta property="og:description" content="Qbessi — Front End Developer, London, UK. Actively seeking a new role.">
+<meta property="og:url" content="https://qbessi.com/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#000000">
+<script>
+/* Restore theme before first paint. Dark (CRT) is the default. */
+(function () {
+  "use strict";
+  try {
+    if (localStorage.getItem("qbessi.theme") === "light") {
+      document.documentElement.classList.add("light");
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) { m.setAttribute("content", "#f2f2f2"); }
+    }
+  } catch (e) { /* storage unavailable: stay dark */ }
+})();
+</script>
+<style>
+/* ================================================================
+   QBESSI.CRT — P4 phosphor terminal / hard-copy printout
+   Strictly monochrome. Tokens on body; html.light = HARD COPY.
+   ================================================================ */
+
+body {
+  /* CRT (dark, default) — white P4 phosphor on black */
+  --bg: #060606;
+  --ink: #e2e2e2;
+  --bright: #ffffff;
+  --dim: #969696;
+  --faint: #5a5a5a;
+  --rule: #333333;
+  --panel: #101010;
+  --inv-bg: #e2e2e2;
+  --inv-ink: #0a0a0a;
+  --glow: 0 0 1px rgba(255, 255, 255, 0.35), 0 0 8px rgba(255, 255, 255, 0.07);
+  --glow-strong: 0 0 1px rgba(255, 255, 255, 0.6), 0 0 12px rgba(255, 255, 255, 0.2), 0 0 32px rgba(255, 255, 255, 0.07);
+
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  text-shadow: var(--glow);
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+html.light body {
+  /* HARD COPY (light) — line-printer printout on paper */
+  --bg: #f2f2f2;
+  --ink: #1a1a1a;
+  --bright: #000000;
+  --dim: #585858;
+  --faint: #9c9c9c;
+  --rule: #c6c6c6;
+  --panel: #e9e9e9;
+  --inv-bg: #1a1a1a;
+  --inv-ink: #f2f2f2;
+  --glow: none;
+  --glow-strong: none;
+}
+
+/* --- CRT furniture: scanlines + vignette (static, subtle) --- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.16) 0px,
+    rgba(0, 0, 0, 0.16) 1px,
+    rgba(0, 0, 0, 0) 1px,
+    rgba(0, 0, 0, 0) 3px
+  );
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 91;
+  pointer-events: none;
+  background: radial-gradient(120% 95% at 50% 42%, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.38) 100%);
+}
+/* HARD COPY: no scanlines, no vignette — the faintest tractor-feed banding */
+html.light body::before {
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.03) 0rem,
+    rgba(0, 0, 0, 0.03) 1.7rem,
+    rgba(0, 0, 0, 0) 1.7rem,
+    rgba(0, 0, 0, 0) 3.4rem
+  );
+}
+html.light body::after { background: none; }
+
+::selection { background: var(--ink); color: var(--bg); text-shadow: none; }
+
+* { box-sizing: border-box; }
+h1, h2, h3, h4, p, dl, dd, ul, figure { margin: 0; }
+ul { padding: 0; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-shadow: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--dim);
+}
+a:hover, a:focus-visible {
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  text-decoration: none;
+  text-shadow: none;
+}
+:focus-visible {
+  outline: 2px solid var(--bright);
+  outline-offset: 2px;
+}
+
+/* --- No-JS notice --- */
+.noscript {
+  display: block;
+  border: 1px solid var(--rule);
+  padding: 1.1rem 1.3rem;
+  margin: 1.6rem 0 0.4rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+.noscript p { margin: 0.35rem 0; }
+.noscript .nh {
+  font-weight: 700;
+  color: var(--bright);
+  letter-spacing: 0.14em;
+}
+.noscript .nd { color: var(--dim); }
+
+/* --- Screen column --- */
+.screen {
+  width: min(100% - 2.25rem, 84ch);
+  margin: 0 auto;
+  padding: 1.1rem 0 2.5rem;
+}
+
+/* --- Top bar --- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem 1.5rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.65rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+}
+.tb-id strong { color: var(--bright); font-weight: 700; }
+.tb-dim { color: var(--dim); }
+.theme-btn {
+  border: 1px solid var(--rule);
+  padding: 0.25rem 0.7rem;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: var(--ink);
+}
+.theme-btn:hover, .theme-btn:focus-visible {
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  border-color: var(--inv-bg);
+  text-shadow: none;
+}
+
+/* --- Views --- */
+.view[hidden] { display: none; }
+.view:focus, .rpt-title:focus, .setup-title:focus { outline: none; }
+
+/* --- Hero / banner --- */
+.banner-wrap {
+  overflow-x: auto;
+  margin: 2.4rem 0 1.1rem;
+}
+.banner {
+  margin: 0 auto;
+  width: max-content;
+  font-family: inherit;
+  font-size: clamp(6px, 2.3vw, 15px);
+  line-height: 1.14;
+  color: var(--bright);
+  text-shadow: var(--glow-strong);
+  white-space: pre;
+}
+.subline {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.42em;
+  font-size: 0.76rem;
+  color: var(--ink);
+  margin-top: 0.9rem;
+}
+.status {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 1.15rem auto 0;
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  text-shadow: none;
+  padding: 0.28rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-align: center;
+}
+.status[hidden], .subline[hidden] { display: none; }
+
+/* --- Main menu --- */
+.menu {
+  margin: 2.6rem auto 0;
+  max-width: 58ch;
+}
+.menu-cap {
+  color: var(--dim);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.mrow {
+  display: flex;
+  align-items: baseline;
+  gap: 1ch;
+  width: 100%;
+  text-align: left;
+  padding: 0.42rem 0.8rem;
+  letter-spacing: 0.06em;
+}
+.mnum { color: var(--dim); }
+.mname { font-weight: 700; }
+.mlead {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--faint);
+  min-width: 2ch;
+}
+.mlead::before {
+  content: "························································";
+  letter-spacing: 0.4ch;
+}
+.mdesc {
+  color: var(--dim);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+}
+.mrow.sel, .mrow:hover, .mrow:focus-visible {
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  text-shadow: none;
+}
+.mrow.sel > span, .mrow:hover > span, .mrow:focus-visible > span { color: inherit; }
+.mrow:focus-visible { outline-offset: 2px; }
+
+.prompt {
+  margin-top: 2.4rem;
+  color: var(--dim);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+.cursor {
+  display: inline-block;
+  width: 0.62em;
+  height: 1.05em;
+  background: var(--ink);
+  vertical-align: text-bottom;
+  margin-left: 0.2ch;
+}
+
+/* --- Report header / footer --- */
+.rpt-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.4rem 1.5rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.55rem 0;
+  margin: 1.7rem 0 1.9rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+}
+.rpt-title {
+  display: flex;
+  align-items: baseline;
+  gap: 1.4ch;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+}
+.rpt-sys { color: var(--dim); }
+.rpt-title strong { color: var(--bright); font-weight: 700; }
+.rpt-page { color: var(--dim); }
+
+.rpt-foot {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.4rem;
+  padding-top: 0.75rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--dim);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.6rem;
+}
+.key {
+  display: inline-block;
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  padding: 0.5rem 0.45rem;
+  margin: -0.5rem -0.3rem;
+}
+.key:hover, .key:focus-visible {
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  text-shadow: none;
+}
+
+/* --- Shared page content --- */
+.prose { max-width: 62ch; overflow-wrap: anywhere; }
+.subhead {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  color: var(--dim);
+  margin: 2rem 0 0.7rem;
+}
+.subhead[hidden] { display: none; }
+.stars {
+  text-align: center;
+  color: var(--faint);
+  letter-spacing: 2ch;
+  margin: 1.9rem 0;
+  font-size: 0.8rem;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 12ch 1fr;
+  gap: 0.45rem 1rem;
+  margin-bottom: 1.7rem;
+}
+.kv dt {
+  color: var(--dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  padding-top: 0.22em;
+}
+.kv dd { overflow-wrap: anywhere; }
+.chip {
+  display: inline-block;
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  text-shadow: none;
+  padding: 0.06rem 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 4ch 1fr;
+  gap: 0.1rem 1ch;
+  margin: 1.4rem 0;
+  overflow-wrap: anywhere;
+}
+.eno {
+  color: var(--dim);
+  font-weight: 700;
+  padding-top: 0.1em;
+  font-size: 0.85rem;
+}
+.etitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.emeta {
+  grid-column: 2;
+  color: var(--dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0.2rem 0 0.45rem;
+}
+.ebullets {
+  grid-column: 2;
+  list-style: none;
+  max-width: 58ch;
+}
+.ebullets li {
+  position: relative;
+  padding-left: 1.6ch;
+  margin: 0.4rem 0;
+}
+.ebullets li::before {
+  content: "▪";
+  position: absolute;
+  left: 0;
+  color: var(--dim);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 14ch 1fr;
+  gap: 0.9rem 1rem;
+}
+.skills dt {
+  color: var(--dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  padding-top: 0.22em;
+}
+.skills dd { overflow-wrap: anywhere; }
+.sep { color: var(--faint); font-style: normal; padding: 0 0.35ch; }
+
+.aside-note {
+  margin-top: 1.9rem;
+  color: var(--dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+}
+
+/* --- Admin: BIOS setup utility --- */
+.setup {
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  margin-top: 1.7rem;
+}
+.setup-title {
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  text-shadow: none;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+.setup-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--rule);
+}
+.stab {
+  padding: 0.45rem 0.8rem;
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  color: var(--dim);
+  border-right: 1px solid var(--rule);
+}
+.stab:hover, .stab:focus-visible,
+.stab[aria-pressed="true"] {
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  text-shadow: none;
+}
+.stab[aria-pressed="true"] { font-weight: 700; }
+.setup-body {
+  padding: 1.3rem 1rem 1.1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+.setup-hint {
+  color: var(--dim);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.3rem;
+  overflow-wrap: anywhere;
+}
+.frow {
+  display: grid;
+  grid-template-columns: 17ch 1fr;
+  gap: 0.6rem;
+  align-items: start;
+}
+.flabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--dim);
+  padding: 0.42rem 0.55rem;
+}
+.frow:focus-within .flabel {
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  text-shadow: none;
+}
+.frow input, .frow textarea {
+  font: inherit;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--dim);
+  padding: 0.42rem 0.65rem;
+  width: 100%;
+  border-radius: 0;
+  text-shadow: inherit;
+}
+.frow textarea { resize: vertical; min-height: 6.8em; }
+.frow input:focus-visible, .frow textarea:focus-visible {
+  outline: 2px solid var(--bright);
+  outline-offset: 1px;
+}
+.fctl {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+.fctl input { flex: 1 1 auto; min-width: 0; }
+.fgroup {
+  border: 1px solid var(--rule);
+  padding: 0.85rem 0.7rem;
+  display: grid;
+  gap: 0.6rem;
+}
+.fgroup-head {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+.fgroup-title {
+  color: var(--dim);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-right: auto;
+}
+.fbtn {
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  padding: 0.22rem 0.55rem;
+  white-space: nowrap;
+}
+.fbtn:hover, .fbtn:focus-visible {
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  border-color: var(--inv-bg);
+  text-shadow: none;
+}
+.fadd { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.setup-keys {
+  border-top: 1px solid var(--rule);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.1rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+}
+.skey {
+  border: 1px solid var(--rule);
+  padding: 0.3rem 0.8rem;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: var(--ink);
+}
+.skey b { font-weight: 700; color: var(--bright); }
+.skey:hover, .skey:focus-visible {
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  border-color: var(--inv-bg);
+  text-shadow: none;
+}
+.skey:hover b, .skey:focus-visible b { color: var(--inv-ink); }
+.save-msg {
+  margin-left: auto;
+  color: var(--dim);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-align: right;
+}
+.setup-demo {
+  padding: 0 1rem 0.9rem;
+  color: var(--dim);
+  font-size: 0.72rem;
+}
+
+/* --- Colophon --- */
+.colophon {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--dim);
+  font-size: 0.64rem;
+  letter-spacing: 0.26em;
+}
+
+/* --- Responsive --- */
+@media (max-width: 620px) {
+  .mdesc { display: none; }
+  .kv { grid-template-columns: 1fr; gap: 0.1rem 0; }
+  .kv dt { margin-top: 0.7rem; }
+  .kv dt:first-child { margin-top: 0; }
+  .skills { grid-template-columns: 1fr; gap: 0.1rem 0; }
+  .skills dt { margin-top: 0.9rem; }
+  .skills dt:first-child { margin-top: 0; }
+  .frow { grid-template-columns: 1fr; gap: 0.15rem; }
+  .flabel { padding-left: 0; padding-bottom: 0.1rem; }
+  .frow:focus-within .flabel { padding-left: 0.55rem; }
+  .subline { letter-spacing: 0.24em; font-size: 0.68rem; }
+}
+@media (max-width: 400px) {
+  body { font-size: 14px; }
+  .screen { width: min(100% - 1.5rem, 84ch); }
+}
+
+/* --- Motion (all animation lives here) --- */
+@media (prefers-reduced-motion: no-preference) {
+  .cursor { animation: qb-blink 1.1s steps(1, end) infinite; }
+  @keyframes qb-blink { 50% { opacity: 0; } }
+
+  html:not(.light) .screen { animation: qb-flicker 8s linear infinite; }
+  @keyframes qb-flicker {
+    0%, 95.8%, 96.6%, 98.2%, 100% { opacity: 1; }
+    96.2% { opacity: 0.94; }
+    97.9% { opacity: 0.975; }
+  }
+
+  .view.enter { animation: qb-formfeed 0.32s steps(14, end); }
+  @keyframes qb-formfeed {
+    from { clip-path: inset(0 0 100% 0); }
+    to { clip-path: inset(0 0 0 0); }
+  }
+}
+
+/* --- Print: force HARD COPY, reveal the full CV in order --- */
+@media print {
+  @page { margin: 1.5cm; }
+  body, html.light body {
+    --bg: #ffffff;
+    --ink: #000000;
+    --bright: #000000;
+    --dim: #333333;
+    --faint: #666666;
+    --rule: #999999;
+    --panel: #ffffff;
+    --inv-bg: #000000;
+    --inv-ink: #ffffff;
+    --glow: none;
+    --glow-strong: none;
+    background: #ffffff;
+    text-shadow: none;
+    font-size: 10.5pt;
+  }
+  body::before, body::after,
+  html.light body::before, html.light body::after { display: none; }
+  .topbar, .menu-cap, .menu, .prompt, .rpt-foot, .colophon,
+  #view-admin { display: none !important; }
+  .noscript { border-color: #000000; }
+  .view[hidden] { display: block; }
+  .view, .screen, .cursor { animation: none !important; }
+  .screen { width: auto; padding: 0; }
+  .banner-wrap { overflow: visible; margin: 0 0 0.6rem; }
+  .banner { font-size: 9px; color: #000000; text-shadow: none; }
+  .status, .chip {
+    background: none;
+    color: #000000;
+    border: 1px solid #000000;
+  }
+  .rpt-head { border-color: #000000; margin-top: 1.4rem; }
+  .entry { break-inside: avoid; page-break-inside: avoid; }
+  .rpt-head { break-after: avoid; page-break-after: avoid; }
+  a { color: #000000; text-decoration-color: #000000; }
+  .stars { margin: 1rem 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="screen">
+  <header class="topbar">
+    <p class="tb-id"><strong>QBESSI.CRT</strong><span class="tb-dim"> · TTY1 · <span id="tb-date">ONLINE</span></span></p>
+    <button type="button" id="theme-btn" class="theme-btn" aria-pressed="false" aria-label="Toggle display mode (T)">[T] DISPLAY: CRT</button>
+  </header>
+
+  <noscript>
+    <div class="noscript">
+      <p class="nh">QBESSI — FRONT END DEVELOPER — LONDON, UK</p>
+      <p>* ACTIVELY SEEKING A NEW ROLE *</p>
+      <p>WEB: <a href="https://qbessi.com">qbessi.com</a> · MAIL: <a href="mailto:hello@qbessi.com">hello@qbessi.com</a> · GIT: <a href="https://github.com/qbessi">github.com/qbessi</a></p>
+      <p class="nd">Enable JavaScript for the full terminal.</p>
+    </div>
+  </noscript>
+
+  <main id="main">
+
+    <!-- ============ MENU ============ -->
+    <section class="view" id="view-menu" tabindex="-1" aria-label="Main menu">
+      <h1 class="sr-only" id="hero-h1">Qbessi — Front End Developer, London, UK</h1>
+
+      <div class="banner-wrap">
+        <pre class="banner" aria-hidden="true">
+ ██████╗  ██████╗  ███████╗ ███████╗ ███████╗ ██╗
+██╔═══██╗ ██╔══██╗ ██╔════╝ ██╔════╝ ██╔════╝ ██║
+██║   ██║ ██████╔╝ █████╗   ███████╗ ███████╗ ██║
+██║▄▄ ██║ ██╔══██╗ ██╔══╝   ╚════██║ ╚════██║ ██║
+╚██████╔╝ ██████╔╝ ███████╗ ███████║ ███████║ ██║
+ ╚══▀▀═╝  ╚═════╝  ╚══════╝ ╚══════╝ ╚══════╝ ╚═╝</pre>
+      </div>
+
+      <p class="subline" id="hero-subline">Front End Developer — London, UK</p>
+      <p class="status" id="hero-status">* ACTIVELY SEEKING A NEW ROLE *</p>
+
+      <nav class="menu" aria-label="Sections">
+        <p class="menu-cap">SELECT WITH ↑/↓ + ENTER, OR PRESS 1–6</p>
+        <button type="button" class="mrow" data-open="about"><span class="mnum">[1]</span><span class="mname">ABOUT</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">PROFILE</span></button>
+        <button type="button" class="mrow" data-open="experience"><span class="mnum">[2]</span><span class="mname">EXPERIENCE</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">EMPLOYMENT RECORD</span></button>
+        <button type="button" class="mrow" data-open="skills"><span class="mnum">[3]</span><span class="mname">SKILLS</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">TECH INVENTORY</span></button>
+        <button type="button" class="mrow" data-open="projects"><span class="mnum">[4]</span><span class="mname">PROJECTS</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">SELECTED WORKS</span></button>
+        <button type="button" class="mrow" data-open="contact"><span class="mnum">[5]</span><span class="mname">CONTACT</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">CHANNELS</span></button>
+        <button type="button" class="mrow" data-open="admin"><span class="mnum">[6]</span><span class="mname">ADMIN SETUP</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">OPERATOR ONLY</span></button>
+      </nav>
+
+      <p class="prompt" aria-hidden="true">&gt; READY — AWAITING INPUT <span class="cursor"></span></p>
+
+      <footer class="rpt-foot">
+        <span>PRESS <button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TO TOGGLE DISPLAY MODE</span>
+      </footer>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="view page" id="view-about" tabindex="-1" hidden aria-labelledby="h-about">
+      <header class="rpt-head">
+        <h2 class="rpt-title" id="h-about" tabindex="-1"><span class="rpt-sys">REPORT 01</span><strong>ABOUT</strong></h2>
+        <span class="rpt-page">PAGE 1/1</span>
+      </header>
+
+      <dl class="kv" id="about-kv"></dl>
+      <p class="prose" id="about-prose"></p>
+
+      <footer class="rpt-foot">
+        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
+        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
+      </footer>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="view page" id="view-experience" tabindex="-1" hidden aria-labelledby="h-experience">
+      <header class="rpt-head">
+        <h2 class="rpt-title" id="h-experience" tabindex="-1"><span class="rpt-sys">REPORT 02</span><strong>EXPERIENCE</strong></h2>
+        <span class="rpt-page">PAGE 1/1</span>
+      </header>
+
+      <h3 class="subhead" id="exp-subhead">EMPLOYMENT RECORD</h3>
+      <div id="exp-list"></div>
+
+      <h3 class="subhead" id="edu-subhead">EDUCATION</h3>
+      <div id="edu-list"></div>
+
+      <footer class="rpt-foot">
+        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
+        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
+      </footer>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="view page" id="view-skills" tabindex="-1" hidden aria-labelledby="h-skills">
+      <header class="rpt-head">
+        <h2 class="rpt-title" id="h-skills" tabindex="-1"><span class="rpt-sys">REPORT 03</span><strong>SKILLS</strong></h2>
+        <span class="rpt-page">PAGE 1/1</span>
+      </header>
+
+      <dl class="skills" id="skills-list"></dl>
+
+      <p class="aside-note">INVENTORY AUDITED CONTINUOUSLY. NO COBOL. YET.</p>
+
+      <footer class="rpt-foot">
+        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
+        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
+      </footer>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="view page" id="view-projects" tabindex="-1" hidden aria-labelledby="h-projects">
+      <header class="rpt-head">
+        <h2 class="rpt-title" id="h-projects" tabindex="-1"><span class="rpt-sys">REPORT 04</span><strong>PROJECTS</strong></h2>
+        <span class="rpt-page">PAGE 1/1</span>
+      </header>
+
+      <div id="projects-list"></div>
+
+      <footer class="rpt-foot">
+        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
+        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
+      </footer>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="view page" id="view-contact" tabindex="-1" hidden aria-labelledby="h-contact">
+      <header class="rpt-head">
+        <h2 class="rpt-title" id="h-contact" tabindex="-1"><span class="rpt-sys">REPORT 05</span><strong>CONTACT</strong></h2>
+        <span class="rpt-page">PAGE 1/1</span>
+      </header>
+
+      <dl class="kv" id="contact-list"></dl>
+
+      <p class="aside-note">ALL CHANNELS MONITORED.</p>
+
+      <footer class="rpt-foot">
+        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
+        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
+      </footer>
+    </section>
+
+    <!-- ============ ADMIN SETUP ============ -->
+    <section class="view page" id="view-admin" tabindex="-1" hidden aria-labelledby="setup-title">
+      <div class="setup">
+        <h2 class="setup-title" id="setup-title" tabindex="-1">QBESSI SETUP UTILITY — v1.0</h2>
+        <div class="setup-tabs" id="setup-tabs"></div>
+        <div class="setup-body" id="setup-body"></div>
+
+        <div class="setup-keys">
+          <button type="button" class="skey" data-act="save"><b>F10</b> SAVE</button>
+          <button type="button" class="skey" data-act="exit"><b>ESC</b> EXIT</button>
+          <span class="save-msg" id="save-msg" role="status" aria-live="polite"></span>
+        </div>
+
+        <p class="setup-demo">This console is public UI — without a repository token it is read-only. Changes commit to GitHub and go live after the Pages deploy.</p>
+      </div>
+
+      <footer class="rpt-foot">
+        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
+        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
+      </footer>
+    </section>
+
+  </main>
+
+  <footer class="colophon">MODEL QB-80 · 80×25 · MONOCHROME P4 · EST. LONDON</footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ================================================================
+     Inline default content — EXACT copy of cv.json. First paint uses
+     this; a same-origin fetch of cv.json then takes over if present.
+     ================================================================ */
+  var DEFAULT_CV = {
+    "name": "Qbessi",
+    "role": "Front End Developer",
+    "location": "London, UK",
+    "status": "Actively seeking a new role",
+    "about": "Front end developer based in London, building fast, accessible interfaces with modern web technologies. I care about performance, typography, and the small details. Currently looking for my next role. (placeholder)",
+    "skills": [
+      { "group": "Languages", "items": ["HTML", "CSS", "JavaScript", "TypeScript (placeholder)"] },
+      { "group": "Frameworks", "items": ["React (placeholder)", "Astro (placeholder)", "Tailwind (placeholder)"] },
+      { "group": "Tools", "items": ["Git", "Node.js (placeholder)", "Vite (placeholder)"] }
+    ],
+    "experience": [
+      {
+        "role": "Front End Developer",
+        "company": "Company A (placeholder)",
+        "location": "London",
+        "start": "2023",
+        "end": "Present",
+        "bullets": [
+          "Shipped and maintained customer-facing web features across a modern front end stack. (placeholder)",
+          "Improved page performance and accessibility scores across key user journeys. (placeholder)"
+        ]
+      },
+      {
+        "role": "Junior Front End Developer",
+        "company": "Company B (placeholder)",
+        "location": "London",
+        "start": "2021",
+        "end": "2023",
+        "bullets": [
+          "Built UI components and internal tooling with a small product team. (placeholder)"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "BSc Computer Science (placeholder)",
+        "school": "University (placeholder)",
+        "start": "2018",
+        "end": "2021"
+      }
+    ],
+    "projects": [
+      {
+        "name": "qbessi.com",
+        "desc": "This site: a terminal-style one-page CV.",
+        "stack": "HTML / CSS / JS",
+        "url": "https://qbessi.com"
+      },
+      {
+        "name": "Project Two (placeholder)",
+        "desc": "A small tool or experiment worth one line. (placeholder)",
+        "stack": "",
+        "url": ""
+      }
+    ],
+    "contact": [
+      { "label": "web", "value": "qbessi.com", "href": "https://qbessi.com" },
+      { "label": "email", "value": "hello@qbessi.com (placeholder)", "href": "mailto:hello@qbessi.com" },
+      { "label": "github", "value": "github.com/qbessi (placeholder)", "href": "https://github.com/qbessi" }
+    ]
+  };
+
+  /* ================================================================
+     Helpers
+     ================================================================ */
+  function byId(id) { return document.getElementById(id); }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) { n.className = cls; }
+    if (text !== undefined && text !== null) { n.textContent = text; }
+    return n;
+  }
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+  function str(v) { return typeof v === "string" ? v : ""; }
+  function list(v) { return Array.isArray(v) ? v : []; }
+  function pad2(n) { return n < 10 ? "0" + n : String(n); }
+  function period(a, b) {
+    a = str(a).trim(); b = str(b).trim();
+    if (a && b) { return a + " – " + b; }
+    return a || b || "";
+  }
+  function joinParts(parts, sep) {
+    var out = [];
+    for (var i = 0; i < parts.length; i++) {
+      if (parts[i]) { out.push(parts[i]); }
+    }
+    return out.join(sep);
+  }
+  function safeHref(href) {
+    if (typeof href !== "string" || href === "") { return null; }
+    var u;
+    try { u = new URL(href); } catch (err) { return null; }
+    if (u.protocol === "https:" || u.protocol === "http:" || u.protocol === "mailto:") {
+      return href;
+    }
+    return null;
+  }
+  function serialize(cv) { return JSON.stringify(cv, null, 2) + "\n"; }
+  function b64utf8(s) {
+    var bytes = new TextEncoder().encode(s);
+    var bin = "";
+    var CH = 0x8000;
+    for (var i = 0; i < bytes.length; i += CH) {
+      bin += String.fromCharCode.apply(null, bytes.subarray(i, i + CH));
+    }
+    return btoa(bin);
+  }
+  function stars() {
+    var p = el("p", "stars", "*****");
+    p.setAttribute("aria-hidden", "true");
+    return p;
+  }
+
+  /* Coerce any parsed object into the full cv shape with safe defaults. */
+  function normalize(cv) {
+    cv = (cv && typeof cv === "object" && !Array.isArray(cv)) ? cv : {};
+    return {
+      name: str(cv.name),
+      role: str(cv.role),
+      location: str(cv.location),
+      status: str(cv.status),
+      about: str(cv.about),
+      skills: list(cv.skills).map(function (g) {
+        g = (g && typeof g === "object") ? g : {};
+        return { group: str(g.group), items: list(g.items).map(str) };
+      }),
+      experience: list(cv.experience).map(function (x) {
+        x = (x && typeof x === "object") ? x : {};
+        return {
+          role: str(x.role), company: str(x.company), location: str(x.location),
+          start: str(x.start), end: str(x.end), bullets: list(x.bullets).map(str)
+        };
+      }),
+      education: list(cv.education).map(function (x) {
+        x = (x && typeof x === "object") ? x : {};
+        return { degree: str(x.degree), school: str(x.school), start: str(x.start), end: str(x.end) };
+      }),
+      projects: list(cv.projects).map(function (p) {
+        p = (p && typeof p === "object") ? p : {};
+        return { name: str(p.name), desc: str(p.desc), stack: str(p.stack), url: str(p.url) };
+      }),
+      contact: list(cv.contact).map(function (c) {
+        c = (c && typeof c === "object") ? c : {};
+        return { label: str(c.label), value: str(c.value), href: str(c.href) };
+      })
+    };
+  }
+
+  /* Strict shape check for imported files. */
+  function validateShape(o) {
+    function isS(v) { return typeof v === "string"; }
+    function isRec(v) { return v !== null && typeof v === "object" && !Array.isArray(v); }
+    if (!isRec(o)) { return false; }
+    if (!isS(o.name) || !isS(o.role) || !isS(o.location) || !isS(o.status) || !isS(o.about)) { return false; }
+    if (!Array.isArray(o.skills) || !o.skills.every(function (g) {
+      return isRec(g) && isS(g.group) && Array.isArray(g.items) && g.items.every(isS);
+    })) { return false; }
+    if (!Array.isArray(o.experience) || !o.experience.every(function (x) {
+      return isRec(x) && isS(x.role) && isS(x.company) && isS(x.location) && isS(x.start) && isS(x.end) &&
+        Array.isArray(x.bullets) && x.bullets.every(isS);
+    })) { return false; }
+    if (!Array.isArray(o.education) || !o.education.every(function (x) {
+      return isRec(x) && isS(x.degree) && isS(x.school) && isS(x.start) && isS(x.end);
+    })) { return false; }
+    if (!Array.isArray(o.projects) || !o.projects.every(function (p) {
+      return isRec(p) && isS(p.name) && isS(p.desc) && isS(p.stack) && isS(p.url);
+    })) { return false; }
+    if (!Array.isArray(o.contact) || !o.contact.every(function (c) {
+      return isRec(c) && isS(c.label) && isS(c.value) && isS(c.href);
+    })) { return false; }
+    return true;
+  }
+
+  /* ================================================================
+     State
+     ================================================================ */
+  var state = normalize(DEFAULT_CV);
+  var lastLoaded = clone(state);
+  var dirty = false;
+  var saving = false;
+  /* Once the operator has authored state (commit/import), a late-arriving
+     initial cv.json fetch must never win. */
+  var superseded = false;
+
+  function setMsg(text) {
+    var m = byId("save-msg");
+    /* Idempotent: identical text must not re-fire the live region. */
+    if (m && m.textContent !== text) { m.textContent = text; }
+  }
+  function touch() {
+    dirty = true;
+    if (!saving) { setMsg("UNSAVED CHANGES — F10 TO SAVE"); }
+    renderAll();
+  }
+
+  /* ================================================================
+     Site renderers — all content flows through textContent/attributes
+     ================================================================ */
+  function entryNode(no, titleText, metaText, bullets, href, hTag) {
+    var art = el("article", "entry");
+    var eno = el("span", "eno", no);
+    eno.setAttribute("aria-hidden", "true");
+    art.appendChild(eno);
+    var h = el(hTag || "h4", "etitle");
+    if (href) {
+      var a = el("a", null, titleText || href);
+      a.href = href;
+      h.appendChild(a);
+    } else {
+      h.textContent = titleText || "";
+    }
+    art.appendChild(h);
+    if (metaText) { art.appendChild(el("p", "emeta", metaText)); }
+    var bl = list(bullets).filter(function (b) { return str(b).trim() !== ""; });
+    if (bl.length) {
+      var ul = el("ul", "ebullets");
+      for (var i = 0; i < bl.length; i++) {
+        ul.appendChild(el("li", null, bl[i]));
+      }
+      art.appendChild(ul);
+    }
+    return art;
+  }
+
+  function renderHero() {
+    var h1 = byId("hero-h1");
+    if (h1) {
+      var t = state.name || "Qbessi";
+      if (state.role) { t += " — " + state.role; }
+      if (state.location) { t += ", " + state.location; }
+      h1.textContent = t;
+    }
+    var sub = byId("hero-subline");
+    if (sub) {
+      var s = joinParts([state.role, state.location], " — ");
+      sub.textContent = s;
+      sub.hidden = !s;
+    }
+    var st = byId("hero-status");
+    if (st) {
+      st.textContent = state.status ? "* " + state.status.toUpperCase() + " *" : "";
+      st.hidden = !state.status;
+    }
+  }
+
+  function renderAbout() {
+    var kv = byId("about-kv");
+    if (kv) {
+      kv.replaceChildren();
+      function row(label, val, node) {
+        kv.appendChild(el("dt", null, label));
+        var dd = document.createElement("dd");
+        if (node) { dd.appendChild(node); } else { dd.textContent = val; }
+        kv.appendChild(dd);
+      }
+      if (state.name) { row("NAME", state.name); }
+      if (state.role) { row("ROLE", state.role); }
+      if (state.location) { row("LOCATION", state.location); }
+      if (state.status) {
+        row("STATUS", null, el("span", "chip", "■ " + state.status.toUpperCase()));
+      }
+    }
+    var prose = byId("about-prose");
+    if (prose) { prose.textContent = state.about; }
+  }
+
+  function renderExperience() {
+    var esub = byId("exp-subhead");
+    if (esub) { esub.hidden = state.experience.length === 0; }
+    var box = byId("exp-list");
+    if (box) {
+      box.replaceChildren();
+      state.experience.forEach(function (x, i) {
+        if (i > 0) { box.appendChild(stars()); }
+        box.appendChild(entryNode(
+          pad2(i + 1),
+          joinParts([x.role, x.company], " — "),
+          joinParts([x.location, period(x.start, x.end)], " · "),
+          x.bullets,
+          null
+        ));
+      });
+      /* Mockup fidelity: a ***** divider between the last employment
+         entry and the EDUCATION subsection. */
+      if (state.experience.length > 0 && state.education.length > 0) {
+        box.appendChild(stars());
+      }
+    }
+    var sub = byId("edu-subhead");
+    var edu = byId("edu-list");
+    var has = state.education.length > 0;
+    if (sub) { sub.hidden = !has; }
+    if (edu) {
+      edu.replaceChildren();
+      state.education.forEach(function (x, i) {
+        if (i > 0) { edu.appendChild(stars()); }
+        edu.appendChild(entryNode(
+          "ED",
+          x.degree,
+          joinParts([x.school, period(x.start, x.end)], " · "),
+          null,
+          null
+        ));
+      });
+    }
+  }
+
+  function renderSkills() {
+    var dl = byId("skills-list");
+    if (!dl) { return; }
+    dl.replaceChildren();
+    state.skills.forEach(function (g) {
+      var items = g.items.filter(function (it) { return it.trim() !== ""; });
+      if (!g.group && !items.length) { return; }
+      dl.appendChild(el("dt", null, g.group.toUpperCase()));
+      var dd = document.createElement("dd");
+      items.forEach(function (it, j) {
+        if (j > 0) {
+          var sep = el("i", "sep", "·");
+          sep.setAttribute("aria-hidden", "true");
+          dd.appendChild(sep);
+        }
+        dd.appendChild(document.createTextNode(it));
+      });
+      dl.appendChild(dd);
+    });
+  }
+
+  function renderProjects() {
+    var box = byId("projects-list");
+    if (!box) { return; }
+    box.replaceChildren();
+    state.projects.forEach(function (p, i) {
+      if (i > 0) { box.appendChild(stars()); }
+      box.appendChild(entryNode(
+        pad2(i + 1),
+        p.name,
+        p.stack,
+        p.desc ? [p.desc] : null,
+        safeHref(p.url),
+        "h3" /* Projects has no h3 subhead, so entries sit directly under h2 */
+      ));
+    });
+  }
+
+  function renderContact() {
+    var dl = byId("contact-list");
+    if (!dl) { return; }
+    dl.replaceChildren();
+    state.contact.forEach(function (c) {
+      if (!c.label && !c.value && !c.href) { return; }
+      dl.appendChild(el("dt", null, c.label.toUpperCase()));
+      var dd = document.createElement("dd");
+      var href = safeHref(c.href);
+      var text = c.value || c.href;
+      if (href) {
+        var a = el("a", null, text || href);
+        a.href = href;
+        dd.appendChild(a);
+      } else {
+        dd.textContent = text;
+      }
+      dl.appendChild(dd);
+    });
+  }
+
+  function renderAll() {
+    renderHero();
+    renderAbout();
+    renderExperience();
+    renderSkills();
+    renderProjects();
+    renderContact();
+  }
+
+  /* ================================================================
+     Views, menu selection, hash routing
+     ================================================================ */
+  var viewOrder = ["about", "experience", "skills", "projects", "contact", "admin"];
+  var headingIds = {
+    about: "h-about", experience: "h-experience", skills: "h-skills",
+    projects: "h-projects", contact: "h-contact", admin: "setup-title"
+  };
+  var views = {};
+  ["menu"].concat(viewOrder).forEach(function (name) {
+    var v = byId("view-" + name);
+    if (v) { views[name] = v; }
+  });
+  var current = "menu";
+
+  var menuRows = Array.prototype.slice.call(document.querySelectorAll(".mrow"));
+  var sel = 0;
+
+  function setSel(i, moveFocus) {
+    if (!menuRows.length) { return; }
+    sel = ((i % menuRows.length) + menuRows.length) % menuRows.length;
+    for (var r = 0; r < menuRows.length; r++) {
+      menuRows[r].classList.toggle("sel", r === sel);
+    }
+    if (moveFocus) { menuRows[sel].focus(); }
+  }
+
+  function show(name, opts) {
+    opts = opts || {};
+    var next = views[name];
+    if (!next) { return; }
+    if (name === current) {
+      if (!opts.fromHash && name !== "menu" && location.hash !== "#" + name) {
+        location.hash = name;
+      }
+      return;
+    }
+    var old = views[current];
+    if (old) {
+      old.hidden = true;
+      old.classList.remove("enter");
+    }
+    next.hidden = false;
+    next.classList.remove("enter");
+    void next.offsetWidth; /* restart the form-feed wipe */
+    next.classList.add("enter");
+    current = name;
+    if (!opts.fromHash && location.hash !== "#" + name) {
+      location.hash = name;
+    }
+    if (name === "admin") { renderAdmin(); }
+    if (opts.focus !== false) {
+      if (name === "menu") {
+        setSel(sel, true);
+      } else {
+        var hd = byId(headingIds[name]);
+        if (hd) {
+          try { hd.focus({ preventScroll: false }); } catch (err) { hd.focus(); }
+        }
+      }
+    }
+    window.scrollTo(0, 0);
+  }
+
+  function applyHash(initial) {
+    var h = location.hash.replace(/^#/, "");
+    var name = Object.prototype.hasOwnProperty.call(views, h) ? h : "menu";
+    show(name, { fromHash: true, focus: !initial });
+  }
+
+  /* ================================================================
+     Theme
+     ================================================================ */
+  var root = document.documentElement;
+  var themeBtn = byId("theme-btn");
+
+  function applyTheme(light) {
+    root.classList.toggle("light", light);
+    if (themeBtn) {
+      themeBtn.textContent = light ? "[T] DISPLAY: HARD COPY" : "[T] DISPLAY: CRT";
+      themeBtn.setAttribute("aria-pressed", light ? "true" : "false");
+    }
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) { m.setAttribute("content", light ? "#f2f2f2" : "#000000"); }
+    try { localStorage.setItem("qbessi.theme", light ? "light" : "dark"); } catch (e) { /* ignore */ }
+  }
+  function toggleTheme() { applyTheme(!root.classList.contains("light")); }
+
+  /* ================================================================
+     Admin — QBESSI SETUP UTILITY
+     ================================================================ */
+  var GH_KEY = "qbessi.gh";
+  var gh = { owner: "qbessi", repo: "qbessi.github.io", branch: "main", path: "site/cv.json", token: "" };
+  try {
+    var storedGh = JSON.parse(localStorage.getItem(GH_KEY) || "null");
+    if (storedGh && typeof storedGh === "object") {
+      ["owner", "repo", "branch", "path", "token"].forEach(function (k) {
+        if (typeof storedGh[k] === "string") { gh[k] = storedGh[k]; }
+      });
+    }
+  } catch (e) { /* ignore */ }
+  function saveGh() {
+    try { localStorage.setItem(GH_KEY, JSON.stringify(gh)); } catch (e) { /* ignore */ }
+  }
+
+  var TABS = [
+    ["identity", "IDENTITY"],
+    ["skills", "SKILLS"],
+    ["experience", "EXPERIENCE"],
+    ["education", "EDUCATION"],
+    ["projects", "PROJECTS"],
+    ["contact", "CONTACT"],
+    ["system", "SYSTEM"]
+  ];
+  var adminTab = "identity";
+
+  function hintLine(text) { return el("p", "setup-hint", text); }
+  function textInput(value, oninput, type) {
+    var i = document.createElement("input");
+    i.type = type || "text";
+    i.autocomplete = "off";
+    i.spellcheck = false;
+    i.value = value == null ? "" : String(value);
+    if (oninput) {
+      i.addEventListener("input", function () { oninput(i.value); });
+    }
+    return i;
+  }
+  function areaInput(value, oninput, rows) {
+    var t = document.createElement("textarea");
+    t.rows = rows || 5;
+    t.spellcheck = false;
+    t.value = value == null ? "" : String(value);
+    if (oninput) {
+      t.addEventListener("input", function () { oninput(t.value); });
+    }
+    return t;
+  }
+  var frowSeq = 0;
+  function frow(labelText, control, scopedName) {
+    var row = el("div", "frow");
+    var lab = el("label", "flabel", labelText);
+    frowSeq += 1;
+    if (!control.id) { control.id = "fld-" + frowSeq; }
+    lab.htmlFor = control.id;
+    row.appendChild(lab);
+    if (!control.getAttribute("aria-label")) {
+      /* scopedName disambiguates repeated entries ("Entry 2 — role"). */
+      control.setAttribute("aria-label", scopedName || labelText);
+    }
+    row.appendChild(control);
+    return row;
+  }
+  function fbtn(text, onclick, ariaLabel) {
+    var b = el("button", "fbtn", text);
+    b.type = "button";
+    if (ariaLabel) { b.setAttribute("aria-label", ariaLabel); }
+    b.addEventListener("click", onclick);
+    return b;
+  }
+  function addRow() {
+    var d = el("div", "fadd");
+    for (var i = 0; i < arguments.length; i++) { d.appendChild(arguments[i]); }
+    return d;
+  }
+  function groupBox(titleText, headButtons) {
+    var grp = el("div", "fgroup");
+    var head = el("div", "fgroup-head");
+    head.appendChild(el("span", "fgroup-title", titleText));
+    for (var i = 0; i < headButtons.length; i++) { head.appendChild(headButtons[i]); }
+    grp.appendChild(head);
+    return grp;
+  }
+  /* renderAdmin() rebuilds the panel DOM, destroying the activated
+     control; these restore focus to its logical successor. */
+  function focusAdminCtl(ctl) {
+    var box = byId("setup-body");
+    var n = box ? box.querySelector('[data-ctl="' + ctl + '"]') : null;
+    if (n) { n.focus(); return true; }
+    return false;
+  }
+  function focusAdminTab(key) {
+    var bar = byId("setup-tabs");
+    var n = bar ? bar.querySelector('[data-tab="' + key + '"]') : null;
+    if (n) { n.focus(); }
+  }
+
+  function panelIdentity(box) {
+    box.appendChild(hintLine("TAB — SELECT FIELD · TYPE TO EDIT · EDITS APPLY TO THE LIVE DISPLAY IMMEDIATELY"));
+    box.appendChild(frow("NAME", textInput(state.name, function (v) { state.name = v; touch(); })));
+    box.appendChild(frow("ROLE", textInput(state.role, function (v) { state.role = v; touch(); })));
+    box.appendChild(frow("LOCATION", textInput(state.location, function (v) { state.location = v; touch(); })));
+    box.appendChild(frow("STATUS", textInput(state.status, function (v) { state.status = v; touch(); })));
+    box.appendChild(frow("ABOUT", areaInput(state.about, function (v) { state.about = v; touch(); }, 5)));
+  }
+
+  function panelSkills(box) {
+    box.appendChild(hintLine("ITEMS ARE COMMA-SEPARATED."));
+    state.skills.forEach(function (g, i) {
+      var rm = fbtn("REMOVE", function () {
+        state.skills.splice(i, 1);
+        touch(); renderAdmin();
+        if (!focusAdminCtl("skill-rm-" + Math.min(i, state.skills.length - 1))) {
+          focusAdminCtl("skill-add");
+        }
+      }, "Remove skill group " + (i + 1));
+      rm.setAttribute("data-ctl", "skill-rm-" + i);
+      var grp = groupBox("GROUP " + pad2(i + 1), [rm]);
+      var nameIn = textInput(g.group, function (v) { g.group = v; touch(); });
+      nameIn.setAttribute("aria-label", "Skill group " + (i + 1) + " name");
+      nameIn.setAttribute("data-ctl", "skill-name-" + i);
+      grp.appendChild(frow("GROUP NAME", nameIn));
+      var itemsIn = textInput(g.items.join(", "), function (v) {
+        g.items = v.split(",").map(function (x) { return x.trim(); }).filter(Boolean);
+        touch();
+      });
+      itemsIn.setAttribute("aria-label", "Skill group " + (i + 1) + " items, comma-separated");
+      grp.appendChild(frow("ITEMS", itemsIn));
+      box.appendChild(grp);
+    });
+    var add = fbtn("+ ADD GROUP", function () {
+      state.skills.push({ group: "", items: [] });
+      touch();
+      renderAdmin();
+      focusAdminCtl("skill-name-" + (state.skills.length - 1));
+    });
+    add.setAttribute("data-ctl", "skill-add");
+    box.appendChild(addRow(add));
+  }
+
+  function panelExperience(box) {
+    var n = state.experience.length;
+    function focusEntryHandle(idx) {
+      if (!focusAdminCtl("exp-up-" + idx) && !focusAdminCtl("exp-dn-" + idx)) {
+        focusAdminCtl("exp-role-" + idx);
+      }
+    }
+    state.experience.forEach(function (x, i) {
+      var eno = "Entry " + (i + 1);
+      var headBtns = [];
+      if (i > 0) {
+        var up = fbtn("▲", function () {
+          var tmp = state.experience[i - 1];
+          state.experience[i - 1] = state.experience[i];
+          state.experience[i] = tmp;
+          touch(); renderAdmin();
+          focusEntryHandle(i - 1);
+        }, "Move entry " + (i + 1) + " up");
+        up.setAttribute("data-ctl", "exp-up-" + i);
+        headBtns.push(up);
+      }
+      if (i < n - 1) {
+        var dn = fbtn("▼", function () {
+          var tmp = state.experience[i + 1];
+          state.experience[i + 1] = state.experience[i];
+          state.experience[i] = tmp;
+          touch(); renderAdmin();
+          if (!focusAdminCtl("exp-dn-" + (i + 1))) { focusEntryHandle(i + 1); }
+        }, "Move entry " + (i + 1) + " down");
+        dn.setAttribute("data-ctl", "exp-dn-" + i);
+        headBtns.push(dn);
+      }
+      var rm = fbtn("REMOVE", function () {
+        state.experience.splice(i, 1);
+        touch(); renderAdmin();
+        if (!focusAdminCtl("exp-rm-" + Math.min(i, state.experience.length - 1))) {
+          focusAdminCtl("exp-add");
+        }
+      }, "Remove entry " + (i + 1));
+      rm.setAttribute("data-ctl", "exp-rm-" + i);
+      headBtns.push(rm);
+
+      var grp = groupBox("ENTRY " + pad2(i + 1), headBtns);
+      var roleIn = textInput(x.role, function (v) { x.role = v; touch(); });
+      roleIn.setAttribute("data-ctl", "exp-role-" + i);
+      grp.appendChild(frow("ROLE", roleIn, eno + " — role"));
+      grp.appendChild(frow("COMPANY", textInput(x.company, function (v) { x.company = v; touch(); }), eno + " — company"));
+      grp.appendChild(frow("LOCATION", textInput(x.location, function (v) { x.location = v; touch(); }), eno + " — location"));
+      grp.appendChild(frow("START", textInput(x.start, function (v) { x.start = v; touch(); }), eno + " — start"));
+      grp.appendChild(frow("END", textInput(x.end, function (v) { x.end = v; touch(); }), eno + " — end"));
+      x.bullets.forEach(function (b, j) {
+        var wrap = el("div", "fctl");
+        var inp = textInput(b, function (v) { x.bullets[j] = v; touch(); });
+        inp.setAttribute("aria-label", "Entry " + (i + 1) + " bullet " + (j + 1));
+        inp.setAttribute("data-ctl", "exp-bullet-" + i + "-" + j);
+        inp.id = "fld-exp-b-" + i + "-" + j;
+        wrap.appendChild(inp);
+        var brm = fbtn("×", function () {
+          x.bullets.splice(j, 1);
+          touch(); renderAdmin();
+          if (!focusAdminCtl("exp-brm-" + i + "-" + Math.min(j, x.bullets.length - 1))) {
+            focusAdminCtl("exp-badd-" + i);
+          }
+        }, "Remove entry " + (i + 1) + " bullet " + (j + 1));
+        brm.setAttribute("data-ctl", "exp-brm-" + i + "-" + j);
+        wrap.appendChild(brm);
+        var row = el("div", "frow");
+        var blab = el("label", "flabel", "BULLET " + (j + 1));
+        blab.htmlFor = inp.id;
+        row.appendChild(blab);
+        row.appendChild(wrap);
+        grp.appendChild(row);
+      });
+      var badd = fbtn("+ ADD BULLET", function () {
+        x.bullets.push("");
+        touch(); renderAdmin();
+        focusAdminCtl("exp-bullet-" + i + "-" + (x.bullets.length - 1));
+      }, "Add bullet to entry " + (i + 1));
+      badd.setAttribute("data-ctl", "exp-badd-" + i);
+      grp.appendChild(addRow(badd));
+      box.appendChild(grp);
+    });
+    var add = fbtn("+ ADD ENTRY", function () {
+      state.experience.push({ role: "", company: "", location: "", start: "", end: "", bullets: [] });
+      touch(); renderAdmin();
+      focusAdminCtl("exp-role-" + (state.experience.length - 1));
+    });
+    add.setAttribute("data-ctl", "exp-add");
+    box.appendChild(addRow(add));
+  }
+
+  function panelEducation(box) {
+    state.education.forEach(function (x, i) {
+      var eno = "Education entry " + (i + 1);
+      var rm = fbtn("REMOVE", function () {
+        state.education.splice(i, 1);
+        touch(); renderAdmin();
+        if (!focusAdminCtl("edu-rm-" + Math.min(i, state.education.length - 1))) {
+          focusAdminCtl("edu-add");
+        }
+      }, "Remove education entry " + (i + 1));
+      rm.setAttribute("data-ctl", "edu-rm-" + i);
+      var grp = groupBox("ENTRY " + pad2(i + 1), [rm]);
+      var degIn = textInput(x.degree, function (v) { x.degree = v; touch(); });
+      degIn.setAttribute("data-ctl", "edu-degree-" + i);
+      grp.appendChild(frow("DEGREE", degIn, eno + " — degree"));
+      grp.appendChild(frow("SCHOOL", textInput(x.school, function (v) { x.school = v; touch(); }), eno + " — school"));
+      grp.appendChild(frow("START", textInput(x.start, function (v) { x.start = v; touch(); }), eno + " — start"));
+      grp.appendChild(frow("END", textInput(x.end, function (v) { x.end = v; touch(); }), eno + " — end"));
+      box.appendChild(grp);
+    });
+    var add = fbtn("+ ADD ENTRY", function () {
+      state.education.push({ degree: "", school: "", start: "", end: "" });
+      touch(); renderAdmin();
+      focusAdminCtl("edu-degree-" + (state.education.length - 1));
+    });
+    add.setAttribute("data-ctl", "edu-add");
+    box.appendChild(addRow(add));
+  }
+
+  function panelProjects(box) {
+    box.appendChild(hintLine("URL RENDERS AS A LINK ONLY FOR http(s):// OR mailto: SCHEMES."));
+    state.projects.forEach(function (p, i) {
+      var pno = "Project " + (i + 1);
+      var rm = fbtn("REMOVE", function () {
+        state.projects.splice(i, 1);
+        touch(); renderAdmin();
+        if (!focusAdminCtl("prj-rm-" + Math.min(i, state.projects.length - 1))) {
+          focusAdminCtl("prj-add");
+        }
+      }, "Remove project " + (i + 1));
+      rm.setAttribute("data-ctl", "prj-rm-" + i);
+      var grp = groupBox("PROJECT " + pad2(i + 1), [rm]);
+      var nameIn = textInput(p.name, function (v) { p.name = v; touch(); });
+      nameIn.setAttribute("data-ctl", "prj-name-" + i);
+      grp.appendChild(frow("NAME", nameIn, pno + " — name"));
+      grp.appendChild(frow("DESC", textInput(p.desc, function (v) { p.desc = v; touch(); }), pno + " — desc"));
+      grp.appendChild(frow("STACK", textInput(p.stack, function (v) { p.stack = v; touch(); }), pno + " — stack"));
+      grp.appendChild(frow("URL", textInput(p.url, function (v) { p.url = v; touch(); }), pno + " — URL"));
+      box.appendChild(grp);
+    });
+    var add = fbtn("+ ADD PROJECT", function () {
+      state.projects.push({ name: "", desc: "", stack: "", url: "" });
+      touch(); renderAdmin();
+      focusAdminCtl("prj-name-" + (state.projects.length - 1));
+    });
+    add.setAttribute("data-ctl", "prj-add");
+    box.appendChild(addRow(add));
+  }
+
+  function panelContact(box) {
+    box.appendChild(hintLine("HREF RENDERS AS A LINK ONLY FOR http(s):// OR mailto: SCHEMES."));
+    state.contact.forEach(function (c, i) {
+      var cno = "Channel " + (i + 1);
+      var rm = fbtn("REMOVE", function () {
+        state.contact.splice(i, 1);
+        touch(); renderAdmin();
+        if (!focusAdminCtl("ct-rm-" + Math.min(i, state.contact.length - 1))) {
+          focusAdminCtl("ct-add");
+        }
+      }, "Remove contact channel " + (i + 1));
+      rm.setAttribute("data-ctl", "ct-rm-" + i);
+      var grp = groupBox("CHANNEL " + pad2(i + 1), [rm]);
+      var labIn = textInput(c.label, function (v) { c.label = v; touch(); });
+      labIn.setAttribute("data-ctl", "ct-label-" + i);
+      grp.appendChild(frow("LABEL", labIn, cno + " — label"));
+      grp.appendChild(frow("VALUE", textInput(c.value, function (v) { c.value = v; touch(); }), cno + " — value"));
+      grp.appendChild(frow("HREF", textInput(c.href, function (v) { c.href = v; touch(); }), cno + " — href"));
+      box.appendChild(grp);
+    });
+    var add = fbtn("+ ADD CHANNEL", function () {
+      state.contact.push({ label: "", value: "", href: "" });
+      touch(); renderAdmin();
+      focusAdminCtl("ct-label-" + (state.contact.length - 1));
+    });
+    add.setAttribute("data-ctl", "ct-add");
+    box.appendChild(addRow(add));
+  }
+
+  function panelSystem(box) {
+    box.appendChild(hintLine("COMMIT TARGET — GITHUB CONTENTS API. F10 WRITES cv.json TO THE REPOSITORY."));
+    var ownerIn = textInput(gh.owner, function (v) { gh.owner = v; saveGh(); });
+    ownerIn.setAttribute("data-ctl", "gh-owner");
+    box.appendChild(frow("OWNER", ownerIn));
+    box.appendChild(frow("REPO", textInput(gh.repo, function (v) { gh.repo = v; saveGh(); })));
+    box.appendChild(frow("BRANCH", textInput(gh.branch, function (v) { gh.branch = v; saveGh(); })));
+    box.appendChild(frow("PATH", textInput(gh.path, function (v) { gh.path = v; saveGh(); })));
+    var tokenIn = textInput(gh.token, function (v) { gh.token = v; saveGh(); }, "password");
+    tokenIn.setAttribute("data-ctl", "gh-token");
+    box.appendChild(frow("TOKEN", tokenIn));
+    box.appendChild(hintLine("TOKEN — CREATE A FINE-GRAINED PERSONAL ACCESS TOKEN AT github.com/settings/personal-access-tokens WITH ACCESS TO ONLY THIS REPOSITORY AND CONTENTS: READ AND WRITE PERMISSION."));
+    var forget = fbtn("FORGET TOKEN", function () {
+      gh.token = "";
+      saveGh();
+      renderAdmin();
+      focusAdminCtl("forget");
+      setMsg("TOKEN FORGOTTEN");
+    });
+    forget.setAttribute("data-ctl", "forget");
+    var imp = fbtn("IMPORT cv.json", function () { fileInput.click(); });
+    imp.setAttribute("data-ctl", "import");
+    var rev = fbtn("REVERT", revertCv);
+    rev.setAttribute("data-ctl", "revert");
+    box.appendChild(addRow(forget, fbtn("EXPORT cv.json", exportCv), imp, rev));
+  }
+
+  function renderAdminTabs() {
+    var bar = byId("setup-tabs");
+    if (!bar) { return; }
+    bar.replaceChildren();
+    TABS.forEach(function (t) {
+      var b = el("button", "stab", t[1]);
+      b.type = "button";
+      b.setAttribute("data-tab", t[0]);
+      b.setAttribute("aria-pressed", adminTab === t[0] ? "true" : "false");
+      b.addEventListener("click", function () {
+        adminTab = t[0];
+        renderAdmin();
+        /* The rebuild destroyed the activated tab; refocus its successor. */
+        focusAdminTab(t[0]);
+      });
+      bar.appendChild(b);
+    });
+  }
+
+  function renderAdmin() {
+    renderAdminTabs();
+    var box = byId("setup-body");
+    if (!box) { return; }
+    box.replaceChildren();
+    switch (adminTab) {
+      case "identity": panelIdentity(box); break;
+      case "skills": panelSkills(box); break;
+      case "experience": panelExperience(box); break;
+      case "education": panelEducation(box); break;
+      case "projects": panelProjects(box); break;
+      case "contact": panelContact(box); break;
+      case "system": panelSystem(box); break;
+    }
+    if (!saving) {
+      setMsg(dirty ? "UNSAVED CHANGES — F10 TO SAVE" : "");
+    }
+  }
+
+  /* ---------- Data tools ---------- */
+  function exportCv() {
+    var blob = new Blob([serialize(state)], { type: "application/json" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "cv.json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    setMsg("EXPORTED cv.json");
+  }
+
+  var fileInput = document.createElement("input");
+  fileInput.type = "file";
+  fileInput.accept = ".json,application/json";
+  fileInput.addEventListener("change", function () {
+    var f = fileInput.files && fileInput.files[0];
+    fileInput.value = "";
+    if (!f) { return; }
+    var reader = new FileReader();
+    reader.onload = function () {
+      var parsed;
+      try {
+        parsed = JSON.parse(String(reader.result));
+      } catch (err) {
+        setMsg("IMPORT FAILED — NOT VALID JSON");
+        return;
+      }
+      if (!validateShape(parsed)) {
+        setMsg("IMPORT REJECTED — INVALID cv.json SHAPE");
+        return;
+      }
+      state = normalize(parsed);
+      dirty = true;
+      superseded = true;
+      renderAll();
+      renderAdmin();
+      focusAdminCtl("import");
+      setMsg("IMPORTED — UNSAVED CHANGES — F10 TO SAVE");
+    };
+    reader.onerror = function () { setMsg("IMPORT FAILED — COULD NOT READ FILE"); };
+    reader.readAsText(f);
+  });
+
+  function revertCv() {
+    if (!window.confirm("Discard unsaved edits and restore the last loaded cv.json?")) { return; }
+    state = clone(lastLoaded);
+    dirty = false;
+    renderAll();
+    renderAdmin();
+    focusAdminCtl("revert");
+    setMsg("REVERTED — LAST LOADED cv.json RESTORED");
+  }
+
+  /* ---------- GitHub commit (only ever talks to api.github.com) ---------- */
+  function commit() {
+    if (saving) { return; }
+    var owner = gh.owner.trim(), repo = gh.repo.trim(), branch = gh.branch.trim(),
+        path = gh.path.trim(), token = gh.token.trim();
+    if (!token) {
+      adminTab = "system";
+      renderAdmin();
+      focusAdminCtl("gh-token");
+      setMsg("NO TOKEN — SET ONE IN SYSTEM");
+      return;
+    }
+    if (!owner || !repo || !branch || !path) {
+      adminTab = "system";
+      renderAdmin();
+      focusAdminCtl("gh-owner");
+      setMsg("INCOMPLETE TARGET — CHECK SYSTEM SETTINGS");
+      return;
+    }
+    saving = true;
+    setMsg("WRITING TO DISK…");
+    var base = "https://api.github.com/repos/" + encodeURIComponent(owner) + "/" +
+      encodeURIComponent(repo) + "/contents/" +
+      path.split("/").map(encodeURIComponent).join("/");
+    var headers = {
+      "Authorization": "Bearer " + token,
+      "Accept": "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28"
+    };
+    /* Snapshot the payload once: only THIS content is being written.
+       Edits typed while the request is in flight stay unsaved. */
+    var snapshot = serialize(state);
+    var content = b64utf8(snapshot);
+
+    function mkErr(status) { return { qb: true, status: status }; }
+    function getSha() {
+      return fetch(base + "?ref=" + encodeURIComponent(branch), { headers: headers }).then(function (r) {
+        if (r.status === 404) { return null; } /* new file */
+        if (!r.ok) { throw mkErr(r.status); }
+        return r.json().then(function (j) {
+          return j && typeof j.sha === "string" ? j.sha : null;
+        });
+      });
+    }
+    function putFile(sha) {
+      var payload = { message: "cv: update via setup utility", content: content, branch: branch };
+      if (sha) { payload.sha = sha; }
+      return fetch(base, {
+        method: "PUT",
+        headers: Object.assign({ "Content-Type": "application/json" }, headers),
+        body: JSON.stringify(payload)
+      });
+    }
+
+    getSha().then(function (sha) {
+      return putFile(sha);
+    }).then(function (r) {
+      if (r.ok) { return "ok"; }
+      if (r.status === 409 || r.status === 422) {
+        /* sha conflict — re-GET once and retry */
+        return getSha().then(putFile).then(function (r2) {
+          if (r2.ok) { return "ok"; }
+          if (r2.status === 409 || r2.status === 422) { throw { qb: true, conflict: true }; }
+          throw mkErr(r2.status);
+        });
+      }
+      throw mkErr(r.status);
+    }).then(function () {
+      /* What is on GitHub now is the snapshot, not necessarily state. */
+      lastLoaded = JSON.parse(snapshot);
+      superseded = true;
+      if (serialize(state) === snapshot) {
+        dirty = false;
+        setMsg("WRITE OK — LIVE IN ~1 MIN (PAGES DEPLOY)");
+      } else {
+        /* Keystrokes landed mid-flight: they are NOT committed. */
+        setMsg("WRITE OK — NEW UNSAVED CHANGES — F10 TO SAVE");
+      }
+    }).catch(function (err) {
+      var m = "OFFLINE — COULD NOT REACH GITHUB";
+      if (err && err.qb) {
+        if (err.conflict) { m = "WRITE CONFLICT — RELOAD PAGE AND RETRY"; }
+        else if (err.status === 401) { m = "AUTH FAILED — CHECK TOKEN"; }
+        else if (err.status === 403) { m = "FORBIDDEN — TOKEN LACKS CONTENTS: WRITE OR RATE-LIMITED"; }
+        else if (err.status === 404) { m = "REPO OR PATH NOT FOUND — CHECK SETTINGS"; }
+        else { m = "WRITE FAILED — HTTP " + err.status; }
+      }
+      setMsg(m);
+    }).then(function () {
+      saving = false;
+    });
+  }
+
+  /* ================================================================
+     Wiring
+     ================================================================ */
+  Array.prototype.forEach.call(document.querySelectorAll("[data-open]"), function (btn) {
+    btn.addEventListener("click", function () {
+      var target = btn.getAttribute("data-open");
+      var idx = viewOrder.indexOf(target);
+      if (idx > -1) { setSel(idx, false); }
+      show(target);
+    });
+    btn.addEventListener("mouseenter", function () {
+      var idx = menuRows.indexOf(btn);
+      if (idx > -1) { setSel(idx, false); }
+    });
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-act]"), function (btn) {
+    btn.addEventListener("click", function () {
+      var act = btn.getAttribute("data-act");
+      if (act === "menu" || act === "exit") { show("menu"); }
+      else if (act === "theme") { toggleTheme(); }
+      else if (act === "save") { commit(); }
+    });
+  });
+
+  if (themeBtn) { themeBtn.addEventListener("click", toggleTheme); }
+
+  document.addEventListener("keydown", function (e) {
+    var t = e.target;
+    var inField = t && t.tagName && (
+      t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" || t.isContentEditable
+    );
+
+    /* F10 saves from anywhere in admin, even while typing in a field. */
+    if (e.key === "F10") {
+      if (current === "admin") {
+        e.preventDefault();
+        commit();
+      }
+      return;
+    }
+    if (inField) {
+      /* No navigation shortcuts while typing. ESC leaves admin (per spec)
+         after releasing the field. */
+      if (e.key === "Escape") {
+        t.blur();
+        if (current === "admin") { show("menu"); }
+      }
+      return;
+    }
+    if (e.altKey || e.ctrlKey || e.metaKey) { return; }
+
+    if (e.key >= "1" && e.key <= "6") {
+      var idx = e.key.charCodeAt(0) - 49;
+      setSel(idx, false);
+      show(viewOrder[idx]);
+      return;
+    }
+
+    switch (e.key) {
+      case "m":
+      case "M":
+        show("menu");
+        break;
+      case "t":
+      case "T":
+        toggleTheme();
+        break;
+      case "Escape":
+        if (current !== "menu") { show("menu"); }
+        break;
+      case "ArrowDown":
+        if (current === "menu") {
+          e.preventDefault();
+          setSel(sel + 1, true);
+        }
+        break;
+      case "ArrowUp":
+        if (current === "menu") {
+          e.preventDefault();
+          setSel(sel - 1, true);
+        }
+        break;
+      case "Enter":
+        if (current === "menu") {
+          var ae = document.activeElement;
+          /* If a button or link has focus, its native click handles Enter. */
+          if (!ae || (ae.tagName !== "BUTTON" && ae.tagName !== "A")) {
+            var row = menuRows[sel];
+            if (row) { row.click(); }
+          }
+        }
+        break;
+    }
+  });
+
+  window.addEventListener("beforeunload", function (e) {
+    if (dirty) {
+      e.preventDefault();
+      e.returnValue = "";
+    }
+  });
+
+  window.addEventListener("hashchange", function () { applyHash(false); });
+
+  /* ================================================================
+     Init
+     ================================================================ */
+  renderAll();
+  setSel(0, false);
+  applyTheme(root.classList.contains("light"));
+
+  var tbDate = byId("tb-date");
+  if (tbDate) {
+    var MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    var now = new Date();
+    tbDate.textContent = now.getDate() + " " + MONTHS[now.getMonth()] + " " + now.getFullYear();
+  }
+
+  applyHash(true);
+
+  /* Same-origin refresh from cv.json; silently keep inline data on failure. */
+  try {
+    fetch("cv.json", { cache: "no-store" }).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).then(function (data) {
+      /* Once the operator has committed or imported, this late response
+         is stale — it must never clobber authored state or REVERT data. */
+      if (superseded || !data || typeof data !== "object") { return; }
+      var norm = normalize(data);
+      lastLoaded = clone(norm);
+      if (!dirty && JSON.stringify(norm) !== JSON.stringify(state)) {
+        state = norm;
+        renderAll();
+        if (current === "admin") {
+          /* Rebuilding the panel would destroy a focused field; capture
+             the focused control and restore it on the rebuilt DOM. */
+          var sb = byId("setup-body");
+          var ae = document.activeElement;
+          var mk = null, lbl = null;
+          if (sb && ae && sb.contains(ae)) {
+            mk = ae.getAttribute("data-ctl");
+            lbl = ae.getAttribute("aria-label");
+          }
+          renderAdmin();
+          var nb = byId("setup-body");
+          var again = null;
+          if (nb && mk) { again = nb.querySelector('[data-ctl="' + mk + '"]'); }
+          if (nb && !again && lbl) {
+            again = nb.querySelector('[aria-label="' + lbl.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"]');
+          }
+          if (again) { again.focus(); }
+        }
+      }
+    }).catch(function () { /* file://, preview, offline: keep inline data */ });
+  } catch (e) { /* no fetch: keep inline data */ }
+})();
+</script>
+</body>
+</html>
