@@ -308,6 +308,7 @@ a:hover, a:focus-visible {
   margin: 2rem 0 0.7rem;
 }
 .subhead[hidden] { display: none; }
+#view-cv section[hidden] { display: none !important; }
 
 .kv {
   display: grid;
@@ -748,7 +749,7 @@ a:hover, a:focus-visible {
         <span>PRESS <button type="button" class="key" data-act="top" aria-label="Scroll to top (M)">[M]</button> TOP</span>
         <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> DISPLAY MODE</span>
         <span><button type="button" class="key" data-act="admin" aria-label="Open setup console (S)">[S]</button> SETUP</span>
-        <span>[1]–[6] REPORTS</span>
+        <span id="keys-hint">[1]–[6] REPORTS</span>
       </footer>
     </div>
 
@@ -1178,12 +1179,52 @@ a:hover, a:focus-visible {
     renderSkills();
     renderProjects();
     renderContact();
+    updateSectionVisibility();
   }
 
   /* ================================================================
      One-page navigation, admin view, hash routing
      ================================================================ */
   var SECTIONS = ["about", "experience", "education", "skills", "projects", "contact"];
+
+  function sectionHasContent(name) {
+    switch (name) {
+      case "about":
+        return !!(state.about || state.name || state.role || state.location || state.status);
+      case "experience": return state.experience.length > 0;
+      case "education": return state.education.length > 0;
+      case "skills":
+        return state.skills.some(function (g) { return !!g.group || g.items.length > 0; });
+      case "projects": return state.projects.length > 0;
+      case "contact": return state.contact.length > 0;
+    }
+    return true;
+  }
+
+  function visibleSections() {
+    return SECTIONS.filter(sectionHasContent);
+  }
+
+  /* Empty sections vanish entirely (title included); the rest renumber 01… */
+  function updateSectionVisibility() {
+    var n = 0;
+    SECTIONS.forEach(function (name) {
+      var sec = byId("view-" + name);
+      if (!sec) { return; }
+      var has = sectionHasContent(name);
+      sec.hidden = !has;
+      if (has) {
+        n += 1;
+        var sys = sec.querySelector(".rpt-sys");
+        if (sys) { sys.textContent = "REPORT " + pad2(n); }
+      }
+    });
+    var hint = byId("keys-hint");
+    if (hint) {
+      hint.hidden = n === 0;
+      hint.textContent = n === 1 ? "[1] REPORT" : "[1]–[" + n + "] REPORTS";
+    }
+  }
   var headingIds = {
     about: "h-about", experience: "h-experience", education: "h-education",
     skills: "h-skills", projects: "h-projects", contact: "h-contact"
@@ -1203,7 +1244,7 @@ a:hover, a:focus-visible {
   function scrollToSection(name, opts) {
     opts = opts || {};
     var sec = byId("view-" + name);
-    if (!sec) { return; }
+    if (!sec || sec.hidden) { return; }
     if (opts.focus !== false) {
       var hd = byId(headingIds[name]);
       if (hd) {
@@ -2020,7 +2061,8 @@ a:hover, a:focus-visible {
 
     if (e.key >= "1" && e.key <= "6") {
       e.preventDefault();
-      jumpToSection(SECTIONS[e.key.charCodeAt(0) - 49]);
+      var target = visibleSections()[e.key.charCodeAt(0) - 49];
+      if (target) { jumpToSection(target); }
       return;
     }
 
