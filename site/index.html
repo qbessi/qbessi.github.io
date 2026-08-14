@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Qbessi</title>
-<meta name="description" content="Qbessi — London, UK.">
+<meta name="description" content="Qbessi.">
 <link rel="canonical" href="https://qbessi.com/">
 <meta property="og:title" content="Qbessi">
-<meta property="og:description" content="Qbessi — London, UK.">
+<meta property="og:description" content="Qbessi.">
 <meta property="og:url" content="https://qbessi.com/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="theme-color" content="#000000">
@@ -649,8 +649,8 @@ a:hover, a:focus-visible {
 
   <noscript>
     <div class="noscript">
-      <p class="nh">QBESSI — LONDON, UK</p>
-      <p>WEB: <a href="https://qbessi.com">qbessi.com</a> · MAIL: <a href="mailto:hello@qbessi.com">hello@qbessi.com</a> · GIT: <a href="https://github.com/qbessi">github.com/qbessi</a></p>
+      <p class="nh">QBESSI</p>
+      <p>WEB: <a href="https://qbessi.com">qbessi.com</a></p>
       <p class="nd">Enable JavaScript for the full terminal.</p>
     </div>
   </noscript>
@@ -659,7 +659,7 @@ a:hover, a:focus-visible {
 
     <!-- ============ CV — ONE CONTINUOUS PRINTOUT ============ -->
     <div class="view" id="view-cv">
-      <h1 class="sr-only" id="hero-h1">Qbessi — London, UK</h1>
+      <h1 class="sr-only" id="hero-h1">Qbessi</h1>
 
       <div class="banner-wrap">
         <pre class="banner" aria-hidden="true">
@@ -671,7 +671,7 @@ a:hover, a:focus-visible {
  ╚══▀▀═╝  ╚═════╝  ╚══════╝ ╚══════╝ ╚══════╝ ╚═╝</pre>
       </div>
 
-      <p class="subline" id="hero-subline">London, UK</p>
+      <p class="subline" id="hero-subline" hidden></p>
       <p class="status" id="hero-status" hidden></p>
 
       <!-- ============ ABOUT ============ -->
@@ -784,83 +784,17 @@ a:hover, a:focus-visible {
      this; a same-origin fetch of cv.json then takes over if present.
      ================================================================ */
   var DEFAULT_CV = {
-    "name": "Qbessi",
+    "name": "",
     "role": "",
-    "location": "London, UK",
+    "location": "",
     "status": "",
-    "about": "Based in London, building fast, accessible interfaces with modern web technologies. I care about performance, typography, and the small details. (placeholder)",
-    "skills": [
-      { "group": "Languages", "items": ["HTML", "CSS", "JavaScript", "TypeScript (placeholder)"] },
-      { "group": "Frameworks", "items": ["React (placeholder)", "Astro (placeholder)", "Tailwind (placeholder)"] },
-      { "group": "Tools", "items": ["Git", "Node.js (placeholder)", "Vite (placeholder)"] }
-    ],
-    "experience": [
-      {
-        "role": "Front End Developer",
-        "company": "Company A (placeholder)",
-        "location": "London",
-        "start": "2023",
-        "end": "Present",
-        "bullets": [
-          "Shipped and maintained customer-facing web features across a modern front end stack. (placeholder)",
-          "Improved page performance and accessibility scores across key user journeys. (placeholder)"
-        ]
-      },
-      {
-        "role": "Junior Front End Developer",
-        "company": "Company B (placeholder)",
-        "location": "London",
-        "start": "2021",
-        "end": "2023",
-        "bullets": [
-          "Built UI components and internal tooling with a small product team. (placeholder)"
-        ]
-      }
-    ],
-    "education": [
-      {
-        "degree": "BSc (Hons) Computer Science",
-        "school": "",
-        "start": "",
-        "end": ""
-      },
-      {
-        "degree": "MSc Information Security",
-        "school": "",
-        "start": "",
-        "end": ""
-      },
-      {
-        "degree": "PhD Information Security",
-        "school": "",
-        "start": "",
-        "end": ""
-      },
-      {
-        "degree": "BSc Biomedical Science",
-        "school": "",
-        "start": "",
-        "end": ""
-      }
-    ],
-    "projects": [
-      {
-        "name": "qbessi.com",
-        "desc": "This site: a terminal-style one-page CV.",
-        "stack": "HTML / CSS / JS",
-        "url": "https://qbessi.com"
-      },
-      {
-        "name": "Project Two (placeholder)",
-        "desc": "A small tool or experiment worth one line. (placeholder)",
-        "stack": "",
-        "url": ""
-      }
-    ],
+    "about": "",
+    "skills": [],
+    "experience": [],
+    "education": [],
+    "projects": [],
     "contact": [
-      { "label": "web", "value": "qbessi.com", "href": "https://qbessi.com" },
-      { "label": "email", "value": "hello@qbessi.com (placeholder)", "href": "mailto:hello@qbessi.com" },
-      { "label": "github", "value": "github.com/qbessi (placeholder)", "href": "https://github.com/qbessi" }
+      { "label": "web", "value": "qbessi.com", "href": "https://qbessi.com" }
     ],
     "passcodeHash": "06e55b633481f7bb072957eabcf110c972e86691c3cfedabe088024bffe42f23"
   };
