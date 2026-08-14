@@ -6,32 +6,7 @@
   "about": "",
   "skills": [],
   "experience": [],
-  "education": [
-    {
-      "degree": "BSc Biomedical Science",
-      "school": "",
-      "start": "",
-      "end": ""
-    },
-    {
-      "degree": "PhD Information Security",
-      "school": "",
-      "start": "",
-      "end": ""
-    },
-    {
-      "degree": "MSc Information Security",
-      "school": "",
-      "start": "",
-      "end": ""
-    },
-    {
-      "degree": "BSc (Hons) Computer Science",
-      "school": "",
-      "start": "",
-      "end": ""
-    }
-  ],
+  "education": [],
   "projects": [],
   "contact": [
     {
