@@ -308,13 +308,6 @@ a:hover, a:focus-visible {
   margin: 2rem 0 0.7rem;
 }
 .subhead[hidden] { display: none; }
-.stars {
-  text-align: center;
-  color: var(--faint);
-  letter-spacing: 2ch;
-  margin: 1.9rem 0;
-  font-size: 0.8rem;
-}
 
 .kv {
   display: grid;
@@ -639,7 +632,6 @@ a:hover, a:focus-visible {
   .entry { break-inside: avoid; page-break-inside: avoid; }
   .rpt-head { break-after: avoid; page-break-after: avoid; }
   a { color: #000000; text-decoration-color: #000000; }
-  .stars { margin: 1rem 0; }
 }
 </style>
 </head>
@@ -692,7 +684,6 @@ a:hover, a:focus-visible {
         <p class="prose" id="about-prose"></p>
       </section>
 
-      <p class="stars" aria-hidden="true">*****</p>
 
       <!-- ============ EXPERIENCE ============ -->
       <section id="view-experience" aria-labelledby="h-experience">
@@ -705,7 +696,6 @@ a:hover, a:focus-visible {
         <div id="exp-list"></div>
       </section>
 
-      <p class="stars" aria-hidden="true">*****</p>
 
       <!-- ============ EDUCATION ============ -->
       <section id="view-education" aria-labelledby="h-education">
@@ -717,7 +707,6 @@ a:hover, a:focus-visible {
         <div id="edu-list"></div>
       </section>
 
-      <p class="stars" aria-hidden="true">*****</p>
 
       <!-- ============ SKILLS ============ -->
       <section id="view-skills" aria-labelledby="h-skills">
@@ -731,7 +720,6 @@ a:hover, a:focus-visible {
         <p class="aside-note">INVENTORY AUDITED CONTINUOUSLY. NO COBOL. YET.</p>
       </section>
 
-      <p class="stars" aria-hidden="true">*****</p>
 
       <!-- ============ PROJECTS ============ -->
       <section id="view-projects" aria-labelledby="h-projects">
@@ -743,7 +731,6 @@ a:hover, a:focus-visible {
         <div id="projects-list"></div>
       </section>
 
-      <p class="stars" aria-hidden="true">*****</p>
 
       <!-- ============ CONTACT ============ -->
       <section id="view-contact" aria-labelledby="h-contact">
@@ -922,11 +909,6 @@ a:hover, a:focus-visible {
     }
     return btoa(bin);
   }
-  function stars() {
-    var p = el("p", "stars", "*****");
-    p.setAttribute("aria-hidden", "true");
-    return p;
-  }
 
   /* Coerce any parsed object into the full cv shape with safe defaults. */
   function normalize(cv) {
@@ -1104,7 +1086,6 @@ a:hover, a:focus-visible {
     if (!box) { return; }
     box.replaceChildren();
     state.experience.forEach(function (x, i) {
-      if (i > 0) { box.appendChild(stars()); }
       box.appendChild(entryNode(
         pad2(i + 1),
         joinParts([x.role, x.company], " — "),
@@ -1120,7 +1101,6 @@ a:hover, a:focus-visible {
     if (!edu) { return; }
     edu.replaceChildren();
     state.education.forEach(function (x, i) {
-      if (i > 0) { edu.appendChild(stars()); }
       edu.appendChild(entryNode(
         pad2(i + 1),
         x.degree,
@@ -1158,7 +1138,6 @@ a:hover, a:focus-visible {
     if (!box) { return; }
     box.replaceChildren();
     state.projects.forEach(function (p, i) {
-      if (i > 0) { box.appendChild(stars()); }
       box.appendChild(entryNode(
         pad2(i + 1),
         p.name,
