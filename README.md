@@ -18,7 +18,7 @@ site/               ← the deployed web root (everything else in the repo stays
 
 ## Editing content — the admin console
 
-Open the site, choose **6. ADMIN SETUP** (or press `6`, or visit `qbessi.com/#admin`). Every field of the CV is editable there, and edits preview live.
+Open the site and press `S` (or use the **[S] SETUP** button in the top bar, or visit `qbessi.com/#admin`). The console asks for a passcode first — initially `operator`; change or remove it in the **SYSTEM** panel. The passcode is stored only as a SHA-256 hash and is a courtesy lock: the repository token below is the real protection. Once unlocked, every field of the CV is editable there, and edits preview live.
 
 To make edits publish for real, the console commits `site/cv.json` back to this repo via the GitHub API:
 
@@ -32,7 +32,7 @@ No token = the console is a read-only demo, which is all any visitor can do.
 
 ## Keys
 
-`1–5` sections · `6` admin · `M` menu · `T` CRT / hard-copy mode · arrows + `Enter` navigate the menu · `F10` save (in admin)
+`1–6` jump to sections · `S` admin setup · `M` top · `T` display mode · `F10` save (in admin)
 
 ## Local preview
 

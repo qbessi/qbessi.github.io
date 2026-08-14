@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Qbessi — Front End Developer</title>
-<meta name="description" content="Qbessi — Front End Developer, London, UK. Actively seeking a new role.">
+<title>Qbessi</title>
+<meta name="description" content="Qbessi — London, UK.">
 <link rel="canonical" href="https://qbessi.com/">
-<meta property="og:title" content="Qbessi — Front End Developer">
-<meta property="og:description" content="Qbessi — Front End Developer, London, UK. Actively seeking a new role.">
+<meta property="og:title" content="Qbessi">
+<meta property="og:description" content="Qbessi — London, UK.">
 <meta property="og:url" content="https://qbessi.com/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="theme-color" content="#000000">
@@ -185,6 +185,11 @@ a:hover, a:focus-visible {
 }
 .tb-id strong { color: var(--bright); font-weight: 700; }
 .tb-dim { color: var(--dim); }
+.tb-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 .theme-btn {
   border: 1px solid var(--rule);
   padding: 0.25rem 0.7rem;
@@ -199,9 +204,9 @@ a:hover, a:focus-visible {
   text-shadow: none;
 }
 
-/* --- Views --- */
+/* --- Views (the one-page CV vs. the admin console) --- */
 .view[hidden] { display: none; }
-.view:focus, .rpt-title:focus, .setup-title:focus { outline: none; }
+.rpt-title:focus, .setup-title:focus { outline: none; }
 
 /* --- Hero / banner --- */
 .banner-wrap {
@@ -241,68 +246,6 @@ a:hover, a:focus-visible {
   text-align: center;
 }
 .status[hidden], .subline[hidden] { display: none; }
-
-/* --- Main menu --- */
-.menu {
-  margin: 2.6rem auto 0;
-  max-width: 58ch;
-}
-.menu-cap {
-  color: var(--dim);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.mrow {
-  display: flex;
-  align-items: baseline;
-  gap: 1ch;
-  width: 100%;
-  text-align: left;
-  padding: 0.42rem 0.8rem;
-  letter-spacing: 0.06em;
-}
-.mnum { color: var(--dim); }
-.mname { font-weight: 700; }
-.mlead {
-  flex: 1;
-  overflow: hidden;
-  white-space: nowrap;
-  color: var(--faint);
-  min-width: 2ch;
-}
-.mlead::before {
-  content: "························································";
-  letter-spacing: 0.4ch;
-}
-.mdesc {
-  color: var(--dim);
-  font-size: 0.66rem;
-  letter-spacing: 0.16em;
-}
-.mrow.sel, .mrow:hover, .mrow:focus-visible {
-  background: var(--inv-bg);
-  color: var(--inv-ink);
-  text-shadow: none;
-}
-.mrow.sel > span, .mrow:hover > span, .mrow:focus-visible > span { color: inherit; }
-.mrow:focus-visible { outline-offset: 2px; }
-
-.prompt {
-  margin-top: 2.4rem;
-  color: var(--dim);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-}
-.cursor {
-  display: inline-block;
-  width: 0.62em;
-  height: 1.05em;
-  background: var(--ink);
-  vertical-align: text-bottom;
-  margin-left: 0.2ch;
-}
 
 /* --- Report header / footer --- */
 .rpt-head {
@@ -633,7 +576,6 @@ a:hover, a:focus-visible {
 
 /* --- Responsive --- */
 @media (max-width: 620px) {
-  .mdesc { display: none; }
   .kv { grid-template-columns: 1fr; gap: 0.1rem 0; }
   .kv dt { margin-top: 0.7rem; }
   .kv dt:first-child { margin-top: 0; }
@@ -652,20 +594,11 @@ a:hover, a:focus-visible {
 
 /* --- Motion (all animation lives here) --- */
 @media (prefers-reduced-motion: no-preference) {
-  .cursor { animation: qb-blink 1.1s steps(1, end) infinite; }
-  @keyframes qb-blink { 50% { opacity: 0; } }
-
   html:not(.light) .screen { animation: qb-flicker 8s linear infinite; }
   @keyframes qb-flicker {
     0%, 95.8%, 96.6%, 98.2%, 100% { opacity: 1; }
     96.2% { opacity: 0.94; }
     97.9% { opacity: 0.975; }
-  }
-
-  .view.enter { animation: qb-formfeed 0.32s steps(14, end); }
-  @keyframes qb-formfeed {
-    from { clip-path: inset(0 0 100% 0); }
-    to { clip-path: inset(0 0 0 0); }
   }
 }
 
@@ -690,12 +623,11 @@ a:hover, a:focus-visible {
   }
   body::before, body::after,
   html.light body::before, html.light body::after { display: none; }
-  .topbar, .menu-cap, .menu, .prompt, .rpt-foot, .colophon,
+  .topbar, .rpt-foot, .colophon,
   #view-admin { display: none !important; }
   .noscript { border-color: #000000; }
-  .view[hidden] { display: block; }
-  .view, .screen, .cursor { animation: none !important; }
-  .screen { width: auto; padding: 0; }
+  .view[hidden] { display: block; } /* CV prints even if admin was open */
+  .screen { animation: none !important; width: auto; padding: 0; }
   .banner-wrap { overflow: visible; margin: 0 0 0.6rem; }
   .banner { font-size: 9px; color: #000000; text-shadow: none; }
   .status, .chip {
@@ -716,13 +648,15 @@ a:hover, a:focus-visible {
 <div class="screen">
   <header class="topbar">
     <p class="tb-id"><strong>QBESSI.CRT</strong><span class="tb-dim"> · TTY1 · <span id="tb-date">ONLINE</span></span></p>
-    <button type="button" id="theme-btn" class="theme-btn" aria-pressed="false" aria-label="Toggle display mode (T)">[T] DISPLAY: CRT</button>
+    <div class="tb-btns">
+      <button type="button" id="setup-btn" class="theme-btn" data-act="admin" aria-expanded="false" aria-label="Open setup console (S)">[S] SETUP</button>
+      <button type="button" id="theme-btn" class="theme-btn" aria-pressed="false" aria-label="Toggle display mode (T)">[T] DISPLAY: CRT</button>
+    </div>
   </header>
 
   <noscript>
     <div class="noscript">
-      <p class="nh">QBESSI — FRONT END DEVELOPER — LONDON, UK</p>
-      <p>* ACTIVELY SEEKING A NEW ROLE *</p>
+      <p class="nh">QBESSI — LONDON, UK</p>
       <p>WEB: <a href="https://qbessi.com">qbessi.com</a> · MAIL: <a href="mailto:hello@qbessi.com">hello@qbessi.com</a> · GIT: <a href="https://github.com/qbessi">github.com/qbessi</a></p>
       <p class="nd">Enable JavaScript for the full terminal.</p>
     </div>
@@ -730,9 +664,9 @@ a:hover, a:focus-visible {
 
   <main id="main">
 
-    <!-- ============ MENU ============ -->
-    <section class="view" id="view-menu" tabindex="-1" aria-label="Main menu">
-      <h1 class="sr-only" id="hero-h1">Qbessi — Front End Developer, London, UK</h1>
+    <!-- ============ CV — ONE CONTINUOUS PRINTOUT ============ -->
+    <div class="view" id="view-cv">
+      <h1 class="sr-only" id="hero-h1">Qbessi — London, UK</h1>
 
       <div class="banner-wrap">
         <pre class="banner" aria-hidden="true">
@@ -744,112 +678,95 @@ a:hover, a:focus-visible {
  ╚══▀▀═╝  ╚═════╝  ╚══════╝ ╚══════╝ ╚══════╝ ╚═╝</pre>
       </div>
 
-      <p class="subline" id="hero-subline">Front End Developer — London, UK</p>
-      <p class="status" id="hero-status">* ACTIVELY SEEKING A NEW ROLE *</p>
+      <p class="subline" id="hero-subline">London, UK</p>
+      <p class="status" id="hero-status" hidden></p>
 
-      <nav class="menu" aria-label="Sections">
-        <p class="menu-cap">SELECT WITH ↑/↓ + ENTER, OR PRESS 1–6</p>
-        <button type="button" class="mrow" data-open="about"><span class="mnum">[1]</span><span class="mname">ABOUT</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">PROFILE</span></button>
-        <button type="button" class="mrow" data-open="experience"><span class="mnum">[2]</span><span class="mname">EXPERIENCE</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">EMPLOYMENT RECORD</span></button>
-        <button type="button" class="mrow" data-open="skills"><span class="mnum">[3]</span><span class="mname">SKILLS</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">TECH INVENTORY</span></button>
-        <button type="button" class="mrow" data-open="projects"><span class="mnum">[4]</span><span class="mname">PROJECTS</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">SELECTED WORKS</span></button>
-        <button type="button" class="mrow" data-open="contact"><span class="mnum">[5]</span><span class="mname">CONTACT</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">CHANNELS</span></button>
-        <button type="button" class="mrow" data-open="admin"><span class="mnum">[6]</span><span class="mname">ADMIN SETUP</span><span class="mlead" aria-hidden="true"></span><span class="mdesc">OPERATOR ONLY</span></button>
-      </nav>
+      <!-- ============ ABOUT ============ -->
+      <section id="view-about" aria-labelledby="h-about">
+        <header class="rpt-head">
+          <h2 class="rpt-title" id="h-about" tabindex="-1"><span class="rpt-sys">REPORT 01</span><strong>ABOUT</strong></h2>
+          <span class="rpt-page">PAGE 1/1</span>
+        </header>
 
-      <p class="prompt" aria-hidden="true">&gt; READY — AWAITING INPUT <span class="cursor"></span></p>
+        <dl class="kv" id="about-kv"></dl>
+        <p class="prose" id="about-prose"></p>
+      </section>
 
-      <footer class="rpt-foot">
-        <span>PRESS <button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TO TOGGLE DISPLAY MODE</span>
-      </footer>
-    </section>
+      <p class="stars" aria-hidden="true">*****</p>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="view page" id="view-about" tabindex="-1" hidden aria-labelledby="h-about">
-      <header class="rpt-head">
-        <h2 class="rpt-title" id="h-about" tabindex="-1"><span class="rpt-sys">REPORT 01</span><strong>ABOUT</strong></h2>
-        <span class="rpt-page">PAGE 1/1</span>
-      </header>
+      <!-- ============ EXPERIENCE ============ -->
+      <section id="view-experience" aria-labelledby="h-experience">
+        <header class="rpt-head">
+          <h2 class="rpt-title" id="h-experience" tabindex="-1"><span class="rpt-sys">REPORT 02</span><strong>EXPERIENCE</strong></h2>
+          <span class="rpt-page">PAGE 1/1</span>
+        </header>
 
-      <dl class="kv" id="about-kv"></dl>
-      <p class="prose" id="about-prose"></p>
+        <h3 class="subhead" id="exp-subhead">EMPLOYMENT RECORD</h3>
+        <div id="exp-list"></div>
+      </section>
 
-      <footer class="rpt-foot">
-        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
-        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
-      </footer>
-    </section>
+      <p class="stars" aria-hidden="true">*****</p>
 
-    <!-- ============ EXPERIENCE ============ -->
-    <section class="view page" id="view-experience" tabindex="-1" hidden aria-labelledby="h-experience">
-      <header class="rpt-head">
-        <h2 class="rpt-title" id="h-experience" tabindex="-1"><span class="rpt-sys">REPORT 02</span><strong>EXPERIENCE</strong></h2>
-        <span class="rpt-page">PAGE 1/1</span>
-      </header>
+      <!-- ============ EDUCATION ============ -->
+      <section id="view-education" aria-labelledby="h-education">
+        <header class="rpt-head">
+          <h2 class="rpt-title" id="h-education" tabindex="-1"><span class="rpt-sys">REPORT 03</span><strong>EDUCATION — ACADEMIC RECORD</strong></h2>
+          <span class="rpt-page">PAGE 1/1</span>
+        </header>
 
-      <h3 class="subhead" id="exp-subhead">EMPLOYMENT RECORD</h3>
-      <div id="exp-list"></div>
+        <div id="edu-list"></div>
+      </section>
 
-      <h3 class="subhead" id="edu-subhead">EDUCATION</h3>
-      <div id="edu-list"></div>
+      <p class="stars" aria-hidden="true">*****</p>
 
-      <footer class="rpt-foot">
-        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
-        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
-      </footer>
-    </section>
+      <!-- ============ SKILLS ============ -->
+      <section id="view-skills" aria-labelledby="h-skills">
+        <header class="rpt-head">
+          <h2 class="rpt-title" id="h-skills" tabindex="-1"><span class="rpt-sys">REPORT 04</span><strong>SKILLS</strong></h2>
+          <span class="rpt-page">PAGE 1/1</span>
+        </header>
 
-    <!-- ============ SKILLS ============ -->
-    <section class="view page" id="view-skills" tabindex="-1" hidden aria-labelledby="h-skills">
-      <header class="rpt-head">
-        <h2 class="rpt-title" id="h-skills" tabindex="-1"><span class="rpt-sys">REPORT 03</span><strong>SKILLS</strong></h2>
-        <span class="rpt-page">PAGE 1/1</span>
-      </header>
+        <dl class="skills" id="skills-list"></dl>
 
-      <dl class="skills" id="skills-list"></dl>
+        <p class="aside-note">INVENTORY AUDITED CONTINUOUSLY. NO COBOL. YET.</p>
+      </section>
 
-      <p class="aside-note">INVENTORY AUDITED CONTINUOUSLY. NO COBOL. YET.</p>
+      <p class="stars" aria-hidden="true">*****</p>
 
-      <footer class="rpt-foot">
-        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
-        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
-      </footer>
-    </section>
+      <!-- ============ PROJECTS ============ -->
+      <section id="view-projects" aria-labelledby="h-projects">
+        <header class="rpt-head">
+          <h2 class="rpt-title" id="h-projects" tabindex="-1"><span class="rpt-sys">REPORT 05</span><strong>PROJECTS</strong></h2>
+          <span class="rpt-page">PAGE 1/1</span>
+        </header>
 
-    <!-- ============ PROJECTS ============ -->
-    <section class="view page" id="view-projects" tabindex="-1" hidden aria-labelledby="h-projects">
-      <header class="rpt-head">
-        <h2 class="rpt-title" id="h-projects" tabindex="-1"><span class="rpt-sys">REPORT 04</span><strong>PROJECTS</strong></h2>
-        <span class="rpt-page">PAGE 1/1</span>
-      </header>
+        <div id="projects-list"></div>
+      </section>
 
-      <div id="projects-list"></div>
+      <p class="stars" aria-hidden="true">*****</p>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="view-contact" aria-labelledby="h-contact">
+        <header class="rpt-head">
+          <h2 class="rpt-title" id="h-contact" tabindex="-1"><span class="rpt-sys">REPORT 06</span><strong>CONTACT</strong></h2>
+          <span class="rpt-page">PAGE 1/1</span>
+        </header>
+
+        <dl class="kv" id="contact-list"></dl>
+
+        <p class="aside-note">ALL CHANNELS MONITORED.</p>
+      </section>
 
       <footer class="rpt-foot">
-        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
-        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
+        <span>PRESS <button type="button" class="key" data-act="top" aria-label="Scroll to top (M)">[M]</button> TOP</span>
+        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> DISPLAY MODE</span>
+        <span><button type="button" class="key" data-act="admin" aria-label="Open setup console (S)">[S]</button> SETUP</span>
+        <span>[1]–[6] REPORTS</span>
       </footer>
-    </section>
+    </div>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="view page" id="view-contact" tabindex="-1" hidden aria-labelledby="h-contact">
-      <header class="rpt-head">
-        <h2 class="rpt-title" id="h-contact" tabindex="-1"><span class="rpt-sys">REPORT 05</span><strong>CONTACT</strong></h2>
-        <span class="rpt-page">PAGE 1/1</span>
-      </header>
-
-      <dl class="kv" id="contact-list"></dl>
-
-      <p class="aside-note">ALL CHANNELS MONITORED.</p>
-
-      <footer class="rpt-foot">
-        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
-        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
-      </footer>
-    </section>
-
-    <!-- ============ ADMIN SETUP ============ -->
-    <section class="view page" id="view-admin" tabindex="-1" hidden aria-labelledby="setup-title">
+    <!-- ============ ADMIN SETUP (separate view, passcode-gated) ============ -->
+    <section class="view" id="view-admin" hidden aria-labelledby="setup-title">
       <div class="setup">
         <h2 class="setup-title" id="setup-title" tabindex="-1">QBESSI SETUP UTILITY — v1.0</h2>
         <div class="setup-tabs" id="setup-tabs"></div>
@@ -863,11 +780,6 @@ a:hover, a:focus-visible {
 
         <p class="setup-demo">This console is public UI — without a repository token it is read-only. Changes commit to GitHub and go live after the Pages deploy.</p>
       </div>
-
-      <footer class="rpt-foot">
-        <span>PRESS <button type="button" class="key" data-act="menu" aria-label="Return to menu (M)">[M]</button> FOR MENU</span>
-        <span><button type="button" class="key" data-act="theme" aria-label="Toggle display mode (T)">[T]</button> TOGGLE DISPLAY MODE</span>
-      </footer>
     </section>
 
   </main>
@@ -885,10 +797,10 @@ a:hover, a:focus-visible {
      ================================================================ */
   var DEFAULT_CV = {
     "name": "Qbessi",
-    "role": "Front End Developer",
+    "role": "",
     "location": "London, UK",
-    "status": "Actively seeking a new role",
-    "about": "Front end developer based in London, building fast, accessible interfaces with modern web technologies. I care about performance, typography, and the small details. Currently looking for my next role. (placeholder)",
+    "status": "",
+    "about": "Based in London, building fast, accessible interfaces with modern web technologies. I care about performance, typography, and the small details. (placeholder)",
     "skills": [
       { "group": "Languages", "items": ["HTML", "CSS", "JavaScript", "TypeScript (placeholder)"] },
       { "group": "Frameworks", "items": ["React (placeholder)", "Astro (placeholder)", "Tailwind (placeholder)"] },
@@ -919,10 +831,28 @@ a:hover, a:focus-visible {
     ],
     "education": [
       {
-        "degree": "BSc Computer Science (placeholder)",
-        "school": "University (placeholder)",
-        "start": "2018",
-        "end": "2021"
+        "degree": "BSc (Hons) Computer Science",
+        "school": "",
+        "start": "",
+        "end": ""
+      },
+      {
+        "degree": "MSc Information Security",
+        "school": "",
+        "start": "",
+        "end": ""
+      },
+      {
+        "degree": "PhD Information Security",
+        "school": "",
+        "start": "",
+        "end": ""
+      },
+      {
+        "degree": "BSc Biomedical Science",
+        "school": "",
+        "start": "",
+        "end": ""
       }
     ],
     "projects": [
@@ -943,7 +873,8 @@ a:hover, a:focus-visible {
       { "label": "web", "value": "qbessi.com", "href": "https://qbessi.com" },
       { "label": "email", "value": "hello@qbessi.com (placeholder)", "href": "mailto:hello@qbessi.com" },
       { "label": "github", "value": "github.com/qbessi (placeholder)", "href": "https://github.com/qbessi" }
-    ]
+    ],
+    "passcodeHash": "06e55b633481f7bb072957eabcf110c972e86691c3cfedabe088024bffe42f23"
   };
 
   /* ================================================================
@@ -1028,7 +959,8 @@ a:hover, a:focus-visible {
       contact: list(cv.contact).map(function (c) {
         c = (c && typeof c === "object") ? c : {};
         return { label: str(c.label), value: str(c.value), href: str(c.href) };
-      })
+      }),
+      passcodeHash: str(cv.passcodeHash)
     };
   }
 
@@ -1054,6 +986,8 @@ a:hover, a:focus-visible {
     if (!Array.isArray(o.contact) || !o.contact.every(function (c) {
       return isRec(c) && isS(c.label) && isS(c.value) && isS(c.href);
     })) { return false; }
+    /* passcodeHash is optional (older files lack it), but must be a string. */
+    if ("passcodeHash" in o && !isS(o.passcodeHash)) { return false; }
     return true;
   }
 
@@ -1068,10 +1002,23 @@ a:hover, a:focus-visible {
      initial cv.json fetch must never win. */
   var superseded = false;
 
-  function setMsg(text) {
+  function setMsg(text, force) {
     var m = byId("save-msg");
-    /* Idempotent: identical text must not re-fire the live region. */
-    if (m && m.textContent !== text) { m.textContent = text; }
+    if (!m) { return; }
+    if (m.textContent === text) {
+      /* Idempotent: identical text must not re-fire the live region —
+         unless forced (a repeated ACCESS DENIED must be announced every
+         time): clear now, re-set in a later task so the region fires.
+         The emptiness check keeps a message written in the interim. */
+      if (force && text !== "") {
+        m.textContent = "";
+        window.setTimeout(function () {
+          if (m.textContent === "") { m.textContent = text; }
+        }, 50);
+      }
+      return;
+    }
+    m.textContent = text;
   }
   function touch() {
     dirty = true;
@@ -1113,7 +1060,7 @@ a:hover, a:focus-visible {
     if (h1) {
       var t = state.name || "Qbessi";
       if (state.role) { t += " — " + state.role; }
-      if (state.location) { t += ", " + state.location; }
+      if (state.location) { t += (state.role ? ", " : " — ") + state.location; }
       h1.textContent = t;
     }
     var sub = byId("hero-subline");
@@ -1154,41 +1101,35 @@ a:hover, a:focus-visible {
     var esub = byId("exp-subhead");
     if (esub) { esub.hidden = state.experience.length === 0; }
     var box = byId("exp-list");
-    if (box) {
-      box.replaceChildren();
-      state.experience.forEach(function (x, i) {
-        if (i > 0) { box.appendChild(stars()); }
-        box.appendChild(entryNode(
-          pad2(i + 1),
-          joinParts([x.role, x.company], " — "),
-          joinParts([x.location, period(x.start, x.end)], " · "),
-          x.bullets,
-          null
-        ));
-      });
-      /* Mockup fidelity: a ***** divider between the last employment
-         entry and the EDUCATION subsection. */
-      if (state.experience.length > 0 && state.education.length > 0) {
-        box.appendChild(stars());
-      }
-    }
-    var sub = byId("edu-subhead");
+    if (!box) { return; }
+    box.replaceChildren();
+    state.experience.forEach(function (x, i) {
+      if (i > 0) { box.appendChild(stars()); }
+      box.appendChild(entryNode(
+        pad2(i + 1),
+        joinParts([x.role, x.company], " — "),
+        joinParts([x.location, period(x.start, x.end)], " · "),
+        x.bullets,
+        null
+      ));
+    });
+  }
+
+  function renderEducation() {
     var edu = byId("edu-list");
-    var has = state.education.length > 0;
-    if (sub) { sub.hidden = !has; }
-    if (edu) {
-      edu.replaceChildren();
-      state.education.forEach(function (x, i) {
-        if (i > 0) { edu.appendChild(stars()); }
-        edu.appendChild(entryNode(
-          "ED",
-          x.degree,
-          joinParts([x.school, period(x.start, x.end)], " · "),
-          null,
-          null
-        ));
-      });
-    }
+    if (!edu) { return; }
+    edu.replaceChildren();
+    state.education.forEach(function (x, i) {
+      if (i > 0) { edu.appendChild(stars()); }
+      edu.appendChild(entryNode(
+        pad2(i + 1),
+        x.degree,
+        joinParts([x.school, period(x.start, x.end)], " · "),
+        null,
+        null,
+        "h3" /* Education has no h3 subhead; entries sit directly under h2 */
+      ));
+    });
   }
 
   function renderSkills() {
@@ -1254,79 +1195,135 @@ a:hover, a:focus-visible {
     renderHero();
     renderAbout();
     renderExperience();
+    renderEducation();
     renderSkills();
     renderProjects();
     renderContact();
   }
 
   /* ================================================================
-     Views, menu selection, hash routing
+     One-page navigation, admin view, hash routing
      ================================================================ */
-  var viewOrder = ["about", "experience", "skills", "projects", "contact", "admin"];
+  var SECTIONS = ["about", "experience", "education", "skills", "projects", "contact"];
   var headingIds = {
-    about: "h-about", experience: "h-experience", skills: "h-skills",
-    projects: "h-projects", contact: "h-contact", admin: "setup-title"
+    about: "h-about", experience: "h-experience", education: "h-education",
+    skills: "h-skills", projects: "h-projects", contact: "h-contact"
   };
-  var views = {};
-  ["menu"].concat(viewOrder).forEach(function (name) {
-    var v = byId("view-" + name);
-    if (v) { views[name] = v; }
-  });
-  var current = "menu";
+  var cvView = byId("view-cv");
+  var adminView = byId("view-admin");
+  var adminOpen = false;
+  /* Hash to restore when the console closes ("" = clear the fragment). */
+  var preAdminHash = "";
 
-  var menuRows = Array.prototype.slice.call(document.querySelectorAll(".mrow"));
-  var sel = 0;
-
-  function setSel(i, moveFocus) {
-    if (!menuRows.length) { return; }
-    sel = ((i % menuRows.length) + menuRows.length) % menuRows.length;
-    for (var r = 0; r < menuRows.length; r++) {
-      menuRows[r].classList.toggle("sel", r === sel);
-    }
-    if (moveFocus) { menuRows[sel].focus(); }
+  function scrollBehavior() {
+    try {
+      return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    } catch (err) { return "auto"; }
   }
 
-  function show(name, opts) {
+  function scrollToSection(name, opts) {
     opts = opts || {};
-    var next = views[name];
-    if (!next) { return; }
-    if (name === current) {
-      if (!opts.fromHash && name !== "menu" && location.hash !== "#" + name) {
-        location.hash = name;
-      }
-      return;
-    }
-    var old = views[current];
-    if (old) {
-      old.hidden = true;
-      old.classList.remove("enter");
-    }
-    next.hidden = false;
-    next.classList.remove("enter");
-    void next.offsetWidth; /* restart the form-feed wipe */
-    next.classList.add("enter");
-    current = name;
-    if (!opts.fromHash && location.hash !== "#" + name) {
-      location.hash = name;
-    }
-    if (name === "admin") { renderAdmin(); }
+    var sec = byId("view-" + name);
+    if (!sec) { return; }
     if (opts.focus !== false) {
-      if (name === "menu") {
-        setSel(sel, true);
-      } else {
-        var hd = byId(headingIds[name]);
+      var hd = byId(headingIds[name]);
+      if (hd) {
+        try { hd.focus({ preventScroll: true }); } catch (err) { hd.focus(); }
+      }
+    }
+    sec.scrollIntoView({ behavior: opts.instant ? "auto" : scrollBehavior(), block: "start" });
+  }
+
+  function jumpToSection(name) {
+    if (location.hash === "#" + name) {
+      /* Hash unchanged, so no hashchange event: handle directly. */
+      if (adminOpen) { closeAdmin({ restoreHash: false, focus: false }); }
+      scrollToSection(name, {});
+    } else {
+      location.hash = name; /* hashchange → applyHash scrolls + focuses */
+    }
+  }
+
+  function goTop() {
+    if (adminOpen) { closeAdmin({ restoreHash: false, focus: false }); }
+    if (location.hash) {
+      try { history.pushState(null, "", location.pathname + location.search); }
+      catch (err) { location.hash = ""; }
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: scrollBehavior() });
+  }
+
+  /* The topbar [S] button toggles the console; keep its announced
+     state truthful (mirrors how applyTheme() updates #theme-btn). */
+  function setSetupBtnState(open) {
+    var sb = byId("setup-btn");
+    if (!sb) { return; }
+    sb.textContent = open ? "[S] EXIT SETUP" : "[S] SETUP";
+    sb.setAttribute("aria-expanded", open ? "true" : "false");
+    sb.setAttribute("aria-label", open ? "Close setup console (S)" : "Open setup console (S)");
+  }
+
+  function openAdmin(opts) {
+    opts = opts || {};
+    if (!adminOpen) {
+      adminOpen = true;
+      if (cvView) { cvView.hidden = true; }
+      if (adminView) { adminView.hidden = false; }
+      setSetupBtnState(true);
+      renderAdmin();
+      window.scrollTo(0, 0);
+      if (opts.focus !== false) {
+        var hd = byId("setup-title");
         if (hd) {
-          try { hd.focus({ preventScroll: false }); } catch (err) { hd.focus(); }
+          try { hd.focus({ preventScroll: true }); } catch (err) { hd.focus(); }
         }
       }
     }
-    window.scrollTo(0, 0);
+    if (!opts.fromHash && location.hash !== "#admin") {
+      preAdminHash = location.hash;
+      location.hash = "admin";
+    }
+  }
+
+  function closeAdmin(opts) {
+    opts = opts || {};
+    if (!adminOpen) { return; }
+    adminOpen = false;
+    if (adminView) { adminView.hidden = true; }
+    if (cvView) { cvView.hidden = false; }
+    setSetupBtnState(false);
+    var restored = false;
+    if (opts.restoreHash !== false && location.hash === "#admin") {
+      if (preAdminHash && preAdminHash !== "#admin") {
+        /* hashchange → applyHash scrolls back and focuses the heading */
+        location.hash = preAdminHash.replace(/^#/, "");
+        restored = true;
+      } else {
+        try { history.pushState(null, "", location.pathname + location.search); }
+        catch (err) { location.hash = ""; }
+      }
+    }
+    preAdminHash = "";
+    if (!restored && opts.focus !== false) {
+      var sb = byId("setup-btn");
+      if (sb) { sb.focus(); }
+    }
   }
 
   function applyHash(initial) {
     var h = location.hash.replace(/^#/, "");
-    var name = Object.prototype.hasOwnProperty.call(views, h) ? h : "menu";
-    show(name, { fromHash: true, focus: !initial });
+    if (h === "admin") {
+      openAdmin({ fromHash: true, focus: !initial });
+      return;
+    }
+    if (adminOpen) { closeAdmin({ restoreHash: false, focus: false }); }
+    if (SECTIONS.indexOf(h) > -1) {
+      /* Focus the heading on load too, so Tab continues from the
+         deep-linked section (per spec: key OR hash, including on load).
+         focus() uses preventScroll and the headings are tabindex="-1",
+         so this adds no tab stop and no scroll jump. */
+      scrollToSection(h, { focus: true, instant: initial });
+    }
   }
 
   /* ================================================================
@@ -1374,6 +1371,54 @@ a:hover, a:focus-visible {
     ["system", "SYSTEM"]
   ];
   var adminTab = "identity";
+
+  /* ---------- Passcode gate (courtesy lock; the token is the real
+     protection). The passcode is never stored — only its SHA-256. ---------- */
+  var adminUnlocked = false;
+  try {
+    adminUnlocked = sessionStorage.getItem("qbessi.unlock") === "1";
+  } catch (e) { /* storage unavailable: stay locked this session */ }
+
+  function gateLocked() {
+    return state.passcodeHash !== "" && !adminUnlocked;
+  }
+
+  function sha256hex(text) {
+    return new Promise(function (resolve, reject) {
+      if (!(window.crypto && window.crypto.subtle && window.crypto.subtle.digest)) {
+        reject(new Error("secure context required"));
+        return;
+      }
+      resolve(window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)));
+    }).then(function (buf) {
+      var b = new Uint8Array(buf);
+      var hex = "";
+      for (var i = 0; i < b.length; i++) {
+        hex += (b[i] < 16 ? "0" : "") + b[i].toString(16);
+      }
+      return hex;
+    });
+  }
+
+  function attemptUnlock(input) {
+    sha256hex(input.value).then(function (hex) {
+      if (state.passcodeHash && hex === state.passcodeHash) {
+        adminUnlocked = true;
+        try { sessionStorage.setItem("qbessi.unlock", "1"); } catch (e) { /* ignore */ }
+        renderAdmin();
+        var bar = byId("setup-tabs");
+        var first = bar ? bar.querySelector(".stab") : null;
+        if (first) { first.focus(); }
+        setMsg("ACCESS GRANTED");
+      } else {
+        input.value = "";
+        /* force: a second identical DENIED must re-fire the live region. */
+        setMsg("ACCESS DENIED", true);
+      }
+    }).catch(function () {
+      setMsg("PASSCODE CHECK REQUIRES A SECURE CONTEXT (HTTPS)");
+    });
+  }
 
   function hintLine(text) { return el("p", "setup-hint", text); }
   function textInput(value, oninput, type) {
@@ -1693,6 +1738,45 @@ a:hover, a:focus-visible {
     var rev = fbtn("REVERT", revertCv);
     rev.setAttribute("data-ctl", "revert");
     box.appendChild(addRow(forget, fbtn("EXPORT cv.json", exportCv), imp, rev));
+
+    var pg = groupBox("PASSCODE", []);
+    pg.appendChild(hintLine(state.passcodeHash
+      ? "PASSCODE: ENABLED"
+      : "PASSCODE: DISABLED — CONSOLE OPENS FREELY"));
+    var np = textInput("", null, "password");
+    np.setAttribute("aria-label", "New passcode");
+    np.setAttribute("data-ctl", "pass-new");
+    pg.appendChild(frow("NEW PASSCODE", np));
+    var setP = fbtn("SET PASSCODE", function () {
+      if (!np.value) {
+        setMsg("EMPTY PASSCODE — NOT SET");
+        return;
+      }
+      sha256hex(np.value).then(function (hex) {
+        state.passcodeHash = hex;
+        /* The operator who set it stays unlocked this session. */
+        adminUnlocked = true;
+        try { sessionStorage.setItem("qbessi.unlock", "1"); } catch (e) { /* ignore */ }
+        touch();
+        renderAdmin();
+        focusAdminCtl("pass-set");
+        setMsg("PASSCODE SET — F10 TO SAVE");
+      }).catch(function () {
+        setMsg("PASSCODE CHECK REQUIRES A SECURE CONTEXT (HTTPS)");
+      });
+    });
+    setP.setAttribute("data-ctl", "pass-set");
+    var remP = fbtn("REMOVE PASSCODE", function () {
+      state.passcodeHash = "";
+      touch();
+      renderAdmin();
+      focusAdminCtl("pass-rm");
+      setMsg("PASSCODE REMOVED — F10 TO SAVE");
+    });
+    remP.setAttribute("data-ctl", "pass-rm");
+    pg.appendChild(addRow(setP, remP));
+    pg.appendChild(hintLine("CLIENT-SIDE GATE ONLY — THE REPOSITORY TOKEN IS THE REAL PROTECTION."));
+    box.appendChild(pg);
   }
 
   function renderAdminTabs() {
@@ -1714,7 +1798,33 @@ a:hover, a:focus-visible {
     });
   }
 
+  /* While locked, the console shows only the SECURITY CHECK panel:
+     no tabs, no editing panels. */
+  function renderGate() {
+    var bar = byId("setup-tabs");
+    if (bar) { bar.replaceChildren(); }
+    var box = byId("setup-body");
+    if (!box) { return; }
+    box.replaceChildren();
+    box.appendChild(hintLine("SECURITY CHECK — OPERATOR VERIFICATION REQUIRED. ENTER PASSCODE TO CONTINUE."));
+    var pass = textInput("", null, "password");
+    pass.setAttribute("aria-label", "Operator passcode");
+    pass.setAttribute("data-ctl", "gate-pass");
+    pass.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        attemptUnlock(pass);
+      }
+    });
+    box.appendChild(frow("PASSCODE", pass));
+    var unlock = fbtn("UNLOCK", function () { attemptUnlock(pass); }, "Unlock the setup console");
+    unlock.setAttribute("data-ctl", "gate-unlock");
+    box.appendChild(addRow(unlock));
+    box.appendChild(hintLine("COURTESY LOCK ONLY — THE REPOSITORY TOKEN, NOT THIS PASSCODE, PROTECTS THE LIVE DATA."));
+  }
+
   function renderAdmin() {
+    if (gateLocked()) { renderGate(); return; }
     renderAdminTabs();
     var box = byId("setup-body");
     if (!box) { return; }
@@ -1792,6 +1902,10 @@ a:hover, a:focus-visible {
   /* ---------- GitHub commit (only ever talks to api.github.com) ---------- */
   function commit() {
     if (saving) { return; }
+    if (gateLocked()) {
+      setMsg("LOCKED — ENTER PASSCODE");
+      return;
+    }
     var owner = gh.owner.trim(), repo = gh.repo.trim(), branch = gh.branch.trim(),
         path = gh.path.trim(), token = gh.token.trim();
     if (!token) {
@@ -1885,25 +1999,16 @@ a:hover, a:focus-visible {
   /* ================================================================
      Wiring
      ================================================================ */
-  Array.prototype.forEach.call(document.querySelectorAll("[data-open]"), function (btn) {
-    btn.addEventListener("click", function () {
-      var target = btn.getAttribute("data-open");
-      var idx = viewOrder.indexOf(target);
-      if (idx > -1) { setSel(idx, false); }
-      show(target);
-    });
-    btn.addEventListener("mouseenter", function () {
-      var idx = menuRows.indexOf(btn);
-      if (idx > -1) { setSel(idx, false); }
-    });
-  });
-
   Array.prototype.forEach.call(document.querySelectorAll("[data-act]"), function (btn) {
     btn.addEventListener("click", function () {
       var act = btn.getAttribute("data-act");
-      if (act === "menu" || act === "exit") { show("menu"); }
-      else if (act === "theme") { toggleTheme(); }
+      if (act === "theme") { toggleTheme(); }
       else if (act === "save") { commit(); }
+      else if (act === "exit") { closeAdmin(); }
+      else if (act === "top") { goTop(); }
+      else if (act === "admin") {
+        if (adminOpen) { closeAdmin(); } else { openAdmin(); }
+      }
     });
   });
 
@@ -1917,7 +2022,7 @@ a:hover, a:focus-visible {
 
     /* F10 saves from anywhere in admin, even while typing in a field. */
     if (e.key === "F10") {
-      if (current === "admin") {
+      if (adminOpen) {
         e.preventDefault();
         commit();
       }
@@ -1928,52 +2033,42 @@ a:hover, a:focus-visible {
          after releasing the field. */
       if (e.key === "Escape") {
         t.blur();
-        if (current === "admin") { show("menu"); }
+        if (adminOpen) { closeAdmin(); }
       }
       return;
     }
     if (e.altKey || e.ctrlKey || e.metaKey) { return; }
 
     if (e.key >= "1" && e.key <= "6") {
-      var idx = e.key.charCodeAt(0) - 49;
-      setSel(idx, false);
-      show(viewOrder[idx]);
+      e.preventDefault();
+      jumpToSection(SECTIONS[e.key.charCodeAt(0) - 49]);
       return;
     }
 
     switch (e.key) {
       case "m":
       case "M":
-        show("menu");
+        e.preventDefault();
+        goTop();
         break;
       case "t":
       case "T":
+        e.preventDefault();
         toggleTheme();
         break;
+      case "s":
+      case "S":
+        e.preventDefault();
+        if (adminOpen) { closeAdmin(); } else { openAdmin(); }
+        break;
       case "Escape":
-        if (current !== "menu") { show("menu"); }
+        if (adminOpen) { closeAdmin(); }
         break;
-      case "ArrowDown":
-        if (current === "menu") {
-          e.preventDefault();
-          setSel(sel + 1, true);
-        }
-        break;
-      case "ArrowUp":
-        if (current === "menu") {
-          e.preventDefault();
-          setSel(sel - 1, true);
-        }
-        break;
-      case "Enter":
-        if (current === "menu") {
-          var ae = document.activeElement;
-          /* If a button or link has focus, its native click handles Enter. */
-          if (!ae || (ae.tagName !== "BUTTON" && ae.tagName !== "A")) {
-            var row = menuRows[sel];
-            if (row) { row.click(); }
-          }
-        }
+      default:
+        /* Swallow every other unmodified printable key so browsers with
+           find-as-you-type (Firefox: letters, "/", "'") stay quiet.
+           Space (page scroll), Tab, F-keys, arrows pass through. */
+        if (e.key.length === 1 && e.key !== " ") { e.preventDefault(); }
         break;
     }
   });
@@ -1991,7 +2086,6 @@ a:hover, a:focus-visible {
      Init
      ================================================================ */
   renderAll();
-  setSel(0, false);
   applyTheme(root.classList.contains("light"));
 
   var tbDate = byId("tb-date");
@@ -2014,9 +2108,18 @@ a:hover, a:focus-visible {
       var norm = normalize(data);
       lastLoaded = clone(norm);
       if (!dirty && JSON.stringify(norm) !== JSON.stringify(state)) {
+        var wasLocked = gateLocked();
         state = norm;
         renderAll();
-        if (current === "admin") {
+        if (adminOpen) {
+          if (wasLocked && gateLocked()) {
+            /* The SECURITY CHECK panel is already up and its copy is
+               static — rebuilding it would silently discard a passcode
+               typed mid-fetch (the gate input never sets dirty, so the
+               !dirty guard cannot protect it). attemptUnlock() reads
+               state.passcodeHash live, so the refreshed hash applies. */
+            return;
+          }
           /* Rebuilding the panel would destroy a focused field; capture
              the focused control and restore it on the rebuilt DOM. */
           var sb = byId("setup-body");

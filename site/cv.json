@@ -1,9 +1,9 @@
 {
   "name": "Qbessi",
-  "role": "Front End Developer",
+  "role": "",
   "location": "London, UK",
-  "status": "Actively seeking a new role",
-  "about": "Front end developer based in London, building fast, accessible interfaces with modern web technologies. I care about performance, typography, and the small details. Currently looking for my next role. (placeholder)",
+  "status": "",
+  "about": "Based in London, building fast, accessible interfaces with modern web technologies. I care about performance, typography, and the small details. (placeholder)",
   "skills": [
     { "group": "Languages", "items": ["HTML", "CSS", "JavaScript", "TypeScript (placeholder)"] },
     { "group": "Frameworks", "items": ["React (placeholder)", "Astro (placeholder)", "Tailwind (placeholder)"] },
@@ -34,10 +34,28 @@
   ],
   "education": [
     {
-      "degree": "BSc Computer Science (placeholder)",
-      "school": "University (placeholder)",
-      "start": "2018",
-      "end": "2021"
+      "degree": "BSc (Hons) Computer Science",
+      "school": "",
+      "start": "",
+      "end": ""
+    },
+    {
+      "degree": "MSc Information Security",
+      "school": "",
+      "start": "",
+      "end": ""
+    },
+    {
+      "degree": "PhD Information Security",
+      "school": "",
+      "start": "",
+      "end": ""
+    },
+    {
+      "degree": "BSc Biomedical Science",
+      "school": "",
+      "start": "",
+      "end": ""
     }
   ],
   "projects": [
@@ -58,5 +76,6 @@
     { "label": "web", "value": "qbessi.com", "href": "https://qbessi.com" },
     { "label": "email", "value": "hello@qbessi.com (placeholder)", "href": "mailto:hello@qbessi.com" },
     { "label": "github", "value": "github.com/qbessi (placeholder)", "href": "https://github.com/qbessi" }
-  ]
+  ],
+  "passcodeHash": "06e55b633481f7bb072957eabcf110c972e86691c3cfedabe088024bffe42f23"
 }
