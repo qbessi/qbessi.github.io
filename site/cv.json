@@ -1,14 +1,20 @@
 {
   "name": "Qbessi",
   "role": "",
-  "location": "London, UK",
+  "location": "",
   "status": "",
   "about": "",
   "skills": [],
   "experience": [],
   "education": [
     {
-      "degree": "BSc (Hons) Computer Science",
+      "degree": "BSc Biomedical Science",
+      "school": "",
+      "start": "2026",
+      "end": "-"
+    },
+    {
+      "degree": "PhD Information Security",
       "school": "",
       "start": "",
       "end": ""
@@ -20,13 +26,7 @@
       "end": ""
     },
     {
-      "degree": "PhD Information Security",
-      "school": "",
-      "start": "",
-      "end": ""
-    },
-    {
-      "degree": "BSc Biomedical Science",
+      "degree": "BSc (Hons) Computer Science",
       "school": "",
       "start": "",
       "end": ""
